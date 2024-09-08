@@ -1,0 +1,12 @@
+// place your custom styles here
+:root{
+    --back-to-top-icon: url("/back-to-top.svg");
+}
+// 覆盖代码块演示标题颜色
+#app {
+    --code-demo-header-bg-color: #fff;
+  
+    html[data-theme="dark"] & {
+      --code-demo-header-bg-color: #000;
+    }
+  }
