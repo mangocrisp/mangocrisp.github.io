@@ -1,8 +1,7 @@
 // 原文：https://blog.csdn.net/q1246192888/article/details/111409908
-import APlayer from 'APlayer';
 let aplayers = [];
 
-export function loadMeting() {
+export function loadMeting(APlayer) {
     function a(a, b) {
         let c = {
             "container": a,
