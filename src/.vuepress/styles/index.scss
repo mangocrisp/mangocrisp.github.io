@@ -14,3 +14,7 @@ html[data-theme="dark"] {
 html[data-theme="light"] .transparent-navbar .vp-color-mode-switch {
   color: var(--grey-dark) !important;
 }
+
+.aplayer.aplayer-fixed .aplayer-lrc {
+  bottom: 60px !important;
+}

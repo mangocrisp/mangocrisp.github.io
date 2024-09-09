@@ -47,18 +47,23 @@ const live2d_settings = {
     'live2dHeight': 340,                        // 看板娘高度，不需要单位
     'live2dWidth': 250,                         // 看板娘宽度，不需要单位
     'waifuMinWidth': 'disable',                 // 页面小于宽度小于指定数值时隐藏看板娘，例如 'disable'(禁用)，推荐 '1040px'
-    'waifuEdgeSide': 'right:0',                 // 看板娘贴边方向，例如 'left:0'(靠左 0px)，'right:30'(靠右 30px)，可以被下面的模型设置覆盖
+    'waifuEdgeSide': 'right:50',                 // 看板娘贴边方向，例如 'left:0'(靠左 0px)，'right:30'(靠右 30px)，可以被下面的模型设置覆盖
     // 其他杂项设置
     'debug': false,                              // 全局 DEBUG 设置
     'debugMousemove': false,                    // 在控制台打印指针移动坐标，仅在 debug 为 true 时可用
     'logMessageToConsole': true,                // 在控制台打印看板娘提示消息
     'l2dVersion': '2.0.0',                      // 当前版本
-    'homePageUrl': 'auto',  // 主页地址，可选 'auto'(自动), '{URL 网址}'
+    'homePageUrl': '/',  // 主页地址，可选 'auto'(自动), '{URL 网址}'
     'aboutPageUrl': '/intro.html', // 关于页地址, '{URL 网址}'
     'screenshotCaptureName': 'bronyaMoe.png',   // 看板娘截图文件名，例如 'live2d.png'
 }
 // 模型列表
 const live2d_models = [
+    {
+        name: 'houmuya',
+        message: 'SDK3 bronya bilibili@呦克里斯汀娜呦',
+        version: 3
+    },
     {
         name: 'paimon',                                     // 模型名称要与文件夹名相同
         message: 'SDK4 Emergency Food bilibili@根瘤菌rkzj',  // 切换时的提示信息
@@ -74,11 +79,6 @@ const live2d_models = [
         name: 'shizuku',
         message: 'SDK2.1 official sample しずく <a href="https://www.live2d.com/eula/live2d-free-material-license-agreement_en.html">LICENSE</a>',
         version: 2
-    },
-    {
-        name: 'houmuya',
-        message: 'SDK3 bronya bilibili@呦克里斯汀娜呦',
-        version: 3
     },
     {
         name: 'Rice',
@@ -619,7 +619,7 @@ margin:auto;
 padding:5px 10px;
 border:0px solid rgba(104,216,255,0.62);
 border-radius:12px;
-background-color:#6db33f;
+background-color: var(--theme-color);
 color:#fff;
 box-shadow:0 3px 15px 2px rgba(16,51,49,0.3);
 text-overflow:ellipsis;
@@ -660,7 +660,7 @@ display:block
 font-family:"waifuico"!important;
 display:block;
 cursor:pointer;
-color:#0396FF;
+color:var(--theme-color);
 transition:.2s;
 font-size:18px;
 font-style:normal;
