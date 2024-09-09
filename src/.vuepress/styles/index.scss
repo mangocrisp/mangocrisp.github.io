@@ -1,12 +1,16 @@
 // place your custom styles here
 :root{
     --back-to-top-icon: url("/back-to-top.svg");
+    --bg-color-secondary: transparent;
 }
 // 覆盖代码块演示标题颜色
 #app {
-    --code-demo-header-bg-color: #fff;
-  
-    html[data-theme="dark"] & {
-      --code-demo-header-bg-color: #000;
-    }
-  }
+    --code-demo-header-bg-color: #fff;  
+}
+
+html[data-theme="dark"] {
+  --code-demo-header-bg-color: #000;
+}
+html[data-theme="light"] .transparent-navbar .vp-color-mode-switch {
+  color: var(--grey-dark) !important;
+}

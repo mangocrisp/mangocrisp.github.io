@@ -8,6 +8,7 @@ export default defineUserConfig({
   lang: "zh-CN",
   title: "Mango Crisp",
   description: "Mango Crisp",
+  //head:[["script", {"src": "/lib/live2d/live2d_bundle.js"}],["script", {"async":true,"type":"module","src": "/lib/live2d/waifu-tips.js"}]],
   alias: {
     "@theme-hope/modules/blog/components/BlogHero": path.resolve(
       __dirname,

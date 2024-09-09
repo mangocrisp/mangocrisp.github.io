@@ -1,7 +1,7 @@
 // 为项目主页的特性添加闪光效
 import "vuepress-theme-hope/presets/shinning-feature-panel.scss";
 // 将博主信息移动至文章列表的左侧
-//import "vuepress-theme-hope/presets/left-blog-info.scss";
+import "vuepress-theme-hope/presets/left-blog-info.scss";
 // 将博主头像裁剪为圆形
 import "vuepress-theme-hope/presets/round-blogger-avatar.scss";
 // 为页面图标添加鼠标悬停的跳动效果
@@ -19,7 +19,7 @@ import { setupRunningTimeFooter } from "vuepress-theme-hope/presets/footerRunnin
 
 export default defineClientConfig({
   setup: () => {
-    //setupTransparentNavbar({ type: "homepage" });
+    setupTransparentNavbar({ type: "homepage" });
     setupRunningTimeFooter(
         new Date("2022-01-01"),
         {
@@ -29,5 +29,32 @@ export default defineClientConfig({
         true,
       );
       //setupSnowFall();
+      let $bodyDom = document.getElementsByTagName('body')[0];
+      let $leve2dDom = document.getElementById('live2d');
+      if($leve2dDom !== null){
+        $leve2dDom.remove();
+      }
+      if($bodyDom !== null){
+        $leve2dDom = document.createElement('div');
+        $leve2dDom.id = 'live2d';
+        $leve2dDom.innerHTML = `<div id="waifu">
+        <div id="waifu-message"></div>
+        <div class="waifu-tool">
+          <span class="icon-next"></span>
+          <span class="icon-home"></span>
+          <span class="icon-message"></span>
+          <span class="icon-camera"></span>
+          <span class="icon-volumeup"></span>
+          <span class="icon-volumedown"></span>
+          <span class="icon-about"></span>
+          <span class="icon-cross"></span>
+        </div>
+        <canvas id="live2d2"></canvas>
+        <canvas id="live2d4"></canvas>
+      </div>
+      <script src="lib/live2d/live2d_bundle.js"></script>
+      <script async type="module" src="lib/live2d/waifu-tips.js"></script>`;
+        document.body.appendChild($leve2dDom);
+      }
   },
 });

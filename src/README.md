@@ -40,7 +40,6 @@ projects:
     name: 自定义项目
     desc: 自定义详细介绍
     link: https://你的自定义链接
-
 #footer: 自定义你的页脚文字
 ---
 
@@ -49,3 +48,23 @@ projects:
 要使用此布局，你应该在页面前端设置 `layout: BlogHome` 和 `home: true`。
 
 相关配置文档请见 [博客主页](https://theme-hope.vuejs.press/zh/guide/blog/home.html)。
+
+<!-- 
+	<div id="waifu">
+		<div id="waifu-message"></div>
+		<div class="waifu-tool">
+			<span class="icon-next"></span>
+			<span class="icon-home"></span>
+			<span class="icon-message"></span>
+			<span class="icon-camera"></span>
+			<span class="icon-volumeup"></span>
+			<span class="icon-volumedown"></span>
+			<span class="icon-about"></span>
+			<span class="icon-cross"></span>
+		</div>
+		<canvas id="live2d2"></canvas>
+		<canvas id="live2d4"></canvas>
+	</div>
+	<script src="lib/live2d/live2d_bundle.js"></script>
+	<script async type="module" src="lib/live2d/waifu-tips.js"></script>
+ -->
