@@ -53,3 +53,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 这里是内容。
 
 ![图片](/assets/images/cover1.jpg)
+
+<button disabled>xxx</button>
+
+<input type="text" value="文字"/>
+
+<input type="radio"/>
+
+<textarea>xxx</textarea>

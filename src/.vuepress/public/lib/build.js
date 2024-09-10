@@ -47,6 +47,16 @@ async function iniLib() {
                 loadMeting(APlayer,{
                     // 音量
                     volumn: 0.5,
+                    // 迷你
+                    mini: true,
+                    // 固定到底部
+                    fixed: true,
+                    // 音频自动播放
+                    autoplay: false,
+                    // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+                    mutex: true,
+                    // 列表默认折叠
+                    listFolded: true,
                     audio:{
                         // 调用第三方播放器接口，比如获取网易云的接口的歌单，然后全部丢到播放列表
                         api:{

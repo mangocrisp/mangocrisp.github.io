@@ -7,11 +7,11 @@ export function loadMeting(APlayer, options = {}) {
             "container": a,
             "audio": b,
             // 迷你
-            "mini": options.mini || true,
+            "mini": options.mini,
             // 固定到底部
-            "fixed": options.fixed || true,
+            "fixed": options.fixed,
             // 音频自动播放
-            "autoplay": options.autoplay || true,
+            "autoplay": options.autoplay,
             // 主题色
             "theme": options.theme || "var(--theme-color)",
             // 音频循环播放, 可选值: 'all', 'one', 'none'
@@ -21,11 +21,11 @@ export function loadMeting(APlayer, options = {}) {
             // 预加载，可选值: 'none', 'metadata', 'auto'
             "preload": options.preload || "none",
             // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
-            "mutex": options.mutex || true,
+            "mutex": options.mutex,
             // 歌词传递方式,3 lrc 文件
             "lrcType": options.lrcType || 3,
             // 列表默认折叠
-            "listFolded": options.listFolded || true,
+            "listFolded": options.listFolded,
             // 列表最大高度
             //"listMaxHeight": 90,
             // 存储播放器设置的 localStorage key

@@ -8,13 +8,45 @@
     --code-demo-header-bg-color: #fff;  
 }
 
+// 暗黑模式
 html[data-theme="dark"] {
   --code-demo-header-bg-color: #000;
+  // 所有元素的样式
+  *{
+    cursor: url('/lib/curs/Klee/Person Select.cur'), auto;
+  }
+  // 所有禁用元素的样式
+  *:disabled{
+    cursor: url('/lib/curs/Klee/unavailable.cur'), not-allowed;
+  }
+  // a 标签链接的样式
+  a{
+    cursor: url('/lib/curs/Klee/Location Select.cur'), auto;
+  }
+  // 输入框，文本域的样式
+  input[type="text"],textarea{
+    cursor: url('/lib/curs/Klee/text.cur'), auto;
+  }
 }
-html[data-theme="light"] .transparent-navbar .vp-color-mode-switch {
-  color: var(--grey-dark) !important;
+// 亮色模式
+html[data-theme="light"] {
+  .transparent-navbar .vp-color-mode-switch {
+    color: var(--grey-dark) !important;
+  }
+  *{
+    cursor: url('/lib/curs/QiQi/Person Select.cur'), auto;
+  }
+  *:disabled{
+    cursor: url('/lib/curs/QiQi/unavailable.cur'), not-allowed;
+  }
+  a{
+    cursor: url('/lib/curs/QiQi/alternate.cur'), auto;
+  }
+  input[type="text"],textarea{
+    cursor: url('/lib/curs/QiQi/text.cur'), auto;
+  }
 }
-
+// 歌词高度
 .aplayer.aplayer-fixed .aplayer-lrc {
   bottom: 60px !important;
 }
