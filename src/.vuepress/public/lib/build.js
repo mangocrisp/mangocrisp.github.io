@@ -1,14 +1,8 @@
-import { clickEffect } from './clickEffect/clickEffect.js'
-import { loadMeting } from './aplayer/Meting.js'
-import { startSakura } from './fullScreenFlower/flower.js'
-import { fairyDustCursor } from './mouseTrack/track.js'
-
-function iniLib() {
-
-    // console.log("========开始配置插件======", clickEffect)
-    // console.log("========开始配置插件======", loadMeting)
-    // console.log("========开始配置插件======", startSakura)
-    // console.log("========开始配置插件======", fairyDustCursor)
+/**
+ * 网站的域名前缀，这里默认是 /
+ */
+const $$site_prefix = '/';
+async function iniLib() {
 
     let $bodyDom = document.getElementsByTagName('body')[0];
     if ($bodyDom !== null) {
@@ -47,12 +41,36 @@ function iniLib() {
             $AplayerDom = document.createElement('div');
             $AplayerDom.id = '_extra_plugins_aplayer_';
             $AplayerDom.classList.add('aplayer');
-            $AplayerDom.setAttribute('data-id', '780461113');
-            $AplayerDom.setAttribute('data-server', 'netease');
-            $AplayerDom.setAttribute('data-type', 'playlist');
             document.body.appendChild($AplayerDom);
             // 注册 APlayer
-            loadMeting(APlayer);
+            await import($$site_prefix + `lib/aplayer/Meting.js`).then(({ loadMeting }) => {
+                loadMeting(APlayer,{
+                    // 音量
+                    volumn: 0.5,
+                    audio:{
+                        // 调用第三方播放器接口，比如获取网易云的接口的歌单，然后全部丢到播放列表
+                        api:{
+                            // Meting 接口
+                            url:'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r',
+                            //server 可选 netease（网易云音乐），tencent（QQ 音乐），kugou（酷狗音乐），xiami（虾米音乐），baidu（百度音乐）。
+                            server:'netease',
+                            // type 可选 song（歌曲），playlist（歌单），album（专辑），search（搜索关键字），artist（歌手）
+                            type:'playlist',
+                            // id 获取示例：浏览器打开网易云音乐，点击我喜欢的音乐歌单，地址栏有一串数字，playlist 的 id 即为这串数字。
+                            id:'780461113',
+                        },
+                        // 本地配置，手动配置你想要的歌曲
+                        // local:[{
+                        //     name: 'Audio name',
+                        //     artist: 'Audio artist',
+                        //     url: '',
+                        //     cover: '',
+                        //     lrc: '',
+                        //     type: 'auto'
+                        // }]
+                    }
+                });
+            })
         }
 
         // cursor
@@ -64,14 +82,22 @@ function iniLib() {
             $cursor.innerHTML = `<span class="js-cursor-container"></span>`;
             document.body.appendChild($cursor);
             // 鼠标拖动特效
-            fairyDustCursor();
+            await import($$site_prefix + `lib/mouseTrack/track.js`).then(({ fairyDustCursor }) => {
+                fairyDustCursor();
+            });
         }
     }
     // 鼠标点击特效
-    clickEffect();
+    await import($$site_prefix + `lib/clickEffect/clickEffect.js`).then(({ clickEffect }) => {
+        clickEffect();
+    });
     // 开始花瓣
-    startSakura();
+    await import($$site_prefix + `lib/fullScreenFlower/flower.js`).then(({ startSakura }) => {
+        startSakura();
+    });
 }
-setTimeout(iniLib, 1000);
+
+// 设置个超时
+setTimeout(iniLib, 200);
 
 export { iniLib }

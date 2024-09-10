@@ -2,6 +2,10 @@ import { defineUserConfig } from "vuepress";
 import { getDirname, path } from "vuepress/utils";
 
 import theme from "./theme.js";
+/**
+ * 网站的域名前缀，这里默认是 /
+ */
+const $$site_prefix = '/';
 
 export default defineUserConfig({
   base: "/",
@@ -10,13 +14,13 @@ export default defineUserConfig({
   description: "Mango Crisp",
   head:[
     // Live2d 看板娘
-    ["script", {"src": "lib/live2d/live2d_bundle.js"}],
-    ["script", {"async":true,"type":"module","src": "lib/live2d/waifu-tips.js"}],
+    ["script", {"src": $$site_prefix + "lib/live2d/live2d_bundle.js"}],
+    ["script", {"async":true,"type":"module","src": $$site_prefix + "lib/live2d/waifu-tips.js"}],
     // APlayer
-    ["link", {"rel":"stylesheet", "href":"lib/aplayer/APlayer.min.css"}],
-    ["script", {"src": "lib/aplayer/APlayer.min.js"}],
+    ["link", {"rel":"stylesheet", "href":$$site_prefix + "lib/aplayer/APlayer.min.css"}],
+    ["script", {"src": $$site_prefix + "lib/aplayer/APlayer.min.js"}],
     // 构建这些插件
-    ["script", {"async":true, "type":"module","src": "lib/build.js"}],
+    ["script", {"async":true, "type":"module","src": $$site_prefix + "lib/build.js"}],
   ],
   alias: {
     "@theme-hope/modules/blog/components/BlogHero": path.resolve(

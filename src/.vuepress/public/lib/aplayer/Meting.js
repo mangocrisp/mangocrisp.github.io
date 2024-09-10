@@ -1,39 +1,39 @@
 // 原文：https://blog.csdn.net/q1246192888/article/details/111409908
 let aplayers = [];
 
-export function loadMeting(APlayer) {
+export function loadMeting(APlayer, options = {}) {
     function a(a, b) {
         let c = {
             "container": a,
             "audio": b,
             // 迷你
-            "mini": true,
+            "mini": options.mini || true,
             // 固定到底部
-            "fixed": true,
+            "fixed": options.fixed || true,
             // 音频自动播放
-            "autoplay": true,
+            "autoplay": options.autoplay || true,
             // 主题色
-            "theme": "var(--theme-color)",
+            "theme": options.theme || "var(--theme-color)",
             // 音频循环播放, 可选值: 'all', 'one', 'none'
-            "loop": "all",
+            "loop": options.loop || "all",
             // 音频循环顺序, 可选值: 'list', 'random'
-            "order": "random",
+            "order": options.order || "random",
             // 预加载，可选值: 'none', 'metadata', 'auto'
-            "preload": "none",
+            "preload": options.preload || "none",
             // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
-            "mutex": true,
+            "mutex": options.mutex || true,
             // 歌词传递方式,3 lrc 文件
-            "lrcType": 3,
+            "lrcType": options.lrcType || 3,
             // 列表默认折叠
-            "listFolded": true,
+            "listFolded": options.listFolded || true,
             // 列表最大高度
             //"listMaxHeight": 90,
             // 存储播放器设置的 localStorage key
-            "storageName":"aplayer-setting",
+            "storageName": options.storageName || "aplayer-setting",
             // 音量
-            "volume": null,
+            "volume": options.volume || 0.5,
             // 自定义类型
-            "customAudioType": null,
+            "customAudioType": options.customAudioType || null,
         };
         if (b.length) {
             b[0].lrc || (c.lrcType = 0);
@@ -55,10 +55,10 @@ export function loadMeting(APlayer) {
     }
     aplayers = [];
     for (let c = document.querySelectorAll('.aplayer'), d = function () {
-        let d = c[e], f = d.dataset.id;
+        let d = c[e], f = options.audio.api;
         if (f) {
-            let g = d.dataset.api || b;
-            g = g.replace(':server', d.dataset.server), g = g.replace(':type', d.dataset.type), g = g.replace(':id', d.dataset.id), g = g.replace(':auth', d.dataset.auth), g = g.replace(':r', Math.random());
+            let g = options.audio.api.url || b;
+            g = g.replace(':server', options.audio.api.server), g = g.replace(':type', options.audio.api.type), g = g.replace(':id', options.audio.api.id), g = g.replace(':auth', options.audio.api.auth), g = g.replace(':r', Math.random());
             let h = new XMLHttpRequest;
             h.onreadystatechange = function () {
                 if (4 === h.readyState && (200 <= h.status && 300 > h.status || 304 === h.status)) {
@@ -66,16 +66,8 @@ export function loadMeting(APlayer) {
                     a(d, b)
                 }
             }, h.open('get', g, !0), h.send(null)
-        } else if (d.dataset.url) {
-            let i = [{
-                name: d.dataset.name || d.dataset.title || 'Audio name',
-                artist: d.dataset.artist || d.dataset.author || 'Audio artist',
-                url: d.dataset.url,
-                cover: d.dataset.cover || d.dataset.pic,
-                lrc: d.dataset.lrc,
-                type: d.dataset.type || 'auto'
-            }];
-            a(d, i)
+        } else if (options.audio.local) {
+            a(d, options.audio.local)
         }
     }, e = 0; e < c.length; e++) d()
   };
