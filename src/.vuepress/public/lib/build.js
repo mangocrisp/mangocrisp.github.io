@@ -2,7 +2,24 @@
  * 网站的域名前缀，这里默认是 /
  */
 const $$site_prefix = '/';
+const ref = {};
+ref.wet_site_title = null;
 async function iniLib() {
+
+    // 动态标题
+    window.onfocus = () => {
+        document.title = '(/≧▽≦/)咦！又好了！';
+    };
+    document.onclick = ()=>{
+        if(ref.wet_site_title){
+            document.title = ref.wet_site_title;
+            ref.wet_site_title = null;
+        }
+    }
+    window.onblur = () => {
+        ref.wet_site_title = document.title;
+        document.title = '(●—●)喔哟, 崩溃啦！';
+    };
 
     let $bodyDom = document.getElementsByTagName('body')[0];
     if ($bodyDom !== null) {
@@ -44,7 +61,7 @@ async function iniLib() {
             document.body.appendChild($AplayerDom);
             // 注册 APlayer
             await import($$site_prefix + `lib/aplayer/Meting.js`).then(({ loadMeting }) => {
-                loadMeting(APlayer,{
+                loadMeting(APlayer, {
                     // 音量
                     volumn: 0.5,
                     // 迷你
@@ -57,17 +74,17 @@ async function iniLib() {
                     mutex: true,
                     // 列表默认折叠
                     listFolded: true,
-                    audio:{
+                    audio: {
                         // 调用第三方播放器接口，比如获取网易云的接口的歌单，然后全部丢到播放列表
-                        api:{
+                        api: {
                             // Meting 接口
-                            url:'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r',
+                            url: 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r',
                             //server 可选 netease（网易云音乐），tencent（QQ 音乐），kugou（酷狗音乐），xiami（虾米音乐），baidu（百度音乐）。
-                            server:'netease',
+                            server: 'netease',
                             // type 可选 song（歌曲），playlist（歌单），album（专辑），search（搜索关键字），artist（歌手）
-                            type:'playlist',
+                            type: 'playlist',
                             // id 获取示例：浏览器打开网易云音乐，点击我喜欢的音乐歌单，地址栏有一串数字，playlist 的 id 即为这串数字。
-                            id:'780461113',
+                            id: '780461113',
                         },
                         // 本地配置，手动配置你想要的歌曲
                         // local:[{
@@ -91,11 +108,21 @@ async function iniLib() {
             $cursor.id = '_extra_plugins_cursor_';
             $cursor.innerHTML = `<span class="js-cursor-container"></span>`;
             document.body.appendChild($cursor);
-            // 鼠标拖动特效
-            await import($$site_prefix + `lib/mouseTrack/track.js`).then(({ fairyDustCursor }) => {
-                fairyDustCursor();
-            });
         }
+        // 鼠标拖动特效
+        await import($$site_prefix + `lib/mouseTrack/track.js`).then(({ fairyDustCursor }) => {
+            fairyDustCursor();
+        });
+
+        // 飘带，这个全局的，不太好用
+        //<script type="text/javascript" size="150" alpha='0.3' zIndex="-2" src="dist/ribbon.min.js"></script>
+        // const $ribbon = document.createElement('script');
+        // $ribbon.setAttribute('type','text/javascript');
+        // $ribbon.setAttribute('size','90');
+        // $ribbon.setAttribute('alpha', '0.1');
+        // $ribbon.setAttribute('zIndex', '1')
+        // $ribbon.setAttribute('src', 'lib/ribbon/ribbon.min.js')        
+        // document.body.appendChild($ribbon);
     }
     // 鼠标点击特效
     await import($$site_prefix + `lib/clickEffect/clickEffect.js`).then(({ clickEffect }) => {
