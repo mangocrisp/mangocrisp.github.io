@@ -14,7 +14,7 @@ function Sakura(x, y, s, r, fn) {
 Sakura.prototype.draw = function (cxt) {
     cxt.save();
     //这个数值是花瓣大小,电脑端网页 40 效果最好
-    let xc = 25 * this.s;
+    let xc = 40 * this.s;
     cxt.translate(this.x, this.y);
     cxt.rotate(this.r);
     cxt.drawImage(img, 0, 0, xc, xc)
@@ -118,7 +118,7 @@ export function startSakura() {
     let canvas = document.createElement('canvas'), cxt;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-    canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;');
+    canvas.setAttribute('style', 'position: fixed;left: 0;top: 0;pointer-events: none;z-index:99999999');
     canvas.setAttribute('id', 'canvas_sakura');
     document.getElementsByTagName('body')[0].appendChild(canvas);
     cxt = canvas.getContext('2d');

@@ -10,8 +10,8 @@ async function iniLib() {
     window.onfocus = () => {
         document.title = '(/≧▽≦/)咦！又好了！';
     };
-    document.onclick = ()=>{
-        if(ref.wet_site_title){
+    document.onclick = () => {
+        if (ref.wet_site_title) {
             document.title = ref.wet_site_title;
             ref.wet_site_title = null;
         }
@@ -68,8 +68,10 @@ async function iniLib() {
                     mini: true,
                     // 固定到底部
                     fixed: true,
+                    // 音频循环顺序
+                    order: 'list',
                     // 音频自动播放
-                    autoplay: false,
+                    autoplay: true,
                     // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
                     mutex: true,
                     // 列表默认折叠
@@ -84,7 +86,7 @@ async function iniLib() {
                             // type 可选 song（歌曲），playlist（歌单），album（专辑），search（搜索关键字），artist（歌手）
                             type: 'playlist',
                             // id 获取示例：浏览器打开网易云音乐，点击我喜欢的音乐歌单，地址栏有一串数字，playlist 的 id 即为这串数字。
-                            id: '780461113',
+                            id: '7076340031',
                         },
                         // 本地配置，手动配置你想要的歌曲
                         // local:[{
@@ -121,7 +123,7 @@ async function iniLib() {
         // $ribbon.setAttribute('size','90');
         // $ribbon.setAttribute('alpha', '0.1');
         // $ribbon.setAttribute('zIndex', '1')
-        // $ribbon.setAttribute('src', 'lib/ribbon/ribbon.min.js')        
+        // $ribbon.setAttribute('src', $$site_prefix + 'lib/ribbon/ribbon.min.js')        
         // document.body.appendChild($ribbon);
 
     }

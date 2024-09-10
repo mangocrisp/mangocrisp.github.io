@@ -17,9 +17,9 @@ export function loadMeting(APlayer, options = {}) {
             // 音频循环播放, 可选值: 'all', 'one', 'none'
             "loop": options.loop || "all",
             // 音频循环顺序, 可选值: 'list', 'random'
-            "order": options.order || "random",
+            "order": options.order || "list",
             // 预加载，可选值: 'none', 'metadata', 'auto'
-            "preload": options.preload || "none",
+            "preload": options.preload || "auto",
             // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
             "mutex": options.mutex,
             // 歌词传递方式,3 lrc 文件

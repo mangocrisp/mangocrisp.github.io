@@ -1,8 +1,13 @@
 // place your custom styles here
 @font-face {
-  font-family: "genkaimincho";
+  font-family: "Confession";
   font-display: swap;
-  src: url("/assets/style/font/genkaimincho.ttf") format('truetype');
+  src: url("/assets/font/confession.ttf") format('truetype');
+}
+@font-face {
+  font-family: "IzihunBlackBold";
+  font-display: swap;
+  src: url("/assets/font/IzihunBlackBold.ttf") format('truetype');
 }
 :root{
     --back-to-top-icon: url("/back-to-top.svg");
@@ -12,12 +17,21 @@
 #app {
     --code-demo-header-bg-color: #fff;  
 }
-
 body {
-  font-family: "genkaimincho", YouYuan !important;
+  font-family: "IzihunBlackBold", YouYuan !important;
+}
+.hitokoto,.vp-site-name{
+  font-family: 'Confession', YouYuan !important;
+}
+.vp-blog-hero-image{
+  border-radius: 50%;
 }
 // 暗黑模式
 html[data-theme="dark"] {
+  .vp-blog-mask::after{
+    opacity: 0.7;
+    background-color: #000;
+  }
   --code-demo-header-bg-color: #000;
   // 所有元素的样式
   *{
@@ -38,6 +52,10 @@ html[data-theme="dark"] {
 }
 // 亮色模式
 html[data-theme="light"] {
+  .vp-blog-mask::after{
+    opacity: 0.2;
+    background-color: #000;
+  }
   .transparent-navbar .vp-color-mode-switch {
     color: var(--grey-dark) !important;
   }

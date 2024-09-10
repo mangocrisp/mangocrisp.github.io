@@ -61,8 +61,8 @@ function loop() {
  */
 function Particle() {
 
-    this.character = "x";
-    this.lifeSpan = 120; //ms
+    this.character = ['❥', '❤', '♥', '❣', '♫', '★', '☆', '※', '♡', 'ღ', '✪', '✯', '✿', '☃', '✬', '✵'];
+    this.lifeSpan = 100; //ms
     this.initialStyles = {
         "position": "fixed",
         "display": "inline-block",
@@ -87,7 +87,7 @@ function Particle() {
         this.initialStyles.color = color;
 
         this.element = document.createElement('span');
-        this.element.innerHTML = this.character;
+        this.element.innerHTML = this.character[Math.floor(Math.random() * (this.character.length - 1))];
         applyProperties(this.element, this.initialStyles);
         this.update();
 

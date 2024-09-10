@@ -3,11 +3,12 @@ home: true
 layout: BlogHome
 icon: home
 title: 主页
-bgImage: /assets/images/home-page-bg.jpg
-bgImageDark: /assets/images/home-page-bg-dark.png
-heroImage: /logo.svg
+bgImage: /assets/images/ys/YaeMikoL.jpg
+bgImageDark: /assets/images/ys/KamisatoAyakaLight.jpg
+#heroImage: 'https://avatars.githubusercontent.com/u/46065167?v=4'
+heroImage: /assets/images/avatar.jpg
 heroAlt: Mango Crisp
-heroText: Mango Crisp 的开发分享站
+heroText: Mango Crisp 的小破站
 heroFullScreen: true
 tagline: Know why,so you can know how.
 projects:
