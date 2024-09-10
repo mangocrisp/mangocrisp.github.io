@@ -1,4 +1,9 @@
 // place your custom styles here
+@font-face {
+  font-family: "genkaimincho";
+  font-display: swap;
+  src: url("/assets/style/font/genkaimincho.ttf") format('truetype');
+}
 :root{
     --back-to-top-icon: url("/back-to-top.svg");
     --bg-color-secondary: transparent;
@@ -8,6 +13,9 @@
     --code-demo-header-bg-color: #fff;  
 }
 
+body {
+  font-family: "genkaimincho", YouYuan !important;
+}
 // 暗黑模式
 html[data-theme="dark"] {
   --code-demo-header-bg-color: #000;

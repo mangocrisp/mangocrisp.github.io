@@ -61,7 +61,7 @@ function loop() {
  */
 function Particle() {
 
-    this.character = "*";
+    this.character = "x";
     this.lifeSpan = 120; //ms
     this.initialStyles = {
         "position": "fixed",

@@ -123,6 +123,7 @@ async function iniLib() {
         // $ribbon.setAttribute('zIndex', '1')
         // $ribbon.setAttribute('src', 'lib/ribbon/ribbon.min.js')        
         // document.body.appendChild($ribbon);
+
     }
     // 鼠标点击特效
     await import($$site_prefix + `lib/clickEffect/clickEffect.js`).then(({ clickEffect }) => {
