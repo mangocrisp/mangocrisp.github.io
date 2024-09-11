@@ -41,7 +41,7 @@ export default hopeTheme({
   // 侧边栏
   sidebar,
   // 页脚
-  footer: "Mango Crisp 的开发分享站",
+  footer: "Mango Crisp 的小破站",
   // 版本信息，不写会根据作者信息和许可自动生成
   //copyright: "",
   // 是否显示页脚

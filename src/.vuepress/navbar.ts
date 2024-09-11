@@ -8,6 +8,10 @@ export default navbar([
     icon: "pen-to-square",
     prefix: "/posts/",
     children: [
+      "cherry",
+      "dragonfruit",
+      "strawberry",
+      "tomato",
       {
         text: "苹果",
         icon: "pen-to-square",
@@ -46,15 +50,7 @@ export default navbar([
           },
         ],
       },
-      { text: "樱桃", icon: "pen-to-square", link: "cherry" },
-      { text: "火龙果", icon: "pen-to-square", link: "dragonfruit" },
-      "tomato",
-      "strawberry",
     ],
   },
-  {
-    text: "V2 文档",
-    icon: "book",
-    link: "https://theme-hope.vuejs.press/zh/",
-  },
+  "intro"
 ]);
