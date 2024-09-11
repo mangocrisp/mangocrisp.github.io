@@ -1,25 +1,40 @@
 import { sidebar } from "vuepress-theme-hope";
 
+// sidebar 这里一般不需要改动，只需要添加多一个文章就行了
 export default sidebar({
   "/":[
-    "",
     "intro",
   ],
-  "/demo/": [
+  "/reference/": [
     {
-      text: "如何使用",
-      icon: "laptop-code",
+      text: "参考",
+      icon: "bomb",
+      link: "/reference/",
       prefix: "",
-      link: "/demo/",
+      collapsible: true,
+      expanded: false,
       children: "structure",
     },
   ],
-  "/posts/":[    
+  "/note/": [
     {
-      text: "文章",
-      icon: "book",
+      text: "随笔",
+      icon: "pen-to-square",
+      link: "/note/",
       prefix: "",
-      link: "/posts/",
+      collapsible: true,
+      expanded: false,
+      children: "structure",
+    },
+  ],
+  "/code/":[    
+    {
+      text: "代码笔记",
+      icon: "laptop-code",
+      link: "/code/",
+      prefix: "",
+      collapsible: true,
+      expanded: false,
       children: "structure",
     },
   ]

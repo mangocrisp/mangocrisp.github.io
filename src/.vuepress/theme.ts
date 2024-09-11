@@ -152,30 +152,42 @@ export default hopeTheme({
     // },
     // 评论
     comment: {
-      provider: "Giscus",
-      repo: "mangocrisp/mangocrisp.github.io",
-      repoId: "R_kgDOMoyjDg",
-      category: "General",
-      categoryId: "DIC_kwDOMoyjDs4CiTlw",
-      mapping: "pathname"
+      // provider: "Giscus",
+      // repo: "mangocrisp/mangocrisp.github.io",
+      // repoId: "R_kgDOMoyjDg",
+      // category: "General",
+      // categoryId: "DIC_kwDOMoyjDs4CiTlw",
+      // mapping: "pathname",
+      // 模板要用这个：https://github.com/walinejs/waline/tree/main/example
+      provider: "Waline",
+      // 服务地址是你的应用名 https://waline-d.vercel.app/
+      serverURL: "https://waline-d.vercel.app/"
     },
 
     components: {
-      components: ["Badge", "VPCard"],
+      components: ["Badge", "VPBanner"],
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
+      breaks: true,
       codetabs: true,
       component: true,
       demo: true,
       figure: true,
+      footnote: true,
+      flowchart: true,
+      gfm: true,
+      hint: true,
       imgLazyload: true,
       imgSize: true,
       include: true,
+      linkify: true,
       mark: true,
+      markmap: true,
+      mermaid: true,
       plantuml: true,
       spoiler: true,
       stylize: [

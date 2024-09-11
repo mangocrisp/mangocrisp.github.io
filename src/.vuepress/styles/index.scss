@@ -3,6 +3,7 @@
   font-family: "Confession";
   font-display: swap;
   src: url("/assets/font/confession.ttf") format('truetype');
+  font-weight: 600;
 }
 @font-face {
   font-family: "IzihunBlackBold";
@@ -23,7 +24,7 @@ body {
 .hitokoto,.vp-site-name{
   font-family: 'Confession', YouYuan !important;
 }
-.vp-blog-hero-image{
+.vp-blog-hero-image,.vp-banner-logo{
   border-radius: 50%;
 }
 // 暗黑模式
