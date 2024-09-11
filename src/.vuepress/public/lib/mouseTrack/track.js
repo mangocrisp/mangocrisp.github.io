@@ -60,9 +60,11 @@ function loop() {
  * Particles
  */
 function Particle() {
-
-    this.character = ['❥', '❤', '♥', '❣', '♫', '★', '☆', '※', '♡', 'ღ', '✪', '✯', '✿', '☃', '✬', '✵'];
-    this.lifeSpan = 100; //ms
+    // 特效字符：https://shijianchuo.net/tesufuhao/
+    //this.character = ['❥', '❤', '♥', '❣', '♫', '★', '☆', '※', '♡', 'ღ', '✪', '✯', '✿', '☃', '✬', '✵'];
+    //this.character = ['✦', '✧', '♦', '♢', '✡', '◆', '◇'];
+    this.character = ['✦', '✧'];
+    this.lifeSpan = 120; //ms
     this.initialStyles = {
         "position": "fixed",
         "display": "inline-block",
