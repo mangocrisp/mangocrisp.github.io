@@ -71,7 +71,7 @@ async function iniLib() {
                     // 音频循环顺序 'list' | 'random'
                     order: 'random',
                     // 音频自动播放
-                    autoplay: true,
+                    autoplay: false,
                     // 互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
                     mutex: true,
                     // 列表默认折叠
