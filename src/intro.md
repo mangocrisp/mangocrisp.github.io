@@ -2,7 +2,7 @@
 shortTitle: 关于我
 description: 没什么用的废话页
 index: false
-article: false
+article: true
 timeline: false
 sidebar: false
 lastUpdated: true
@@ -33,4 +33,4 @@ cover: /assets/images/ys/YaeMikoS.jpg
   ]'
 />
 
-<span style="font-family: Confession, YouYuan;">&nbsp;&nbsp;&nbsp;&nbsp;混迹互联网多年，如你所见的二次元，CV得一手好代码，也有自己的理解。</span>
+<span style="font-family: Confession, YouYuan;font-weight: 800;">&nbsp;&nbsp;&nbsp;&nbsp;混迹多年的互联网，如您所见的二次元，知识音乐 ACG，CV 得一手好代码</span>

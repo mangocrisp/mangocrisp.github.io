@@ -20,6 +20,6 @@ tag:
 cover: /assets/images/ys/GanyuL.jpg
 ---
 
-# 一些操作这里仅代考，不一定有用
+# 一些操作这里仅供参考，不一定有用
 
 <Catalog />
