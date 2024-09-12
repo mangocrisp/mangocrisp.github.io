@@ -1,9 +1,9 @@
-import { hopeTheme } from "vuepress-theme-hope";
+import { git, hopeTheme } from "vuepress-theme-hope";
 
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
-export default hopeTheme({  
+export default hopeTheme({
   hostname: "https://mangocrisp.github.io",
   // 作者信息
   author: {
@@ -54,41 +54,15 @@ export default hopeTheme({
     avatar: "https://avatars.githubusercontent.com/u/46065167?v=4",
     sidebarDisplay: "mobile",
     medias: {
-      Baidu: "https://example.com",
-      BiliBili: "https://example.com",
-      Bitbucket: "https://example.com",
-      Dingding: "https://example.com",
-      Discord: "https://example.com",
-      Dribbble: "https://example.com",
-      Email: "mailto:info@example.com",
-      Evernote: "https://example.com",
-      Facebook: "https://example.com",
-      Flipboard: "https://example.com",
-      Gitee: "https://example.com",
-      GitHub: "https://example.com",
-      Gitlab: "https://example.com",
-      Gmail: "mailto:info@example.com",
-      Instagram: "https://example.com",
-      Lark: "https://example.com",
-      Lines: "https://example.com",
-      Linkedin: "https://example.com",
-      Pinterest: "https://example.com",
-      Pocket: "https://example.com",
-      QQ: "https://example.com",
-      Qzone: "https://example.com",
-      Reddit: "https://example.com",
-      Rss: "https://example.com",
-      Steam: "https://example.com",
-      Twitter: "https://example.com",
-      Wechat: "https://example.com",
-      Weibo: "https://example.com",
-      Whatsapp: "https://example.com",
-      Youtube: "https://example.com",
-      Zhihu: "https://example.com",
-      VuePressThemeHope: {
-        icon: "https://theme-hope-assets.vuejs.press/logo.svg",
-        link: "https://theme-hope.vuejs.press",
-      },
+      GitHub: "https://github.com/mangocrisp",
+      Gitee: "https://gitee.com/mangocrisp",
+      BiliBili: "https://space.bilibili.com/25505115",
+      "163Music": "https://music.163.com/#/user/home?id=528192925",
+      // QQ 推广工具还需要申请公司啥的，比较麻烦就没搞
+      //QQ: "https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=2415446179",
+      Qzone: "https://user.qzone.qq.com/2415446179",
+      "QQMusic": "https://y.qq.com/n/ryqq/profile/like/song?uin=owv57KvP7w6lNv",
+      Steam: "https://steamcommunity.com/profiles/76561198867566298",
     },
   },
 
@@ -152,16 +126,16 @@ export default hopeTheme({
     // },
     // 评论
     comment: {
-      // provider: "Giscus",
-      // repo: "mangocrisp/mangocrisp.github.io",
-      // repoId: "R_kgDOMoyjDg",
-      // category: "General",
-      // categoryId: "DIC_kwDOMoyjDs4CiTlw",
-      // mapping: "pathname",
+      provider: "Giscus",
+      repo: "mangocrisp/mangocrisp.github.io",
+      repoId: "R_kgDOMoyjDg",
+      category: "General",
+      categoryId: "DIC_kwDOMoyjDs4CiTlw",
+      mapping: "pathname",
       // 模板要用这个：https://github.com/walinejs/waline/tree/main/example
-      provider: "Waline",
+      //provider: "Waline",
       // 服务地址是你的应用名 https://waline-d.vercel.app/
-      serverURL: "https://waline-d.vercel.app/"
+      //serverURL: "https://waline-d.vercel.app/"
     },
 
     components: {
@@ -305,6 +279,6 @@ export default hopeTheme({
     //   },
     // },
   },
-},{
+}, {
   custom: true
 });

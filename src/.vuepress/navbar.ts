@@ -20,5 +20,11 @@ export default navbar([
     prefix: "/code/",
     link: "/code/",
   },  
+  {
+    text: "软/硬件知识",
+    icon: "computer",
+    prefix: "/ware/",
+    link: "/ware/",
+  },  
   "intro"
 ]);

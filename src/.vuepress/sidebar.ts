@@ -37,5 +37,16 @@ export default sidebar({
       expanded: false,
       children: "structure",
     },
-  ]
+  ],
+  "/ware/":[    
+    {
+      text: "软/硬件知识",
+      icon: "computer",
+      link: "/ware/",
+      prefix: "",
+      collapsible: true,
+      expanded: false,
+      children: "structure",
+    },
+  ],
 });
