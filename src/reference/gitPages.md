@@ -55,7 +55,7 @@ origin ------ 默认远程仓库
 > 这里现在默认 origin 仓库是 Gitee（哈哈，Gitee Pages 挂了，正好也没有像 GitHub 或者 GitLab 这样的工作流，最适合存储代码了，然后要发布的时候就往 github 和 gitlab 两个远程去推，他们就会自动部署了）
 
 > [!tip]
-> `git 操作[fetch | push | pull] 指定远程仓库[gitee | github | gitlab | origin]`
+> `git 操作[fetch | push | pull] 指定远程仓库[gitee | github | gitlab | origin] <远程分支名>:<本地分支名>`
 
 ## GitHub Pages
 
