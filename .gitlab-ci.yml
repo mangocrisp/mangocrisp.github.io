@@ -15,7 +15,6 @@
 #   rules:
 #   - if $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 #     variable 
-# install 安装依赖
 pages:
   stage: deploy
   image: node:18.20.4
