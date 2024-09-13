@@ -45,7 +45,7 @@ install:
 cache:
   paths:
     - node_modules/
-    
+
 # test 代码检查
 test:
   stage: test
@@ -86,8 +86,9 @@ pages:
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  # rules 不能和 only 一起使用
+  # rules: 
+  #   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
  
 # # deploy
 # # 开发环境部署
