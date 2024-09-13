@@ -18,9 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: 0
+order: -2
 # 页面图标
-icon: bomb
+icon: question
 # 是否原创
 isOriginal: false
 # 日期
@@ -428,6 +428,7 @@ $font-family-mono: '"IzihunBlackBold", YouYuan';
 [看板娘](https://github.com/Konata09/Live2dOnWeb/tree/master)
 [鼠标拖行轨迹](https://blog.csdn.net/qq_64608499/article/details/124990378)
 [特效字符](https://shijianchuo.net/tesufuhao/)
+[图标库](https://fontawesome.com/)
 https://blog.kevinchu.top/2023/07/17/vercel-deploy-waline/
 https://nyakku.moe/posts/2019/10/21/moefy-your-vuepress-blog.html
 https://blog.csdn.net/q1246192888/article/details/111409908

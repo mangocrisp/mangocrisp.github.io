@@ -26,5 +26,6 @@ export default navbar([
     prefix: "/ware/",
     link: "/ware/",
   },  
-  "intro"
+  "/reference/aboutThisSite",
+  "intro",
 ]);

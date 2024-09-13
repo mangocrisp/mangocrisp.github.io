@@ -55,6 +55,7 @@ export default hopeTheme({
     sidebarDisplay: "mobile",
     medias: {
       GitHub: "https://github.com/mangocrisp",
+      GitLab: "https://gitlab.com/mangocrisp",
       Gitee: "https://gitee.com/mangocrisp",
       BiliBili: "https://space.bilibili.com/25505115",
       "163Music": "https://music.163.com/#/user/home?id=528192925",
@@ -139,7 +140,7 @@ export default hopeTheme({
     },
 
     components: {
-      components: ["Badge", "VPBanner"],
+      components: ["Badge", "VPBanner", "Share"],
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。

@@ -33,7 +33,6 @@ cover: /assets/images/ys/YaeMikoS.jpg
   ]'
 />
 
-
 从业到现在（编辑本文的时间），干了五六年开发了 :computer:，刚开始入行的时候还是用 JSP + Strust + Hibernate 开发项目，很多东西都很繁琐:sweat_smile:，人人都是全栈（全干 :clown_face: ）工程师，开发极其困难 :confounded:，维护极其遭罪 :triumph:，也许是现在越来越便利，所以才现在觉得以前很难吧。
 
 但是也没抱怨什么:relaxed:，遇到问题从来也不是说干不了就算了，都是说，试试呗？没有试错成本的话，为什么不试试:sunglasses:？

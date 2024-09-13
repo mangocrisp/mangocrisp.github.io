@@ -39,7 +39,7 @@ pages:
       - .pnpm-store
   artifacts:
     paths:
-      - public # 打包文件  
+      - public
 # cache:
 #   paths:
 #     - node_modules/
