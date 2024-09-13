@@ -1,0 +1,107 @@
+# default # 可以给 after_script before_script 等作业设置默认值
+ 
+# 定义作业组的阶段
+stages:
+  - install
+  - test
+  - build
+  - deploy
+ 
+# global variables 公共的变量 如果作业组中定义了相同的变量，以作业为主
+# variables:
+#   DEFAULT_VARIABLE: 'default-deploy'
+#   DEVELOPMENT: 'deployment'
+#   PRODUCTION: 'production'
+ 
+# workflow定义流水线
+# workflow:
+#   rules:
+#   - if $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+#     variable
+ 
+# install 安装依赖
+install:
+  stage: install
+  image: node:18.20.4
+  only:
+    - main
+    # - dev
+    # - master
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest-9 --activate
+    - pnpm config set store-dir .pnpm-store
+  script:
+    - echo "---start install---"
+    - pnpm install --frozen-lockfile # install dependencies
+    - echo "---end install---"
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+  
+cache:
+  paths:
+    - node_modules/
+    
+# test 代码检查
+test:
+  stage: test
+  only:
+    - main
+    # - dev
+    # - master
+  script:
+    - pnpm run docs:clean-dev
+ 
+# 打包
+build:
+  stage: build
+  only:
+    - main
+    # - dev
+    # - master
+  script:
+    - echo "---start build---"
+    - pnpm run docs:build
+    - echo "---end build---"
+  artifacts:
+    paths:
+      - dist # 打包文件
+
+# 部署
+pages:
+  stage: deploy
+  only:
+    - main
+    # - dev
+    # - master
+  script: 
+    - echo "---start deploy---"
+    - sudo rm -rf public
+    - sudo mv ./src/.vuepress/dist public
+    - echo "---end deploy---"
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+ 
+# # deploy
+# # 开发环境部署
+# deploy_dev:
+#   stage: deploy
+#   only:
+#     - dev
+#   script:
+#     - scp -r dist/* user@$SERVER_IP:/home/user/www/security-management-platform.$DEVELOPMENT.com/ # 把dist目录下文件递归复制到服务器下的地址
+ 
+# # 生产环境部署
+# deploy_master:
+#   stage: deploy
+#   only:
+#     - master
+#   script:
+#     - scp -r dist/* user@$SERVER_IP:/home/user/www/security-management-platform.$PRODUCTION.com/ # 把dist目录下文件递归复制到服务器下的地址  scp -r  -r是
