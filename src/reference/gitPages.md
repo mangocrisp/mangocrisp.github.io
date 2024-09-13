@@ -170,6 +170,11 @@ pages:
 
 [Gitee 源代码](https://gitee.com/mangocrisp/mangocrisp) 
 
+## 最后
+
+> [!caution]
+> 无论 GitLab 还是 GitHub，如果你只是改了文件名的大小写，他是不会识别为更改？这个我惊呆了
+
 ## 参考链接
 
 https://blog.csdn.net/u010059669/article/details/82670484
