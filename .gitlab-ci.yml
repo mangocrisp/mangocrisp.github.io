@@ -1,4 +1,4 @@
-# default # 可以给 after_script before_script 等作业设置默认值 
+# default # 可以给 after_script before_script 等作业设置默认值
 # 定义作业组的阶段
 # stages:
 #   - install
