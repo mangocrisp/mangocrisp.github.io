@@ -91,7 +91,7 @@ src --------------------- 所有的页面都在这个文件夹下面
 
 ### 详细配置
 
-详细配置就不全部贴出来了，我会把最基本的配置放在 [GitHub](https://github.com/mangocrisp/mangocrisp.github.io) 的 template 分支里面了，你可以拿下来直接用，但是要注意，评论模块得自行去修改自己的服务：
+详细配置就不全部贴出来了，我会把最基本的配置放在 [GitHub](https://github.com/mangocrisp/mangocrisp.github.io/tree/template) 的 template 分支里面了，你可以拿下来直接用，但是要注意，评论模块得自行去修改自己的服务：
 
 theme.ts
 
