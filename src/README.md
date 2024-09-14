@@ -14,10 +14,12 @@ heroFullScreen: true
 tagline: Know why,so you can know how.
 projects:
   - icon: /logo.svg
-    name: 自定义项目
-    desc: 自定义详细介绍
-    link: https://你的自定义链接
+    name: 个人博客
+    desc: 个人博客（GitHub Pages）
+    link: https://mangocrisp.github.io/
+  - icon: /logo.svg
+    name: 个人博客
+    desc: 个人博客（GitLab Pages）
+    link: https://mangocrisp.gitlab.io/
 #footer: 自定义你的页脚文字
 ---
-
-...

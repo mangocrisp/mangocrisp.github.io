@@ -151,7 +151,7 @@ pages:
 
 > [!note]
 > 如果你使用了 pnpm 你得配置这些上去 [参考](https://pnpm.io/zh/continuous-integration/#gitlab-ci)
-> GitLab Pages 的机制就是会到 public 目录中解析静态文件成页面，所以打包完后执行 `mv src/.vuepress/dist public`
+> [GitLab Pages](https://www.bookstack.cn/read/gitlab-doc-zh/docs-245.md) 的机制就是会到 public 目录中解析静态文件成页面，所以打包完后执行 `mv src/.vuepress/dist public`
 
 ### Pages 配置
    
