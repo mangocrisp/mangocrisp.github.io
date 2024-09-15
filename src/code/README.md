@@ -9,7 +9,7 @@ lastUpdated: true
 editLink: false
 contributors: true
 order: 0
-icon: laptop-code
+icon: "ph:code-bold"
 isOriginal: false
 date: 2024-09-11
 category:

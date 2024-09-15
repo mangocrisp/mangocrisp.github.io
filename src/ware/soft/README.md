@@ -9,7 +9,7 @@ lastUpdated: true
 editLink: false
 contributors: true
 order: 0
-icon: bars
+icon: "hugeicons:software"
 isOriginal: false
 date: 2024-09-12
 category:

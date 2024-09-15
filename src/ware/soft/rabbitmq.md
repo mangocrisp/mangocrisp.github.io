@@ -18,9 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -1
+order: -2
 # 页面图标
-icon: download
+icon: "simple-icons:rabbitmq"
 # 是否原创
 isOriginal: false
 # 日期
@@ -37,7 +37,7 @@ tag:
   - CentOS
   - RabbitMQ
 # 页面顶上的图片
-#cover: /assets/images/ys/KamisatoAyakaBlack.jpg
+cover: "https://www.rabbitmq.com/img/rabbitmq-logo-with-name.svg"
 ---
 
 # RabbitMQ 安装
@@ -79,6 +79,18 @@ rabbitmq-plugins enable rabbitmq_delayed_message_exchange
 ### 5. 迷之操作（才能正常运行？）
    
 执行 Rabbit Service stop > Rabbit Service remove > Rabbit Service (re)install > Rabbit Service start > 访问 127.0.0.1:15672 guest/guest
+
+
+### 6. 配置用户名和虚拟路径
+
+1. 初次使用 `guest`/`guest` 登录 http://localhost:15672
+2. 进入首页选择 `Admin` 页
+3. 点击 `Add a user`
+4. 按要求输入，设置对应的角色之后点击 `Add user`
+5. 点击右侧 `Virtual Hosts`
+6. 按要求输入，点击 `Add virtual host`
+7. 点击列表里面刚新增的 `Virtual Hosts`
+8. `Set permission` 和 `Set topic permission` 设置给刚新增的用户
 
 ## Linux (CentOS7.9)
 
@@ -130,7 +142,6 @@ systemctl start rabbitmq-server
 # 查看rabbitmq状态
 systemctl status rabbitmq-server
 ```
-
 ### 8. 配置用户
 
 ```bash
@@ -144,3 +155,14 @@ rabbitmqctl set_permissions -p "/" admin ".*" ".*" ".*"
 rabbitmqctl list_users
 
 ```
+
+> [!warning]
+> `guest` 用户只能在 `localhost` 登录
+> 所以需要配置可以远程登录的用户
+
+## 默认端口，用户名
+
+- API 端口：5672
+- Management 端口：15672
+- 默认用户名：guest
+- 默认密码：guest

@@ -1,8 +1,8 @@
 ---
 # 当前页面的短标题，会在导航栏、侧边栏和路径导航中作为首选
-shortTitle: 页面默认模板
+shortTitle: "Redis 安装"
 # 当前页面内容描述
-description: 新建 .md 文件的时候的默认基础 .md 文件
+description: "Redis 安装"
 # 是否在侧边栏或目录中索引当前页面
 index: true
 # 当前页面是否开启评论功能
@@ -20,20 +20,33 @@ contributors: true
 # 指定当前页面在侧边栏或目录中的排序
 order: -1
 # 页面图标
-icon: "tabler:template"
+icon: "cib:redis"
 # 是否原创
 isOriginal: false
 # 日期
-date: 2024-09-14
+date: 2024-09-16
 # 类别
 category:
-  - 参考
+  - 软/硬件知识
 # 标签
 tag:
   - 知识
   - 分享
+  - 软件知识
+  - Redis
 # 页面顶上的图片
-#cover: /assets/images/ys/KamisatoAyakaBlack.jpg
+cover: "https://redis.io/wp-content/uploads/2024/04/Logotype.svg"
 ---
 
-# 页面默认模板
+# Redis 安装
+
+## Windows
+
+Redis 官网已经找不到 Windows 版本的下载了，但是 GitHub 上有人做了把代码编译成 Windows 版本
+[参考](https://github.com/redis-windows/redis-windows)
+
+下载下来直接就运行就可以了，还是挺简单的
+
+## Linux 
+
+社区版下载：[Redis Community Edition](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)

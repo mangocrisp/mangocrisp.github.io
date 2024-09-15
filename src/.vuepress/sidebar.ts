@@ -8,7 +8,7 @@ export default sidebar({
   "/reference/": [
     {
       text: "参考",
-      icon: "bomb",
+      icon: "ooui:reference",
       link: "/reference/",
       prefix: "",
       collapsible: true,
@@ -19,7 +19,7 @@ export default sidebar({
   "/note/": [
     {
       text: "随笔",
-      icon: "pen-to-square",
+      icon: "clarity:note-line",
       link: "/note/",
       prefix: "",
       collapsible: true,
@@ -30,7 +30,7 @@ export default sidebar({
   "/code/":[    
     {
       text: "代码笔记",
-      icon: "laptop-code",
+      icon: "ph:code-bold",
       link: "/code/",
       prefix: "",
       collapsible: true,
@@ -41,7 +41,7 @@ export default sidebar({
   "/ware/":[    
     {
       text: "软/硬件知识",
-      icon: "computer",
+      icon: "arcticons:inware",
       link: "/ware/",
       prefix: "",
       collapsible: true,

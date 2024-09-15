@@ -20,11 +20,13 @@ contributors: true
 # 指定当前页面在侧边栏或目录中的排序
 order: -1
 # 页面图标
-icon: sliders
+icon: "ooui:special-pages-ltr"
 # 是否原创
 isOriginal: false
 # 日期
 date: 2024-09-14
+# 星标文章
+star: true
 # 类别
 category:
   - 参考

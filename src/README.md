@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: "uiw:home"
 title: 主页
 bgImage: /assets/images/ys/YaeMikoL.jpg
 bgImageDark: /assets/images/ys/KamisatoAyakaLight.jpg

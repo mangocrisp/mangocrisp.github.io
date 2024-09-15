@@ -20,7 +20,7 @@ contributors: true
 # 指定当前页面在侧边栏或目录中的排序
 order: -2
 # 页面图标
-icon: question
+icon: "ph:question"
 # 是否原创
 isOriginal: false
 # 日期

@@ -9,7 +9,7 @@ lastUpdated: true
 editLink: false
 contributors: true
 order: 0
-icon: pen-to-square
+icon: "clarity:note-line"
 isOriginal: false
 date: 2024-09-11
 category:

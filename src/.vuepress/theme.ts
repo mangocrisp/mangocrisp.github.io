@@ -15,7 +15,9 @@ export default hopeTheme({
   // 网站的 icon
   favicon: "/logo.svg",
   // 图标库
-  iconAssets: "fontawesome-with-brands",
+  iconAssets: "iconify",
+  // 前缀
+  iconPrefix: "",
   darkmode: "switch",
   // 导航栏的图标
   logo: "/logo.svg",

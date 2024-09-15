@@ -9,7 +9,7 @@ lastUpdated: true
 editLink: false
 contributors: true
 order: 0
-icon: bomb
+icon: "ooui:reference"
 isOriginal: false
 date: 2024-09-11
 category:

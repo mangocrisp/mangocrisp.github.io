@@ -9,7 +9,7 @@ lastUpdated: true
 editLink: false
 contributors: true
 order: 0
-icon: computer
+icon: "arcticons:inware"
 isOriginal: false
 date: 2024-09-12
 category:
