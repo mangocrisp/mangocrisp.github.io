@@ -1,5 +1,5 @@
 // 原文：https://blog.csdn.net/qq_64608499/article/details/124990378
-var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+var possibleColors = ["#F73859", "#14FFEC", "#00E0FF", "#FF99FE", "#FAF15D"]
 var width = window.innerWidth;
 var height = window.innerHeight;
 var cursor = { x: width / 2, y: width / 2 };

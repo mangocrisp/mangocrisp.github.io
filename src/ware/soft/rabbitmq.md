@@ -40,7 +40,7 @@ tag:
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
 
-# RabbitMQ
+# RabbitMQ 安装
 
 ## [Erlang 版本支持](https://www.rabbitmq.com/docs/which-erlang)
 
