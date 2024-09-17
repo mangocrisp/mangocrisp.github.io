@@ -11,6 +11,7 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
+    "@iconify/vue": "^4.1.2",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@waline/client": "^3.3.1",
     "flowchart.ts": "^3.0.1",
