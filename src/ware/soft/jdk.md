@@ -18,7 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -1
+order: 5
+dir:
+  order: 5
 # 页面图标
 icon: "ri:java-fill"
 # 是否原创

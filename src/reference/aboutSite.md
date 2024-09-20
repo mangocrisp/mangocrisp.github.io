@@ -17,8 +17,10 @@ lastUpdated: true
 editLink: true
 # 是否显示贡献者
 contributors: true
-# 指定当前页面在侧边栏或目录中的排序
-order: -2
+# 分组在侧边栏的顺序
+order: 1
+dir:
+  order: 1
 # 页面图标
 icon: "ph:question"
 # 是否原创

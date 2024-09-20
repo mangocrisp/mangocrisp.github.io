@@ -2,9 +2,7 @@ import { sidebar } from "vuepress-theme-hope";
 
 // sidebar 这里一般不需要改动，只需要添加多一个文章就行了
 export default sidebar({
-  "/":[
-    "intro",
-  ],
+  "/": ["intro"],
   "/reference/": [
     {
       text: "参考",
@@ -27,7 +25,7 @@ export default sidebar({
       children: "structure",
     },
   ],
-  "/code/":[    
+  "/code/": [
     {
       text: "代码笔记",
       icon: "ph:code-bold",
@@ -38,7 +36,7 @@ export default sidebar({
       children: "structure",
     },
   ],
-  "/ware/":[    
+  "/ware/": [
     {
       text: "软/硬件知识",
       icon: "arcticons:inware",
@@ -47,6 +45,22 @@ export default sidebar({
       collapsible: true,
       expanded: false,
       children: "structure",
+    },
+  ],
+  "/code/taybct/": [
+    {
+      text: "Spring Taybct",
+      icon: "eos-icons:application",
+      link: "/code/taybct/",
+      prefix: "",
+      collapsible: true,
+      expanded: false,
+      children: "structure",
+    },
+    {
+      text: "前端框架",
+      icon: "mingcute:vue-fill",
+      link: "https://turtlewxg.github.io/gx-web-doc/",
     },
   ],
 });

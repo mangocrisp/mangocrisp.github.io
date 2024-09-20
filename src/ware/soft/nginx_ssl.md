@@ -18,7 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -1
+order: 3
+dir:
+  order: 3
 # 页面图标
 icon: "simple-icons:nginx"
 # 是否原创
@@ -42,6 +44,149 @@ cover: "https://nginx.org/nginx.png"
 # Nginx 配置 ssl
 
 如果你的网站是 Nginx 服务，并且需要访问的时候带上 https，那么就需要在 Nginx 配置 ssl
+
+## yum 安装
+
+### 1. 安装
+
+   ```bash
+   yum install -y nginx
+   ```
+
+### 2. 启动
+
+   ```bash
+   systemctl start nginx.service
+   ```
+
+### 3. 设置开机自启
+
+   ```bash
+   systemctl enable nginx.service
+   ```
+
+### 4. 停止
+
+   ```bash
+   systemctl stop nginx.service
+   ```
+
+### 5. 重启
+
+   ```bash
+   systemctl restart nginx.service
+   ```
+
+### 6. 目录
+
+   ```bash
+   /etc/nginx    配置文件目录
+   /var/log/nginx   日志目录（这个，你可以自己在配置文件里面配置）
+   ```
+
+## 官网下载安装（推荐）
+
+去官网下载下来 nginx-x.x.x.tar.gz，上传到服务器
+
+### 1. 解压源代码
+
+   ```bash
+   tar -zxvf nginx-x.x.x.tar.gz
+   ```
+
+### 2. 安装编译环境和相关依赖
+
+   ```bash
+   yum install gcc-c++
+   yum install -y openssl openssl-devel
+   yum install -y pcre pcre-devel
+   yum install -y zlib zlib-devel
+   ```
+
+### 3. 自定义配置安装
+
+   [自定义配置](http://nginx.org/en/docs/configure.html)
+
+### 4. 安装
+
+   ```bash
+   cd nginx-x.x.x
+   ./configure --prefix=/usr/local/nginx
+   make
+   make install
+   ```
+
+> [!tip]
+> 这里，如果没有 make ,需要先安装  make 
+> yum install make
+
+### 5. 启动
+
+   ```bash
+   cd /usr/local/nginx/sbin
+   ./nginx
+   ```
+
+### 6. 设置自动启动
+
+   ```bash
+   vim /lib/systemd/system/nginx.service
+   ```
+
+   内容：
+
+   ```
+   [Unit]
+   #描述服务
+   Description=nginx
+   #描述服务类别
+   After=network.target
+    
+   #服务运行参数的设置，注意【Service】的启动、重启、停止命令都要用绝对路径
+   [Service]
+   #后台运行的形式
+   Type=forking
+   #服务具体运行的命令
+   ExecStart=/usr/local/nginx/sbin/nginx
+   #重启命令
+   ExecReload=/usr/local/nginx/sbin/nginx -s reload
+   #停止命令
+   ExecStop=/usr/local/nginx/sbin/nginx -s quit
+   #表示给服务分配独立的临时空间
+   PrivateTmp=true
+    
+   #运行级别下服务安装的相关设置，可设置为多用户，即系统运行级别为3
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+   开机自动启动：
+
+   ```bash
+   systemctl daemon-reload
+   systemctl enable nginx.service
+   systemctl start nginx.service
+   ```
+
+   nginx其他命令：
+
+   ```bash
+   systemctl start nginx.service　（启动nginx服务）
+   systemctl stop nginx.service　（停止nginx服务）
+   systemctl enable nginx.service （设置开机自启动）
+   systemctl disable nginx.service （停止开机自启动）
+   systemctl status nginx.service （查看服务当前状态）
+   systemctl restart nginx.service　（重新启动服务）
+   systemctl list-units --type=service （查看所有已启动的服务）
+   ```
+
+### 7. 目录
+
+   ```bash
+   /usr/local/nginx   nginx 主目录
+   /usr/local/nginx/conf   配置文件夹
+   /usr/local/nginx/logs   日志文件夹
+   ```
 
 ## 生成 ssl 证书
 

@@ -42,6 +42,7 @@ export default hopeTheme({
   fullscreen: true,
   // 侧边栏
   sidebar,
+  sidebarSorter:['readme', 'order', 'title', 'filename'],
   // 页脚
   footer: "Mango Crisp 的小破站",
   // 版本信息，不写会根据作者信息和许可自动生成

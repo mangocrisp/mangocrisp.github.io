@@ -8,7 +8,6 @@ timeline: false
 lastUpdated: true
 editLink: false
 contributors: true
-order: 0
 icon: "ooui:reference"
 isOriginal: false
 date: 2024-09-11

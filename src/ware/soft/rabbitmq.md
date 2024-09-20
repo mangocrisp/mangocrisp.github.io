@@ -18,7 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -2
+order: 1
+dir:
+  order: 1
 # 页面图标
 icon: "simple-icons:rabbitmq"
 # 是否原创
@@ -41,6 +43,9 @@ cover: "https://www.rabbitmq.com/img/rabbitmq-logo-with-name.svg"
 ---
 
 # RabbitMQ 安装
+
+> [!tip]
+> 如果下载很慢，可以试试使用[迅雷](https://www.xunlei.com/)下载
 
 ## [Erlang 版本支持](https://www.rabbitmq.com/docs/which-erlang)
 

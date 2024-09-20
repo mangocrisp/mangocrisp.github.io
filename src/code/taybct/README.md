@@ -1,6 +1,6 @@
 ---
-shortTitle: 代码笔记
-description: 记录写代码的一些收获
+shortTitle: Spring TayBct
+description: Spring 后端开发框架
 index: false
 comment: false
 article: false
@@ -8,9 +8,9 @@ timeline: false
 lastUpdated: true
 editLink: false
 contributors: true
-icon: "ph:code-bold"
+icon: "simple-icons:spring"
 isOriginal: false
-date: 2024-09-11
+date: 2024-09-20
 category:
   - 代码笔记
 tag:
@@ -18,10 +18,11 @@ tag:
   - 前端
   - Java
   - SpringBoot
-  - 全干
+  - "Spring Taybct"
+  - 开发框架
 cover: /assets/images/ys/KamisatoAyakaS.jpeg
 ---
 
-# 记录写代码的一些收获
+# Spring TayBct
 
 <Catalog />
