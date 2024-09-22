@@ -95,7 +95,7 @@ src --------------------- 所有的页面都在这个文件夹下面
 
 详细配置就不全部贴出来了，我会把最基本的配置放在 [GitHub](https://github.com/mangocrisp/mangocrisp.github.io/tree/template) 的 template 分支里面了，你可以拿下来直接用，但是要注意，评论模块得自行去修改自己的服务：
 
-theme.ts
+::: details theme.ts
 
 ```typescript
 export default hopeTheme({    
@@ -115,6 +115,8 @@ export default hopeTheme({
 });
 ```
 
+:::
+
 ## 特别注意的地方
 
 ### Node.js
@@ -122,6 +124,8 @@ export default hopeTheme({
 Node.js 因为是运行的服务器上的，所以是没有 windows 和 document 的，这点要考虑进去，所以集成一些骚气插件的时候，看似能用，但是一打包就报一堆的错所以我这里的方案就是 VuePress 的 [可以替换 head 的功能](https://vuepress.vuejs.org/zh/reference/frontmatter.html#head)，自行写一个 js 文件，让他在用户访问的时候才加载这个 js ，然后才去执行，所以我集成的有一些插件是在 build.js 里面去做的
 
 ### config.ts
+
+::: details config.ts
 
 ```typescript
 import { defineUserConfig } from "vuepress";
@@ -163,7 +167,11 @@ export default defineUserConfig({
 
 ```
 
+:::
+
 ### build.js
+
+::: details build.js
 
 ```javascript
 /**
@@ -311,7 +319,11 @@ setTimeout(iniLib, 200);
 export { iniLib }
 ```
 
+:::
+
 ### index.scss
+
+::: details index.scss
 
 ```scss
 // place your custom styles here
@@ -395,7 +407,11 @@ html[data-theme="light"] {
 }
 ```
 
+:::
+
 ### palette.scss
+
+::: details palette.scss
 
 ```scss
 // you can change colors here
@@ -411,6 +427,8 @@ $font-family: '"IzihunBlackBold", YouYuan';
 $font-family-heading: '"IzihunBlackBold", YouYuan';
 $font-family-mono: '"IzihunBlackBold", YouYuan';
 ```
+
+:::
 
 ## 参考链接
 

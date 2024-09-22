@@ -133,7 +133,7 @@ cover: "https://nginx.org/nginx.png"
    vim /lib/systemd/system/nginx.service
    ```
 
-   内容：
+::: details nginx.service
 
    ```
    [Unit]
@@ -159,6 +159,8 @@ cover: "https://nginx.org/nginx.png"
    [Install]
    WantedBy=multi-user.target
    ```
+
+:::
 
    开机自动启动：
 
@@ -222,7 +224,7 @@ openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout server.key -out ser
 - -out：新的证书请求文件位置
 - -config：指定 `req` 的配置文件
 
-req.cnf
+::: details req.cnf
 
 ```bash
 # 定义输入用户信息选项的"特征名称"字段名，该扩展字段定义了多项用户信息。
@@ -254,11 +256,15 @@ IP.1 = 35.185.44.232
 # IP.2 = 35.185.44.232
 ```
 
+:::
+
 ## 配置 Nginx
 
 执行上面的命令之后会在当前目录生成 server.key 和 server.crt 两个文件，你可以将两个文件放到 nginx 的安装目录/ssl 下
 
 ### nginx.conf
+
+::: details nginx.conf
 
 ```conf
 http {
@@ -290,6 +296,8 @@ http {
     }
 }
 ```
+
+:::
 
 > [!tip]
 > 如果有些请求是你一定要配置 http 的，那就得取消强制 https

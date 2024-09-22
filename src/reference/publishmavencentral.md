@@ -65,9 +65,9 @@ Bitbucket io.bitbucket.myusername
 
 ## 4、创建push的账号和密码
 
-点击右上角的view account，然后 Generate User Token，这里会自动生成 maven 的 setting 配置
+点击右上角的view account，然后 Generate User Token，这里会自动生成 maven 的 settings 配置
 
-## 5、Maven Setting.xml 配置
+## 5、Maven settings.xml 配置
 
 ```xml
 <settings>
@@ -128,7 +128,9 @@ gpg --list-keys
 
 查看本地所有的 keys
 
-### 配置 Maven Setting.xml 文件
+### 配置 Maven settings.xml 文件
+
+::: details settings.xml
 
 ```xml
 <settings>
@@ -142,9 +144,13 @@ gpg --list-keys
 </settings>
 ```
 
+:::
+
 需要在 profile 里面配置生成 key 时的 name
 
 ## 7、pom.xml
+
+::: details pom.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -327,6 +333,8 @@ gpg --list-keys
 </project>
 ```
 
+:::
+
 ## 8、发布
 
 ```bash
@@ -345,7 +353,9 @@ mvn deploy -DskipTests=true
 
 ## 9、使用发布成功的 maven 依赖
 
-中央仓库发布成功之后，其他镜像仓库例如：阿里云镜像仓库会跟着同步中央仓库的依赖，但是这个不是实时的，没那么及时，所以，如果想马上看到效果，你需要在 maven setting.xml 里面配置
+中央仓库发布成功之后，其他镜像仓库例如：阿里云镜像仓库会跟着同步中央仓库的依赖，但是这个不是实时的，没那么及时，所以，如果想马上看到效果，你需要在 maven settings.xml 里面配置
+
+::: details settings.xml
 
 ```xml
 <mirrors>  
@@ -367,3 +377,4 @@ mvn deploy -DskipTests=true
   </mirror>
 </mirrors>
 ```
+:::

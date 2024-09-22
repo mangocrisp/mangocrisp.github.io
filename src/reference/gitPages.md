@@ -127,6 +127,8 @@ $ pnpm create vuepress-theme-hope my-docs
 在推去仓库之前，你需要一份 .gitlab-ci.yml 配置，存放在你的项目根目录里面，GitLab 的 CI/CD 机制就是，只要你的根目录有这个配置，你提交代码他就会去读取然后执行命令 
 [先了解一下什么是 GitLab CI/CD](https://www.bookstack.cn/read/gitlab-doc-zh/docs-198.md)
 
+::: details .gitlab-ci.yml
+
 ```yaml
 pages:
   stage: deploy
@@ -152,6 +154,8 @@ pages:
     paths:
       - public
 ```
+
+:::
 
 > [!note]
 > 如果你使用了 pnpm 你得配置这些上去 [参考](https://pnpm.io/zh/continuous-integration/#gitlab-ci)

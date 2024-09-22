@@ -9,6 +9,8 @@ lastUpdated: true
 editLink: false
 contributors: true
 icon: "clarity:note-line"
+dir:
+  link: true
 isOriginal: false
 date: 2024-09-11
 category:

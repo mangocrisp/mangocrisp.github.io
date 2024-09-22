@@ -9,6 +9,8 @@ lastUpdated: true
 editLink: false
 contributors: true
 icon: "hugeicons:software"
+dir:
+  link: true
 isOriginal: false
 date: 2024-09-12
 category:

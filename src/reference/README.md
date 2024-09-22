@@ -9,6 +9,8 @@ lastUpdated: true
 editLink: false
 contributors: true
 icon: "ooui:reference"
+dir:
+  link: true
 isOriginal: false
 date: 2024-09-11
 category:

@@ -50,7 +50,7 @@ export default sidebar({
   "/code/taybct/": [
     {
       text: "Spring Taybct",
-      icon: "eos-icons:application",
+      icon: "simple-icons:spring",
       link: "/code/taybct/",
       prefix: "",
       collapsible: true,
