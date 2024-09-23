@@ -28,6 +28,8 @@ cover: /assets/images/ys/KamisatoAyakaS.jpeg
 
 Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
 
+## 特点
+
 - <Badge text="后台管理基础功能" type="tip" vertical="middle" /><br>
   后台管理会用到的一些基础功能，包括不限于，用户体系（多租户 + RABC）、字典/参数管理、任务调度、通知公告、流程管理
 - <Badge text="初始化项目" type="danger" vertical="middle" /><br>
@@ -40,5 +42,31 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   [Spring Authorization Server](https://spring.io/projects/spring-authorization-server)（OAuth2）自定义鉴权类型和后续可扩展
 - <Badge text="RESTful 接口" type="warning" vertical="middle" /><br>
   这边建议所有的后端接口（与前端对接的接口）都严格遵循 [RESTful 风格](https://restfulapi.cn/)
+
+## 源码
+
+::: info
+拿人东西就分享出来，项目代码借鉴了许多互联网同行和我自身的经验，希望对你有帮助
+:::
+
+<VPBanner
+  title="Spring TayBct Tools"
+  content="Spring 业务组件基础集成的工具类库，对一些常用的中间件做了基础的常用的集成，并且提供一些业务开发过程中常用的功能模块集成，开箱即用"
+  :actions='[
+    {
+      text: "GitHub",
+      link:"https://github.com/mangocrisp/spring-taybct-tools",
+    },
+    {
+      text: "GitLab",
+      link:"https://getlab.com/mangocrisp/spring-taybct-tools",
+    },
+    {
+      text: "Gitee",
+      link:"https://gitee.com/mangocrisp/spring-taybct-tools",
+    },
+  ]'
+/>
+
 
 <Catalog />
