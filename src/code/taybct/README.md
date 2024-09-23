@@ -46,24 +46,69 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
 ## 源码
 
 ::: info
-拿人东西就分享出来，项目代码借鉴了许多互联网同行和我自身的经验，希望对你有帮助
+拿人东西就分享出来，项目代码借鉴了许多互联网上的同行和我自身的经验，希望对你有帮助
 :::
 
 <VPBanner
   title="Spring TayBct Tools"
-  content="Spring 业务组件基础集成的工具类库，对一些常用的中间件做了基础的常用的集成，并且提供一些业务开发过程中常用的功能模块集成，开箱即用"
+  content="Spring 业务组件基础集成的工具类库，对一些常用的中间件做了基础的常用的集成，并且提供一些业务开发过程中常用的功能模块集成"
   :actions='[
     {
       text: "GitHub",
-      link:"https://github.com/mangocrisp/spring-taybct-tools",
+      link: "https://github.com/mangocrisp/spring-taybct-tools",
     },
     {
       text: "GitLab",
-      link:"https://getlab.com/mangocrisp/spring-taybct-tools",
+      link: "https://gitlab.com/mangocrisp/spring-taybct-tools",
+      type: "default"
+    },
+  ]'
+/>
+
+<VPBanner
+  title="Spring TayBct"
+  content="Spring 业务组件基础集成的基础业务库，对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成"
+  :actions='[
+    {
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct",
     },
     {
-      text: "Gitee",
-      link:"https://gitee.com/mangocrisp/spring-taybct-tools",
+      text: "GitLab",
+      link: "https://gitlab.com/mangocrisp/spring-taybct",
+      type: "default"
+    },
+  ]'
+/>
+
+<VPBanner
+  title="Spring TayBct Single"
+  content="Spring 业务组件基础集成的基础业务（单体架构），对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成"
+  :actions='[
+    {
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct-single",
+    },
+    {
+      text: "GitLab",
+      link: "https://gitlab.com/mangocrisp/spring-taybct-single",
+      type: "default"
+    },
+  ]'
+/>
+
+<VPBanner
+  title="Spring TayBct Cloud"
+  content="Spring 业务组件基础集成的基础业务（微服务架构），对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成"
+  :actions='[
+    {
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct-cloud",
+    },
+    {
+      text: "GitLab",
+      link: "https://gitlab.com/mangocrisp/spring-taybct-cloud",
+      type: "default"
     },
   ]'
 />
