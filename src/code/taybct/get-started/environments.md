@@ -8,9 +8,9 @@ index: true
 # 当前页面是否开启评论功能
 comment: true
 # 是否将该文章添加至文章列表中
-article: true
+article: false
 # 是否将该文章添加至时间线中
-timeline: true
+timeline: false
 # 是否显示页面最后更新时间
 lastUpdated: true
 # 是否显示编辑链接
@@ -410,7 +410,7 @@ spring:
 
 :::
 
-::: info **ENC()**
+::: info ENC()
 这里使用了 SM4 国密对称加密数据连接信息，可以很有效的防止密码明文显示在配置文件里面
 :::
 
@@ -589,3 +589,170 @@ spring:
 ```
 
 :::
+
+## MinIO（可选）
+
+使用 MinIO 做内对象存储文件管理
+
+- 对象存储
+- 文件管理
+- 文件管理集群扩展性
+- 其他对象存储功能
+
+### 下载安装
+
+<VPCard
+  title="MinIO"
+  desc="Object Store"
+  logo="https://www.minio.org.cn/resources/img/logo.svg"
+  link="/ware/soft/minio"
+/>
+
+### 简单配置
+
+::: details file.yml
+
+```yaml
+taybct:
+  file:
+    enable: true
+    type: minio
+    minio:
+      url: http://127.0.0.1:19000
+      accessKey: admin
+      secretKey: password
+      bucketName: taybct
+```
+
+:::
+
+## Nacos（Cloud 必须）
+
+使用 Nacos 做注册中心和配置中心
+
+- 负载均衡
+- 动态配置
+- 动态注册
+- 其他 Nacos 功能
+
+### 下载安装
+
+下载和说明文档，官网写得很详细，请参考官网：
+
+<VPCard
+  title="Nacos"
+  desc="一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台"
+  logo="https://img.alicdn.com/imgextra/i3/O1CN01ZvHnbg29VwowXGiKM_!!6000000008074-2-tps-8001-1562.png"
+  link="https://nacos.io/"
+/>
+
+### 简单配置
+   
+::: details bootstrap.yml
+
+```yaml
+spring:
+  main:
+    #springCloud 的2.1.0以上版本的，将不再默认支持 FeignClient 的name属性 的相同名字。
+    #即 ：多个接口上的@FeignClient(“相同服务名”)会报错，overriding is disabled(覆盖 是 禁止的/关闭的)。
+    allow-bean-definition-overriding: true
+  application:
+    # 应用名称
+    name: module-system
+  profiles:
+    active: dev
+  cloud:
+    # 使用 nacos 注册发现和配置
+    nacos:
+      username: nacos
+      password: nacos
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+        # 命名空间
+        namespace: taybct-3-2-x
+        # 配置分组
+        group: ${spring.profiles.active}
+      config:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+        # 命名空间
+        namespace: taybct-3-2-x
+        # 配置分组
+        group: ${spring.profiles.active}
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - data-id: ${taybct.config-prefix}.${spring.cloud.nacos.config.file-extension}      # 基本配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-global-exception.${spring.cloud.nacos.config.file-extension}     # 全局异常配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-swagger.${spring.cloud.nacos.config.file-extension}     # swagger 配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-redis.${spring.cloud.nacos.config.file-extension}      # redis 缓存
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-datasource.${spring.cloud.nacos.config.file-extension}      # 数据源
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-mybatis.${spring.cloud.nacos.config.file-extension}     # mybatis-plus 配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-mq.${spring.cloud.nacos.config.file-extension}     # rabbit mq 配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-dubbo.${spring.cloud.nacos.config.file-extension}     # dubbo 配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+          - data-id: ${taybct.config-prefix}-data-scope.${spring.cloud.nacos.config.file-extension}     # data-scope 配置
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+taybct:
+  config-prefix: taybct
+```
+
+:::
+
+## 项目配置文件
+
+在仓库源代码里面可以找到配置文件
+
+<VPBanner
+  title="Spring TayBct Single"
+  content="Spring 业务组件基础集成的基础业务（单体架构），对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成"
+  :actions='[
+    {
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct-single",
+    },
+    {
+      text: "GitLab",
+      link: "https://gitlab.com/mangocrisp/spring-taybct-single",
+      type: "default"
+    },
+  ]'
+/>
+
+Single 在 `/run/src/main/resources` 目录下有项目配置文件
+
+<VPBanner
+  title="Spring TayBct Cloud"
+  content="Spring 业务组件基础集成的基础业务（微服务架构），对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成"
+  :actions='[
+    {
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct-cloud",
+    },
+    {
+      text: "GitLab",
+      link: "https://gitlab.com/mangocrisp/spring-taybct-cloud",
+      type: "default"
+    },
+  ]'
+/>
+
+Cloud 在 `/_ini` 目录下有 nacos 配置文件（项目配置文件）和数据库文件

@@ -25,7 +25,8 @@ export default navbar([
     icon: "arcticons:inware",
     prefix: "/ware/",
     link: "/ware/",
+    activeMatch: ""
   },  
-  "/reference/aboutSite",
+  "aboutSite",
   "intro",
 ]);

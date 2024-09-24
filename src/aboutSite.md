@@ -4,7 +4,9 @@ shortTitle: 关于本站
 # 当前页面内容描述
 description: 如何白嫖互联网资源搭建自己的博客
 # 是否在侧边栏或目录中索引当前页面
-index: true
+index: false
+# 左边栏
+sidebar: false
 # 当前页面是否开启评论功能
 comment: true
 # 是否将该文章添加至文章列表中

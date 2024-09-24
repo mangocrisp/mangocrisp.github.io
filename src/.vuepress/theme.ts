@@ -117,17 +117,17 @@ export default hopeTheme({
     // 博客
     blog: true,
     // 搜索
-    searchPro: true,
-    // searchPro: {
-    //   // 是否索引内容
-    //   indexContent: true,
-    //   // 是否自动提示搜索建议
-    //   autoSuggestions: true,
-    //   // 存储搜索查询词历史的最大数量
-    //   queryHistoryCount: 5,
-    //   // 存储搜索结果历史的最大数量
-    //   resultHistoryCount: 5
-    // },
+    //searchPro: true,
+    searchPro: {
+      // 是否索引内容
+      indexContent: true,
+      // 是否自动提示搜索建议
+      autoSuggestions: true,
+      // 存储搜索查询词历史的最大数量
+      queryHistoryCount: 5,
+      // 存储搜索结果历史的最大数量
+      resultHistoryCount: 5
+    },
     // 评论
     comment: {
       provider: "Giscus",
