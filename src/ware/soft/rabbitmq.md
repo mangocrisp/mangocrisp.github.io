@@ -44,6 +44,19 @@ cover: "https://www.rabbitmq.com/img/rabbitmq-logo-with-name.svg"
 
 # RabbitMQ 安装
 
+## 链接
+
+<VPCard
+  title="Rabbit MQ 官网"
+  link="https://www.rabbitmq.com/"
+/>
+
+<VPCard
+  title="Rabbit MQ 中文网"
+  desc="仅供参考"
+  link="https://rabbitmq.org.cn/"
+/>
+
 > [!tip]
 > 如果下载很慢，可以试试使用[迅雷](https://www.xunlei.com/)下载
 

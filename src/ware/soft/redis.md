@@ -42,6 +42,20 @@ cover: "https://redis.io/wp-content/uploads/2024/04/Logotype.svg"
 
 # Redis 安装
 
+## 链接
+
+<VPCard
+  title="redis 官网"
+  desc="这个权威一些"
+  link="https://redis.io/"
+/>
+
+<VPCard
+  title="redis 中文文档"
+  desc="仅供参考"
+  link="https://redis.com.cn/"
+/>
+
 ## Windows
 
 Redis 官网已经找不到 Windows 版本的下载了，但是 GitHub 上有人做了把代码编译成 Windows 版本
