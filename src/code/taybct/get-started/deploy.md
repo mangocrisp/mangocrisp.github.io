@@ -8,9 +8,9 @@ index: true
 # 当前页面是否开启评论功能
 comment: true
 # 是否将该文章添加至文章列表中
-article: false
+article: true
 # 是否将该文章添加至时间线中
-timeline: false
+timeline: true
 # 是否显示页面最后更新时间
 lastUpdated: true
 # 是否显示编辑链接
@@ -26,7 +26,7 @@ icon: "eos-icons:deploy"
 # 是否原创
 isOriginal: false
 # 日期
-date: 2024-09-25
+date: 2024-09-27
 # 类别
 category:
   - 代码笔记
