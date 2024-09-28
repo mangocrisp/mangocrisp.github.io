@@ -755,4 +755,4 @@ Single 在 `/run/src/main/resources` 目录下有项目配置文件
   ]'
 />
 
-Cloud 在 `/_ini` 目录下有 nacos 配置文件（项目配置文件）和数据库文件
+Cloud 在`/_ini`目录下有`Nacos`配置文件（项目配置文件）和数据库文件

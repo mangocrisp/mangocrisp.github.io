@@ -43,6 +43,8 @@ export default hopeTheme({
   // 侧边栏
   sidebar,
   sidebarSorter:['readme', 'order', 'title', 'filename'],
+  // 侧边栏嵌套的标题深度
+  headerDepth: 2,
   // 页脚
   footer: "Mango Crisp 的小破站",
   // 版本信息，不写会根据作者信息和许可自动生成

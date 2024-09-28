@@ -125,9 +125,9 @@ logging:
 
 ## Cloud
 
-微服务的配置，使用的是 [Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须) 作为配置中心，所以你需要
+微服务的配置，使用的是 [Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须) 作为配置中心，所以你需要先将环境准备好
 
-### 1. 配置本地的`bootstrap.yml`
+### 配置本地的`bootstrap.yml`
 
 本地配置的一般是不会做修改的固定配置
 
@@ -251,5 +251,53 @@ taybct:
 
 :::
 
-### 2. 在配置中心(`Nacos`)动态配置
+### 在配置中心(`Nacos`)动态配置
 
+这里默认你已经安装好了[Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须)
+
+浏览器打开 [http://127.0.0.1:8848/nacos](http://127.0.0.1:8848/nacos)，并登录（账号密码是你自己设置的，默认是 `nacos`/`nacos`）
+
+#### 1. 新增命名空间
+
+![对应版本的命名空间](/assets/images/taybct/nacosnamespace.png)
+
+#### 2. 导入配置
+
+1. 找到项目`/_ini`目录下有`Nacos`配置文件
+2. 在`Nacos`配置列表选择对应的命名空间
+3. 点击`导入配置`按钮，选择上传文件，将`Nacos`配置文件导入
+4. 导入成功
+5. 之后就可以像配置单体架构一样的配置每个配置文件了
+
+#### 3. 引入配置到项目
+
+在本地的`bootstrap.yml`里面配置
+
+``` yaml
+spring:
+  cloud:
+    nacos:
+      config:
+        shared-configs:
+          - data-id: 配置列表的 Data id
+            group: 配置列表的 Group
+            refresh: true # 是否需要动态刷新
+```
+
+::: warning Nacos 动态刷新
+
+只需要在需要动态刷新配置的地方添加`@RefreshScope`，就可以实现动态刷新配置了[参考官方文档](https://nacos.io/blog/faq/nacos-user-question-history14883/?source=wuyi#_top)
+
+`Nacos-opensource`中`@RefreshScope`实现配置自动更新的原理可以依据提供的知识进行如下分析：
+
+1. 初始化与注册监听器： 当`Spring Cloud`应用启动时，配置了`@RefreshScope`的`Bean`（如示例中的`ConfigController`）会被`Spring`容器特殊处理。在这个过程中，`Nacos Spring Cloud`客户端会根据`spring.application.name`、`spring.profiles.active`以及配置文件的扩展名（默认是`.properties`或`.yaml`）自动生成`dataId`。之后，它会向`Nacos Server`发起请求，获取与`dataId`匹配的配置内容，并注册一个监听器到`Nacos Server`上，用于监听此`dataId`的配置变化。
+
+2. 配置变更检测： 当`Nacos Server`上的配置发生变化时，它会立即通知所有订阅了该`dataId`的客户端。`Nacos`客户端接收到变更通知后，会触发一个刷新事件。
+
+3. 动态更新配置值： 接收到刷新事件后，`Spring Cloud`框架会重新加载受影响的`Bean`（即那些标记了`@RefreshScope`的`Bean`）。在这个过程中，之前通过`@Value`注入的配置值（如`useLocalCache`）会被重新解析，获取最新的配置内容。因此，当再次调用相关接口（如`/config/get`）时，返回的就是更新后的配置值。
+
+4. 实际操作验证： 示例中通过`Nacos Open API`手动更改`example.properties`的`useLocalCache`值，并通过`HTTP`请求验证配置自动更新的效果。这一步骤直观展示了配置变更后，应用能即时响应并应用新配置的过程。
+
+总结而言，`@RefreshScope`通过在`Spring Cloud`应用启动时注册配置监听器至`Nacos Server`，并在配置变更时重新初始化受影响的`Bean`，从而实现了配置的自动更新。这一机制确保了微服务应用能够在不重启的情况下，实时响应外部配置的变化。
+
+:::

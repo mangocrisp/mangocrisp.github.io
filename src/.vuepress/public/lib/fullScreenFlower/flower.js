@@ -123,7 +123,7 @@ export function startSakura() {
     document.getElementsByTagName('body')[0].appendChild(canvas);
     cxt = canvas.getContext('2d');
     let sakuraList = new SakuraList();
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 7; i++) {
         let sakura, randomX, randomY, randomS, randomR, randomFnx, randomFny, randomFnR;
         randomX = getRandom('x');
         randomY = getRandom('y');
