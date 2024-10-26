@@ -1,6 +1,6 @@
 ---
-shortTitle: 指南
-description: 一些使用细节
+shortTitle: 注解
+description: 使用注解优雅的开发
 index: false
 comment: false
 article: false
@@ -8,14 +8,14 @@ timeline: false
 lastUpdated: true
 editLink: false
 contributors: true
-icon: "eos-icons:compass"
+icon: "oui:token-annotation"
 # 指定当前页面在侧边栏或目录中的排序
-order: 2
+order: 3
 dir:
-  order: 2
+  order: 3
   link: true
 isOriginal: false
-date: 2024-09-22
+date: 2024-10-27
 category:
   - 代码笔记
 tag:
@@ -24,10 +24,12 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-  - 指南
+  - 注解
 # cover: /assets/images/ys/KamisatoAyakaS.jpeg
 ---
 
-# 指南
+# 注解
+
+如果所有的代码都可以用注解来写就太爽了，省去太多繁琐的工作~
 
 <Catalog />

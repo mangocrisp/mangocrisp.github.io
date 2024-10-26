@@ -9,7 +9,10 @@ lastUpdated: true
 editLink: false
 contributors: true
 icon: "hugeicons:start-up-02"
+# 指定当前页面在侧边栏或目录中的排序
+order: 1
 dir:
+  order: 1
   link: true
 isOriginal: false
 date: 2024-09-22
