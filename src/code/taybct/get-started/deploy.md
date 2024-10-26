@@ -167,7 +167,7 @@ cat /dev/null > nohup.out
 rem 配置控制台显示中文（防止乱码）
 chcp 65001
 rem 可以显示当前运行的 bat 位置到黑窗口上面，方便后续找到运行的 jar 包的位置
-set TITLE=%0
+TITLE=%0
 rem 指定jdk的 java 命令，你也可以指定对应的 jdk 版本
 set java=D:\dev\environment\jdk\jdk-17.0.5\bin\java.exe
 rem 打包好后的jar包名，每个服务的 jar 包名不一样
