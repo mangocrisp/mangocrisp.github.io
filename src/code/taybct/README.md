@@ -21,7 +21,7 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-cover: /assets/images/ys/KamisatoAyakaS.jpeg
+#cover: /assets/images/ys/KamisatoAyakaS.jpeg
 ---
 
 # Spring TayBct

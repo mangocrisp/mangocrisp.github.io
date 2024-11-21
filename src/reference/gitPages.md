@@ -36,6 +36,7 @@ category:
 tag:
   - 知识
   - 分享
+  - GitPage
 # 页面顶上的图片
 cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---

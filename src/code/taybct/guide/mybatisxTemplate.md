@@ -42,3 +42,22 @@ tag:
 ---
 
 # 自动生成业务代码
+
+## 插件
+
+首先，需要先安装 `MyBatisX` 插件
+[参考 MyBatisX 官方文档](https://baomidou.com/guides/mybatis-x/)
+
+## 模板
+
+`MyBatisX` 需要先使用一次才会有默认的模板生成在，通常是在
+`C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea版本号\extensions\com.baomidou.plugin.idea.mybatisx`
+的目录下面，可以通过在 `IntelliJ IDEA` 的 `项目`>`临时文件和控制台`>`扩展`>`MyBatisX`>`templates` 下面找到，然后右键可以打开文件所在位置在资源管理器显示
+![openideajmybatisxtemplatesfolder.png](/assets/images/blog/openideajmybatisxtemplatesfolder.png)
+
+可以自行修改想要生成怎么样的业务模板，也可以参考直接使用我这边的
+
+- [通用模板（3.2.x 持续更新）](https://gitlab.com/mangocrisp/spring-taybct/-/tree/3.2.x/spring-taybct-common/src/main/resources/MybatisX/Controller-Service-Mapper-MP3)
+- [通用模板（2.7.x 持续更新）](https://gitlab.com/mangocrisp/spring-taybct/-/tree/2.7.x/spring-taybct-common/src/main/resources/MybatisX/Controller-Service-Mapper-MP3)
+
+ 这边集成了一整套的`增删改查`的基础操作（单表），后续还会加入多表的操作的模板更便捷的使用，无脑开发！！！
