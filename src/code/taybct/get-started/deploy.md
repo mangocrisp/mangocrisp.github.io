@@ -74,13 +74,22 @@ Linux 部署要注意的是，没有图形化的界面，所以一定要做好�
 ::: details run.sh
 
 ```bash
-#!/bin/ash
+#!/bin/bash
 # 清除之前运行的控制台输出日志
-echo "">run.jar.out
+echo "">$1.out
 # 指定jdk的 java 命令，你也可以指定对应的 jdk 版本
-java=java
+java=env/linux/jdk-17.0.5/bin/java
 # 打包好后的jar包名，每个服务的 jar 包名不一样
-jar=run.jar
+jar=$1
+echo "*****************尝试重启中*****************"
+# 先杀进程
+oldpid=`env/linux/jdk-17.0.5/bin/jps | grep $jar | grep -v "prep" | awk '{print $1}'`
+kill -9 $oldpid
+if [ "$?" -eq 0 ]; then
+    echo "kill 成功，pid：$oldpid"
+else
+    echo "kill 失败，没有找到对应的进程"
+fi
 # 配置 VM 参数
 vm=-Dfile.encoding=utf-8 \
 -Dmaven.wagon.http.ssl.insecure=true \
@@ -95,10 +104,12 @@ params=--spring.profiles.active=test \
 --spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848 \
 --spring.cloud.nacos.config.server-addr=127.0.0.1:8848 \
 --spring.cloud.nacos.username=nacos \
---spring.cloud.nacos.password=nacos \
---server.port=8080
+--spring.cloud.nacos.password=nacos
+echo "启动中：$jar"
 # 组合成启动命令，后台运行，并且把控制台日志输出到 run.jar.out 文件
-nohup $java $vm -jar $jar $params >run.jar.out 2>&1 &
+nohup $java $vm -jar $jar $params >$1.out 2>&1 &
+nowpid=`jps | grep $jar | grep -v "prep" | awk '{print $1}'`
+echo "*****************启动成功，pid：$nowpid"*****************"
 ```
 使用`nohup`在后台运行`Jar 包`
 
@@ -108,6 +119,37 @@ nohup $java $vm -jar $jar $params >run.jar.out 2>&1 &
 如果不想输出日志，只想在后台运行，可以这样配置
 ```bash
 nohup $java $vm -jar $jar $params >/dev/null 2>&1 &
+```
+
+:::
+
+::: details 如果是微服务，有多个 jar 需要同步启动
+
+run-auth.sh
+
+```bash
+#!/bin/bash
+./run.sh auth.jar
+```
+
+run-module-system.sh
+```bash
+#!/bin/bash
+./run.sh module-system.jar
+```
+
+run-gateway.sh
+```bash
+#!/bin/bash
+./run.sh gateway.jar
+```
+
+run-all.sh
+```bash
+#!/bin/bash
+./run-auth.sh & 
+./run-gateway.sh & 
+./run-module-system.sh & 
 ```
 
 :::
@@ -164,15 +206,22 @@ cat /dev/null > nohup.out
 ::: details run.bat
 
 ```shell
-rem 配置控制台显示中文（防止乱码）
+@echo off
+rem "配置控制台显示中文（防止乱码）"
 chcp 65001
-rem 可以显示当前运行的 bat 位置到黑窗口上面，方便后续找到运行的 jar 包的位置
-TITLE=%0
-rem 指定jdk的 java 命令，你也可以指定对应的 jdk 版本
-set java=D:\dev\environment\jdk\jdk-17.0.5\bin\java.exe
-rem 打包好后的jar包名，每个服务的 jar 包名不一样
-set jar=run.jar
-rem 配置 VM 参数
+rem "可以显示当前运行的 bat 位置到黑窗口上面，方便后续找到运行的 jar 包的位置"
+set TITLE=%0
+rem "指定jdk的 java 命令，你也可以指定对应的 jdk 版本"
+set java=env\win\jdk-17.0.5\bin\java.exe
+rem "打包好后的jar包名，每个服务的 jar 包名不一样"
+set jar=%1
+for /f "tokens=1-5" %%i in ('env\win\jdk-17.0.5\bin\jps ^|findstr "%jar%"') do (
+    echo kill the process %%i who use the port 
+    taskkill /pid %%i -t -f
+    goto start
+)
+:start
+rem "配置 VM 参数"
 set vm=-Dfile.encoding=utf-8 ^
 -Dmaven.wagon.http.ssl.insecure=true ^
 -Dmaven.wagon.http.ssl.allowall=true ^
@@ -181,17 +230,51 @@ set vm=-Dfile.encoding=utf-8 ^
 --add-opens java.base/java.lang.reflect=ALL-UNNAMED ^
 --add-opens java.base/java.lang.invoke=ALL-UNNAMED ^
 --add-opens java.base/java.lang.io=ALL-UNNAMED
-rem 配置 Jar 包参数
+rem "配置 Jar 包参数"
 set params=--spring.profiles.active=test ^
 --spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848 ^
 --spring.cloud.nacos.config.server-addr=127.0.0.1:8848 ^
 --spring.cloud.nacos.username=nacos ^
---spring.cloud.nacos.password=nacos ^
---server.port=8080
-rem 组合成启动命令
+--spring.cloud.nacos.password=nacos
+rem "组合成启动命令"
+echo "启动中：%jar%"
 %java% %vm% -jar %jar% %params%
-rem 这里暂停一下，防止 Jar 包没启动起来，但是黑窗口一闪而过导致找不到错误原因
-pause
+exit
+```
+
+:::
+
+::: details 如果是微服务，有多个 jar 需要同步启动
+
+run-auth.bat
+
+```shell
+@echo off
+start cmd /k "run.bat auth.jar"
+exit
+```
+
+run-module-system.bat
+```shell
+@echo off
+start cmd /k "run.bat module-system.jar"
+exit
+```
+
+run-gateway.bat
+```shell
+@echo off
+start cmd /k "run.bat gateway.jar"
+exit
+```
+
+run-all.bat
+```shell
+@echo off
+start cmd /k "timeout -nobreak 2 && run-auth.bat"
+start cmd /k "timeout -nobreak 2 && run-gateway.bat"
+start cmd /k "timeout -nobreak 2 && run-module-system.bat"
+exit
 ```
 
 :::
