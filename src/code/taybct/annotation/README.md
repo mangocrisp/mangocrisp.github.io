@@ -8,7 +8,7 @@ timeline: false
 lastUpdated: true
 editLink: false
 contributors: true
-icon: "oui:token-annotation"
+icon: "catppuccin:java-annotation"
 # 指定当前页面在侧边栏或目录中的排序
 order: 3
 dir:
