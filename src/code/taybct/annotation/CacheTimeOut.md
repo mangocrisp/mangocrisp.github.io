@@ -36,7 +36,7 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-  - 指南
+  - 注解
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
