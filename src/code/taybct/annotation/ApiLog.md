@@ -43,4 +43,68 @@ tag:
 
 # ApiLog
 
-日志记录
+## 参数说明
+
+| 参数 | 类型 | 必须 | 默认 | 说明 |
+|:----:|:----:|:----:|:----:|:----:|
+| title | String | 否 | "" | 模块名 |
+| description | String | 否 | "" | 模块描述 |
+| type | String | 否 | OperateType.OTHER | 操作类型，这个操作类型完全可以自定义是些什么类型，也就是用来过滤区分不同类型的日志 |
+| isSaveRequestData | boolean | 否 | true | 是否保存请求的参数 |
+| isSaveResultData | boolean | 否 | true | 是否保存返回结果 |
+
+### OperateType
+
+操作类型常量，增删改查这些
+
+## 使用说明
+
+这个注解依赖日志模块和内部消息功能，使用了这个注解之前需要确保日志功能是否有被开启来，可能需要配置`IMessageSendHandler`(内部消息处理器)，或者配置`IMessageSendService`(内部消息发送服务)
+
+当然，如果不配置这些，框架也是已经有自带的默认可以使用的，只需要在依赖里面加入`RabbitMQ`的依赖就可以了
+
+[RabbitMQ 安装](/ware/soft/rabbitmq.html)
+
+::: details RabbitMQ 依赖
+
+```xml
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-amqp</artifactId>
+      </dependency>
+```
+
+:::
+
+这样就还得再配置`RabbitMQ`
+
+::: details RabbitMQ yaml 配置
+
+```yaml
+spring:
+  # mq 配置
+  rabbitmq:
+    listener:
+      simple:
+        # 手动应答
+        acknowledge-mode: manual
+        # 消费端最小并发数
+        concurrency: 5
+        # 消费端最大并发数
+        max-concurrency: 10
+        # 一次请求中预处理的消息数量
+        prefetch: 5
+    cache:
+      channel:
+        # 缓存的channel数量
+        size: 50
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: taybct
+    publisher-confirm-type: CORRELATED
+    publisher-returns: true
+```
+
+:::
