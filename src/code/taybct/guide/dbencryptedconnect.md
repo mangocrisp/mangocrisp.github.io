@@ -57,7 +57,7 @@ tag:
 在配置文件里面配置：
 
 ```yaml
-gx-cloud:
+taybct:
   datasource:
     # 数据源加密连接
     encrypted-connection:

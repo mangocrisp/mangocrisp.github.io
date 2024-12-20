@@ -50,7 +50,7 @@ tag:
 | 参数 | 类型 | 必须 | 默认 | 说明 |
 |:----:|:----:|:----:|:----:|:----:|
 | value | String | 否 | "" | 指定要记录的对象,如果不指定，默认就会拿第一个参数 |
-| clazz | `Class<?>` | 是 |  | 类型，数据库对象实体类 |
+| clazz | `Class<?>` | ==是== |  | 类型，数据库对象实体类 |
 | tableName | String | 否 | "" | 表名，如果不指定就会默认根据 MybatisPlus 的注解 |
 | primaryKey | String | 否 | "" | 主键名，这里默认是 id，如果找不到 id 也会根据 MybatisPlus 的注解 |
 | pkTypes | int | 否 | java.sql.Types.BIGINT | 主键数据库类型 |

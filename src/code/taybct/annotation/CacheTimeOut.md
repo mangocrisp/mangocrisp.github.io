@@ -55,8 +55,8 @@ tag:
 
 | 参数 | 类型 | 必须 | 默认 | 说明 |
 |:----:|:----:|:----:|:----:|:----:|
-| cacheName | String | 是 |  | 缓存名 |
-| key | String | 是 |  | 缓存键 |
+| cacheName | String | ==是== |  | 缓存名 |
+| key | String | ==是== |  | 缓存键 |
 | timeout | long | 否 | 60L | 超时时间 |
 | timeUnit | long | 否 | TimeUnit.SECONDS | 时间单位 |
 | condition | String | 否 | "" | 缓存条件 |
