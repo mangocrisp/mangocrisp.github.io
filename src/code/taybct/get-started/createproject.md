@@ -109,7 +109,7 @@ tag:
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-single",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -125,7 +125,7 @@ tag:
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-cloud",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
       type: "default"
     },
   ]'

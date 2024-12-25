@@ -731,7 +731,7 @@ taybct:
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-single",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -749,7 +749,7 @@ Single 在 `/run/src/main/resources` 目录下有项目配置文件
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-cloud",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
       type: "default"
     },
   ]'

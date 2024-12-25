@@ -245,7 +245,7 @@ O = Mango
 #企业部门
 OU = Crisp
 #证书的主域名
-CN = mangocrisp.gitlab.io
+CN = mangocrisp.github.io
 ##### 要加入到证书请求中的一系列扩展项 #####
 [v3_req]
 keyUsage = critical, digitalSignature, keyAgreement

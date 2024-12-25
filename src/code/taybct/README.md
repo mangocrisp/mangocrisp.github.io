@@ -63,7 +63,7 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-tools",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-tools",
       type: "default"
     },
   ]'
@@ -79,7 +79,7 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct",
+      link: "https://jihulab.com/mangocrisp/spring-taybct",
       type: "default"
     },
   ]'
@@ -95,7 +95,7 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-single",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -111,7 +111,7 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
     },
     {
       text: "GitLab",
-      link: "https://gitlab.com/mangocrisp/spring-taybct-cloud",
+      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
       type: "default"
     },
   ]'

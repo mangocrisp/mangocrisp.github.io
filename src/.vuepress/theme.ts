@@ -60,7 +60,7 @@ export default hopeTheme({
     sidebarDisplay: "mobile",
     medias: {
       GitHub: "https://github.com/mangocrisp",
-      GitLab: "https://gitlab.com/mangocrisp",
+      GitLab: "https://jihulab.com/mangocrisp",
       Gitee: "https://gitee.com/mangocrisp",
       BiliBili: "https://space.bilibili.com/25505115",
       "163Music": "https://music.163.com/#/user/home?id=528192925",

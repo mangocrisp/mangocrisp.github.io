@@ -19,7 +19,7 @@ projects:
     link: https://mangocrisp.github.io/
   - icon: /logo.svg
     name: 个人博客
-    desc: 个人博客（GitLab Pages）
+    desc: 个人博客（GitLab Pages 或将不能继续使用）
     link: https://mangocrisp.gitlab.io/
 #footer: 自定义你的页脚文字
 ---
