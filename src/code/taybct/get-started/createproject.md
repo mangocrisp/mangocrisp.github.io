@@ -61,7 +61,7 @@ tag:
 文件夹名尽量都使用英文
 :::
 
-3. 如果是 2.7.x 就选择 jdk8，如果是 3.2.x 就选择 jdk17
+3. 如果是 2.7.x 就选择 jdk8，如果是 3.2.x+ 就选择 jdk17
 4. 添加模板
    
    ![添加模板](/assets/images/blog/addarchetype.png)

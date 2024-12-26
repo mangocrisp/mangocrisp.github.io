@@ -75,7 +75,7 @@ JDK 目前有 [Oracle JDK](https://www.oracle.com/cn/java/technologies/downloads
 1. 基于 Spring Boot 3.2.x 开发的 3.2.x 版本
 2. 基于 Spring Boot 2.7.x 开发的 2.7.x 版本
 
-所以如何选择项目版本，取决于项目开发真实所需，请谨慎选择，毕竟是最`底层`的东西
+所以如何选择项目版本，取决于项目开发真实所需，请谨慎选择，毕竟是最`底层`的东西，后续的版本号也是会基于 Spring Boot 的大版本去构建
 
 1. 3.2.x 版本要求 JDK >= 17.0.5
 2. 2.7.x 版本要求 JDK >= 8.202
