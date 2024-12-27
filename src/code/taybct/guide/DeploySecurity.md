@@ -18,9 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: 5
+order: 6
 dir:
-  order: 5
+  order: 6
 # 页面图标
 icon: "carbon:ibm-cloud-security-compliance-center"
 # 是否原创

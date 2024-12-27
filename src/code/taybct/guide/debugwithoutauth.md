@@ -18,9 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: 3
+order: 4
 dir:
-  order: 3
+  order: 4
 # 页面图标
 icon: "codicon:debug-alt-small"
 # 是否原创

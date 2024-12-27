@@ -18,9 +18,9 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: 2
+order: 3
 dir:
-  order: 2
+  order: 3
 # 页面图标
 icon: "carbon:encryption"
 # 是否原创
