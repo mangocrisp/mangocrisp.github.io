@@ -131,3 +131,29 @@ taybct:
 |taybct.serve.${模块}.context-path|String|"/"|网关配置的模块路径|
 |taybct.serve.${模块}.service-id|String|"/"| `@FeignClient`注解的 value -- `the name of the service with optional protocol prefix` |
 |||||
+
+### taybct.params.map.*
+
+::: note
+系统参数配置，这里配置的是默认参数，这些参数，可以在系统管理模块的系统参数里面以同样的 key 去覆盖配置
+:::
+
+|参数|类型|默认|<div style="width:200px">说明</div>|
+|:----:|:----:|:----:|:----:|
+|menu_layout|Long|0|菜单默认的 Layout 的 id|
+|role_root_id|Long|1| 默认的 ROOT 角色 id|
+|user_root_id|Long|1| 默认 ROOT 用户的 id|
+|user_passwd|String|'123456'| 默认密码（重置密码时会使用这个）|
+|user_role|String|'TOURIST'| 默认角色 |
+|user_role_id|Long|5| 默认角色id |
+|user_status|Long|1| 用户默认状态 |
+|tenant_id|String|'000000'| 默认租户id |
+|enable_captcha|Boolean|false| 是否需要验证码登录 |
+|captcha_type|Enum|GIF| 验证码的类型，可以查看枚举：io.github.mangocrisp.spring.taybct.common.enums.CaptchaType，可选：CIRCLE，GIF，LINE，SHEAR，默认 GIF  |
+|||||
+
+### taybct.secure.*
+
+::: note
+安全配置：接口访问限制、ip 黑/白名单、本地鉴权配置等
+:::
