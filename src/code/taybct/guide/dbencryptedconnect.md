@@ -22,7 +22,7 @@ order: 3
 dir:
   order: 3
 # 页面图标
-icon: "carbon:encryption"
+icon: "flat-color-icons:data-encryption"
 # 是否原创
 isOriginal: false
 # 日期
