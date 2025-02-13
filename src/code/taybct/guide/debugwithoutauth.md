@@ -59,14 +59,14 @@ tag:
                 {
                     "uid":"1",
                     "nbf":1732851466,
-                    "grant_type":"gx_cloud",
+                    "grant_type":"taybct",
                     "user_name":"root",
                     "scope":["all"],
                     "atm":"username",
                     "exp":1732855066,
                     "iat":1732851466,
                     "jti":"ae8109f4257847b68747c644d31c43f4",
-                    "client_id":"gx_cloud_pc",
+                    "client_id":"taybct_pc",
                     "authorities":["ROOT"],
                     "tni":"000000"
                 }""";

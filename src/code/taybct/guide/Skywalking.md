@@ -111,7 +111,7 @@ apache-skywalking-apm-bin/bin/startup.sh
 
 ```bash
 -javaagent:D:/dev/tools/apache-skywalking-apm-9.1.0/apache-skywalking-apm-bin/agent/skywalking-agent.jar # 这个是 agent jar 包的路径
--Dskywalking.agent.service_name=gx-cloud-system # 你要注册到 skywalking 里面的服务名称，这个只是为了告诉你自己是哪个应用程序
+-Dskywalking.agent.service_name=module-system # 你要注册到 skywalking 里面的服务名称，这个只是为了告诉你自己是哪个应用程序
 -Dskywalking.collector.backend_service=127.0.0.1:11800 # 这个是 skywalking oap 的入口，端口默认是 11800
 ```
 
