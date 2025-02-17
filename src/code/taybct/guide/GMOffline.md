@@ -61,10 +61,10 @@ public class LoginCacheClear implements ILoginCacheClear {
         redisTemplate.delete(sysUsers.stream()
                 .map(user -> Arrays.asList(
                         //TODO 这里有多少种登录方式就得加多少种，用户名，包含了邮箱
-                        String.format("%s::%s", CacheConstants.OAuth.USERNAME, user.getUsername()),
-                        String.format("%s::%s", CacheConstants.OAuth.OPENID, user.getUsername()),
-                        String.format("%s::%s", CacheConstants.OAuth.PHONE, user.getPhone()),
-                        String.format("%s::%s", CacheConstants.OAuth.USERID, user.getId())
+                        CacheConstants.OAuth.USERNAME + "::" +user.getUsername(),
+                        CacheConstants.OAuth.OPENID + "::" + user.getUsername(),
+                        CacheConstants.OAuth.PHONE + "::" + user.getPhone(),
+                        CacheConstants.OAuth.USERID + "::" + user.getId()
                 ))
                 .flatMap(Collection::stream)
                 .collect(Collectors.toSet()));

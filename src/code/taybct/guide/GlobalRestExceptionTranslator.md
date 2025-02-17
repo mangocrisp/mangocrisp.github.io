@@ -67,7 +67,7 @@ public class GlobalRestExceptionTranslator {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public R<?> handleError(MissingServletRequestParameterException e) {
         log.warn("缺少请求参数:{}", e.getMessage());
-        String message = String.format("缺少必要的请求参数: %s", e.getParameterName());
+        String message = "缺少必要的请求参数: " + e.getParameterName();
         return R.fail(ResultCode.VALIDATE_ERROR.getCode(), message);
     }
 
@@ -75,7 +75,7 @@ public class GlobalRestExceptionTranslator {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public R<?> handleError(MethodArgumentTypeMismatchException e) {
         log.warn("请求参数格式错误:{}", e.getMessage());
-        String message = String.format("请求参数格式错误: %s", e.getName());
+        String message = "请求参数格式错误: " + e.getName();
         return R.fail(ResultCode.VALIDATE_ERROR.getCode(), message);
     }
 
@@ -96,7 +96,7 @@ public class GlobalRestExceptionTranslator {
     private R<?> handleError(BindingResult result) {
         FieldError error = result.getFieldError();
         if (Objects.nonNull(error)) {
-            String message = String.format("%s:%s", error.getField(), error.getDefaultMessage());
+            String message = error.getField() + ":" + error.getDefaultMessage();
             return R.fail(ResultCode.VALIDATE_ERROR.getCode(), message);
         }
         return R.fail(ResultCode.VALIDATE_ERROR);

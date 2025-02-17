@@ -84,7 +84,7 @@ tag:
     @Override
     public R<SysUser> updateMyInfo(@Valid @NotNull @RequestBody SysUser domain) {
         domain.setId(getSecurityUtil().getLoginUser().getUserId());
-        return getBaseService().updateMyInfo(domain) ? R.data(domain) : R.fail(String.format("更新%s失败！", getResource()));
+        return getBaseService().updateMyInfo(domain) ? R.data(domain) : R.fail("更新失败！");
     }  
 
     @SafeConvert(resultType = EntityType.Entity, safeOut = SysUser.class, ignoreOut = {"password"})
