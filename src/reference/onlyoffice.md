@@ -137,6 +137,13 @@ docker restart onlyoffice
 
 ::: details VUE 示例
 
+```bash
+#npm 
+npm install --save @onlyoffice/document-editor-vue
+#pnpm 
+pnpm add @onlyoffice/document-editor-vue
+```
+
 ```vue
 <template>
   <div>
