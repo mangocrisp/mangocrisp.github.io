@@ -196,7 +196,7 @@ pnpm add @onlyoffice/document-editor-vue
       >{{ item.title }}</a
     >
   </div>
-  <div style="width: 100vw;height: 100vh;margin: 0px;">
+  <div class="onlyofficeView" style="width: 100vw;height: 100vh;margin: 0px;">
     <DocumentEditor
       id="docEditor"
       documentServerUrl="http://ip:18080/"
@@ -400,6 +400,23 @@ const onlyOfficeServerUrl = ref("");
 const isCertificateTrusted = ref(false);
 onlyOfficeServerUrl.value = import.meta.env.VITE_ONLY_OFFICE_SERVER_URL;
 
+
+/**
+ * 全屏显示
+ */
+const fullScreenEditor = () => {
+  const onlyofficeView = document.getElementsByClassName('onlyofficeView')[0];
+  if (onlyofficeView) {
+
+    if (onlyofficeView.requestFullscreen) {
+      onlyofficeView.requestFullscreen();
+    } else if (onlyofficeView.webkitRequestFullscreen) { // Safari
+      onlyofficeView.webkitRequestFullscreen();
+    } else if (onlyofficeView.msRequestFullscreen) { // IE11
+      myDiv.msRequestFullscreen();
+    }
+  }
+}
 /**
  * 手动打开证书
  */
