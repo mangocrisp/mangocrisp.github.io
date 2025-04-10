@@ -418,16 +418,27 @@ html[data-theme="light"] {
 ```scss
 // you can change colors here
 //$theme-color: #8fdf82;
-$theme-color: #6db33f;
-$theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f, #8fdf82;
 // 将边框颜色加深
 $border-color: (
   light: #ddd,
   dark: #444,
 );
-$font-family: '"IzihunBlackBold", YouYuan';
-$font-family-heading: '"IzihunBlackBold", YouYuan';
-$font-family-mono: '"IzihunBlackBold", YouYuan';
+$vp-font: '"IzihunBlackBold", YouYuan';
+$vp-font-heading: '"IzihunBlackBold", YouYuan';
+$vp-font-mono: '"IzihunBlackBold", YouYuan';
+```
+
+:::
+
+### config.css
+
+::: details config.css
+
+```scss
+// you can change config here
+$colors: #c0392b, #d35400, #f39c12, #6db33f, #16a085, #2980b9, #8e44ad, #2c3e50,
+  #7f8c8d !default;
+$theme-color: #6db33f, #2196f3, #f26d6d, #a8b1ff, #fb9b5f;  
 ```
 
 :::
