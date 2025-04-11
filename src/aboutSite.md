@@ -411,9 +411,9 @@ html[data-theme="light"] {
 
 :::
 
-### palette.scss
+### config.scss
 
-::: details palette.scss
+::: details config.scss
 
 ```scss
 // you can change colors here
