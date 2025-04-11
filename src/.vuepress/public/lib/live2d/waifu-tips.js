@@ -623,7 +623,7 @@ margin:auto;
 padding:5px 10px;
 border:0px solid rgba(104,216,255,0.62);
 border-radius:12px;
-background-color: var(--theme-color);
+background-color: var(--vp-c-accent);
 color:#fff;
 box-shadow:0 3px 15px 2px rgba(16,51,49,0.3);
 text-overflow:ellipsis;
@@ -664,7 +664,7 @@ display:block
 font-family:"waifuico"!important;
 display:block;
 cursor:pointer;
-color:var(--theme-color);
+color:var(--vp-c-accent);
 transition:.2s;
 font-size:18px;
 font-style:normal;
