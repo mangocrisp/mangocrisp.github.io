@@ -276,7 +276,7 @@ const constConfig = {
   },
 };
 
-const config = ref({});
+const config = ref<any>({});
 
 const openInEditor = (item) => {
   config.value = { ...constConfig };
@@ -410,10 +410,10 @@ const fullScreenEditor = () => {
 
     if (onlyofficeView.requestFullscreen) {
       onlyofficeView.requestFullscreen();
-    } else if (onlyofficeView.webkitRequestFullscreen) { // Safari
-      onlyofficeView.webkitRequestFullscreen();
-    } else if (onlyofficeView.msRequestFullscreen) { // IE11
-      myDiv.msRequestFullscreen();
+    } else if ((onlyofficeView as any).webkitRequestFullscreen) { // Safari
+      (onlyofficeView as any).webkitRequestFullscreen();
+    } else if ((onlyofficeView as any).msRequestFullscreen) { // IE11
+      (onlyofficeView as any).msRequestFullscreen();
     }
   }
 }
