@@ -1,8 +1,8 @@
 ---
 # 当前页面的短标题，会在导航栏、侧边栏和路径导航中作为首选
-shortTitle: 3.2.0
+shortTitle: 工具类
 # 当前页面内容描述
-description: 3.2.0
+description: 工具类
 # 是否在侧边栏或目录中索引当前页面
 index: true
 # 当前页面是否开启评论功能
@@ -18,15 +18,15 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -1
+order: 3
 dir:
-  order: -1
+  order: 3
 # 页面图标
-icon: "mingcute:version-fill"
+icon: "streamline-ultimate:common-file-module-1"
 # 是否原创
 isOriginal: false
 # 日期
-date: 2025-01-08
+date: 2025-06-06
 # 类别
 category:
   - 代码笔记
@@ -36,14 +36,15 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-  - 发布日志
+  - 轮子
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
 
-# 3.2.0
+# 工具类
 
-基于 SpringBoot 3.2.5 开发的 Java 后端后台管理业务基础框架，常用的业务功能已经集成，开箱即用，相关使用说明，可以参考：
+::: info
+提供了一些方便业务开发的工具类，一些好用的通用工具类也有依赖进来，可以直接使用，例如：[Hutool](https://doc.hutool.cn/)
+:::
 
-- [快速开始](/code/taybct/get-started/)
-- [指南](/code/taybct/guide/)
+

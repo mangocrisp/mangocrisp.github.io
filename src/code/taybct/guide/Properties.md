@@ -186,6 +186,11 @@ taybct:
 |taybct.secure.auth.user.status|Byte||用户状态|
 |taybct.secure.auth.user.password|String||用户密码|
 |taybct.secure.auth.users|String|OAuth2UserDTO[]|配置多个用户|
+|taybct.secure.auth.login-page.redirect|Boolean|false|<Badge text="3.2.3" type="tip" vertical="top" />开启重定向到登录页面|
+|taybct.secure.auth.login-page.login-page|String|base-login|<Badge text="3.2.3" type="tip" vertical="top" />默认的登录页面|
+|taybct.secure.auth.login-page.redirect-login-page|String||<Badge text="3.2.3" type="tip" vertical="top" />重定向的地址|
+|taybct.secure.auth.login-page.params-redirect-api|String||<Badge text="3.2.3" type="tip" vertical="top" />登录页面登录成功之后用于获取 code 的接口地址|
+|taybct.secure.auth.login-page.params-redirect-api-encode-type|String|uri_component|<Badge text="3.2.3" type="tip" vertical="top" />前端获取参数需要加密的 url 加密类型|
 |||||
 
 #### UriIP

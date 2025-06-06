@@ -311,9 +311,9 @@ body,
 这个示例其实也就是官网的示例，[官方文档](https://api.onlyoffice.com/zh-CN/docs/docs-api/usage-api/callback-handler/#java-%E6%96%87%E6%A1%A3%E4%BF%9D%E5%AD%98%E7%A4%BA%E4%BE%8B)
 
 ```java
-package cn.gx.admin.file.controller;
+package io.github.mangocrisp.admin.file.controller;
 
-import cn.gx.tool.file.util.FileServiceBuilder;
+import io.github.mangocrisp.tool.file.util.FileServiceBuilder;
 import com.alibaba.fastjson2.JSONObject;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

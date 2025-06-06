@@ -24,7 +24,7 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-  - 工具
+  - 轮子
 # cover: /assets/images/ys/KamisatoAyakaS.jpeg
 ---
 

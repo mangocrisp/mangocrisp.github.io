@@ -1,8 +1,8 @@
 ---
 # 当前页面的短标题，会在导航栏、侧边栏和路径导航中作为首选
-shortTitle: 3.2.0
+shortTitle: 启动模块
 # 当前页面内容描述
-description: 3.2.0
+description: 启动模块
 # 是否在侧边栏或目录中索引当前页面
 index: true
 # 当前页面是否开启评论功能
@@ -18,15 +18,15 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: -1
+order: 2
 dir:
-  order: -1
+  order: 2
 # 页面图标
-icon: "mingcute:version-fill"
+icon: "material-symbols:rocket-launch"
 # 是否原创
 isOriginal: false
 # 日期
-date: 2025-01-08
+date: 2025-06-06
 # 类别
 category:
   - 代码笔记
@@ -36,14 +36,28 @@ tag:
   - SpringBoot
   - "Spring Taybct"
   - 开发框架
-  - 发布日志
+  - 轮子
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
 
-# 3.2.0
+# 启动模块
 
-基于 SpringBoot 3.2.5 开发的 Java 后端后台管理业务基础框架，常用的业务功能已经集成，开箱即用，相关使用说明，可以参考：
+可以在需要启动运行的模块里面添加这个依赖
 
-- [快速开始](/code/taybct/get-started/)
-- [指南](/code/taybct/guide/)
+```xml
+<!--启动模块-->
+<dependency>
+    <groupId>io.github.mangocrisp</groupId>
+    <artifactId>spring-taybct-tool-launch</artifactId>
+</dependency>
+```
+
+- 加入了一个 banner.txt 
+- 打印一些启动信息
+- 配置了基础的 logback-spring.xml
+- 依赖了 Spring 测试相关的  dependency 以及 `Skywalking`
+
+![架构图](/assets/images/taybct/launch.png)
+
+![架构图](/assets/images/taybct/launch-2.png)
