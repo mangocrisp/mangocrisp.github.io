@@ -326,3 +326,21 @@ try{
 - BaseException
 
 基础异常，加入了 [HttpStatus](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Reference/Status) 状态码可以直接告诉前端大概报的是啥类型的错误，方便前端处理而无需再使用 `@RestControllerAdvice` 之类的方式去做状态码处理
+
+## WebSocket <Badge text="3.2.3" type="trip" vertical="top" />
+
+工具框架对 WebSocket 进行了封装，提供了一些常用的功能，兼容并适配了 WebMVC 和 WebFlux 两种 WebSocket 框架
+
+可以查看这个示例：[exp-websocket](https://github.com/mangocrisp/spring-taybct-example/blob/3.2.x/exp-websocket)
+
+需要注意的是，在 WebMVC 框架中，需要引入依赖：
+
+```xml
+<!--mvc websocket-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+```
+
+但是在 WebFlux 框架中，不需要引入依赖，因为 WebFlux 框架本身就支持 WebSocket

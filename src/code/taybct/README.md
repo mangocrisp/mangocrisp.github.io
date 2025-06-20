@@ -61,11 +61,6 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
       text: "GitHub",
       link: "https://github.com/mangocrisp/spring-taybct-tools",
     },
-    {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-tools",
-      type: "default"
-    },
   ]'
 />
 
@@ -76,11 +71,6 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
     {
       text: "GitHub",
       link: "https://github.com/mangocrisp/spring-taybct",
-    },
-    {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct",
-      type: "default"
     },
   ]'
 />
@@ -93,11 +83,6 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
       text: "GitHub",
       link: "https://github.com/mangocrisp/spring-taybct-single",
     },
-    {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
-      type: "default"
-    },
   ]'
 />
 
@@ -109,10 +94,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
       text: "GitHub",
       link: "https://github.com/mangocrisp/spring-taybct-cloud",
     },
+  ]'
+/>
+
+<VPBanner
+  title="Spring TayBct Example"
+  content="使用 Spring TayBct 创建的 Spring Boot 项目示例，一些无语用文字描述得完整的示例。"
+  :actions='[
     {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
-      type: "default"
+      text: "GitHub",
+      link: "https://github.com/mangocrisp/spring-taybct-example",
     },
   ]'
 />
