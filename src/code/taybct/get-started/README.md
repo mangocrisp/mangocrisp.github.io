@@ -41,8 +41,39 @@ tag:
   ]'
 />
 
+## 后端接 JavaDoc 口文档
+
 <a href="/javadoc/spring-taybct-tools-doc/index.html" target="_blank" >spring-taybct-tools 接口文档</a>
 
 <a href="/javadoc/spring-taybct-doc/index.html" target="_blank" >spring-taybct 接口文档</a>
+
+## 前端框架集成
+
+本项目为纯后端项目，所以这里适配了一开源的前端模板，可以自行拿去使用：
+
+<VPBanner
+  title="gx-cloud-web"
+  content="这个是我公司的前端小伙伴开发的基于Vue3的开源前端框架，基于Vue3、Element Plus、TypeScript、Vite、Pinia、Axios、Vue Router 等主流技术，也做了一些工具类和脚手架的封装...因为是比较早的就和我一起在开发了，所以这个框架是与我后端框架比较完整的集成的。"
+  :actions='[
+    {
+      text: "文档",
+      link:"https://turtlewxg.github.io/gx-web-doc/",
+    }
+  ]'
+/>
+
+
+<VPBanner
+  title="vue-pure-admin"
+  content="这个框架是我自己以学习/复习的形式去集成的框架，和 gx-cloud-web 类似的框架，并且这个框架是完全免费开源的，但是这个框架是纯前端的，没有后端，所以我就给他集成进来，主要看我的这个库的`spring-taybct`分支，目前还在集成中（老年后端，写前端有点慢😓）"
+  :actions='[
+    {
+      text: "GitEE",
+      link:"https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
+    }
+  ]'
+/>
+
+... 后续添加一些其他框架的吧，比如 react, ant-design 等
 
 <Catalog />

@@ -58,9 +58,14 @@ export default sidebar({
       children: "structure",
     },
     {
-      text: "前端框架",
-      icon: "mingcute:vue-fill",
+      text: "前端框架-gx-web",
+      icon: "logos:element",
       link: "https://turtlewxg.github.io/gx-web-doc/",
+    },
+    {
+      text: "前端框架-vue-pure-admin",
+      icon: "logos:element",
+      link: "https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
     },
   ],
 });
