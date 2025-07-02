@@ -423,6 +423,31 @@ public class AuthServerConfigurer {
 不建议修改签名证书的代码（`Bean`注入），可以生成新的`jwt.jks`证书，[生成方式](/code/taybct/guide/GenKeys.html)
 :::
 
+
+
 ### 其他示例配置
 
-其他相关的配置示例，可以[查看](https://github.com/mangocrisp/spring-taybct-single/-/blob/3.2.x/run/src/main/java/io/github/mangocrisp/spring/taybct/single/security/AuthServerConfigurer.java)
+其他相关的配置示例，可以[查看](https://github.com/mangocrisp/spring-taybct-single/blob/3.2.x/run/src/main/java/io/github/mangocrisp/spring/taybct/single/security/AuthServerConfigurer.java)
+
+## 第三方授权码登录模式登录页面配置 <Badge text="3.2.3" type="tip" vertical="top" />
+
+version: 3.2.3
+
+[Spring Authorization Server](https://spring.io/projects/spring-authorization-server) 默认的登录页面是 `/oauth2/authorize`，但是 `/oauth2/authorize` 是 `POST` 请求，所以 `GET` 请求会跳转到 `/login` 页面，传统的方式是使用 Thymeleaf 模板引擎来生成前端登录页面，现在都是前后端分离了，前端大多使用  VUE 来开发的。所以这里可以根据 [Spring Authorization Server](https://spring.io/projects/spring-authorization-server) 源码分析出，他是利用 Cookies 来做授权码登录的，所以我这里就在登录成功之后把 Cookies 存到前，再次请求的时候就会带上 Cookies，这样去生成 Code ，然后再去获取 Access Token。
+
+我已经做完了上面的这些集成了，所以在实际开发过程中只需要配置几个参数就行了：
+
+```yaml
+taybct:
+  secure:
+    auth:
+      login-page:
+        # 开启重定向到登录页面
+        redirect: true
+        # 登录页面
+        redirect-login-page: https://127.0.0.1/#/login
+        # 登录页面登录成功之后用于获取 code 的接口地址
+        params-redirect-api: https://127.0.0.1/api/auth/oauth/authorize
+        # 前端获取参数需要加密的 url 加密类型
+        params-redirect-api-encode-type: uri_component
+```
