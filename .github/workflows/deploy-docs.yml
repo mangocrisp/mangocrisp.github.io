@@ -33,6 +33,9 @@ jobs:
           cache-dependency-path: |
             **/pnpm-lock.yaml
 
+      - name: 确保pnpm缓存目录存在
+        run: mkdir -p ~/.pnpm-store
+
       - name: 安装依赖
         run: |
           corepack enable
