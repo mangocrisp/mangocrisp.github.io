@@ -75,6 +75,10 @@ io.github.mangocrisp.spring.taybct.tool.core.util.rsa
 io.github.mangocrisp.spring.taybct.tool.core.util.sm
 io.github.mangocrisp.spring.taybct.tool.core.util.tree
 io.github.mangocrisp.spring.taybct.tool.core.version
+io.github.mangocrisp.spring.taybct.tool.core.websocket.config
+io.github.mangocrisp.spring.taybct.tool.core.websocket.endpoint
+io.github.mangocrisp.spring.taybct.tool.core.websocket.enums
+io.github.mangocrisp.spring.taybct.tool.core.websocket.support
 io.github.mangocrisp.spring.taybct.tool.file.config
 io.github.mangocrisp.spring.taybct.tool.file.dto
 io.github.mangocrisp.spring.taybct.tool.file.enums

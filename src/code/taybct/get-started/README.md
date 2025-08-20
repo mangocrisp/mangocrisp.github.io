@@ -68,7 +68,7 @@ tag:
   content="这个框架是我自己以学习/复习的形式去集成的框架，和 gx-cloud-web 类似的框架，并且这个框架是完全免费开源的，但是这个框架是纯前端的，没有后端，所以我就给他集成进来，主要看我的这个库的`spring-taybct`分支，目前还在集成中（老年后端，写前端有点慢😓）"
   :actions='[
     {
-      text: "GitEE",
+      text: "Gitee",
       link:"https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
     }
   ]'
