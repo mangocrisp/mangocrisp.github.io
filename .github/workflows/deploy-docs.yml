@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
   deploy-gh-pages:
     runs-on: ubuntu-latest
@@ -23,21 +27,21 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 8
-          # 显式指定 pnpm 存储路径
-          run_install: false
-
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-          # 明确指定 lockfile 位置，帮助缓存正确识别路径
-          cache-dependency-path: '**/pnpm-lock.yaml'
 
       - name: 安装依赖
         run: |
           corepack enable
           pnpm install --frozen-lockfile
+          
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          cache-dependency-path: '**/pnpm-lock.yaml'
+
+      - name: Setup pnpm store config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
       - name: 构建文档
         env:
@@ -46,21 +50,18 @@ jobs:
           pnpm run docs:build
           > src/.vuepress/dist/.nojekyll
 
-      - name: 检查构建目录和缓存路径
+      - name: 检查构建目录是否存在
         run: |
-          # 验证构建产物目录
           if [ -d "src/.vuepress/dist" ]; then
             echo "构建目录存在"
           else
             echo "构建目录不存在，请检查构建步骤"
             exit 1
           fi
-          # 验证 pnpm 缓存路径
-          echo "pnpm 存储路径: $(pnpm store path)"
-          ls -la $(pnpm store path)
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
+          # 部署文档
           branch: gh-pages
           folder: src/.vuepress/dist
