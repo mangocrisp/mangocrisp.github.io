@@ -30,6 +30,14 @@ jobs:
           node-version: 20
           cache: pnpm
 
+      - name: 缓存 pnpm 依赖
+        uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
       - name: 安装依赖
         run: |
           corepack enable
@@ -38,14 +46,13 @@ jobs:
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          pnpm run docs:build
-          > src/.vuepress/dist/.nojekyll
+        run: pnpm run docs:build
 
       - name: 检查构建目录是否存在
         run: |
           if [ -d "src/.vuepress/dist" ]; then
             echo "构建目录存在"
+            ls -la src/.vuepress/dist/
           else
             echo "构建目录不存在，请检查构建步骤"
             exit 1
@@ -54,6 +61,5 @@ jobs:
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4.6.4
         with:
-          # 部署文档
           branch: gh-pages
           folder: src/.vuepress/dist
