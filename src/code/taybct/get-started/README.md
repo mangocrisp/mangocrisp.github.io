@@ -43,9 +43,9 @@ tag:
 
 ## 后端接 JavaDoc 口文档
 
-<a href="/javadoc/spring-taybct-tools-doc/index.html" target="_blank" >spring-taybct-tools 接口文档</a>
+<a href="/javadoc/spring-taybct-tools-doc/index.html" target="_blank" >::line-md:link::spring-taybct-tools 接口文档</a>
 
-<a href="/javadoc/spring-taybct-doc/index.html" target="_blank" >spring-taybct 接口文档</a>
+<a href="/javadoc/spring-taybct-doc/index.html" target="_blank" >::line-md:link::spring-taybct 接口文档</a>
 
 ## 前端框架集成
 
@@ -65,11 +65,16 @@ tag:
 
 <VPBanner
   title="vue-pure-admin"
-  content="这个框架是我自己以学习/复习的形式去集成的框架，和 gx-cloud-web 类似的框架，并且这个框架是完全免费开源的，但是这个框架是纯前端的，没有后端，所以我就给他集成进来，主要看我的这个库的 spring-taybct 分支，目前还在集成中（老年后端，写前端有点慢😓）。使用的时候需要接取 spring-taybct 分支的代码，不要拉 main 分支，因为，我会定期使用 main 分支同步原作者大佬的代码，只有 spring-taybct 分支是我做了框架适配的"
+  content="这个框架是我自己以学习/复习的形式去集成的大佬的框架，和 gx-cloud-web 类似的框架，并且这个框架是完全免费开源的，但是这个框架是纯前端的，没有后端，所以我就给他集成进来，主要看我的这个库的 spring-taybct 分支，目前还在集成中（老年后端，写前端有点慢😓）。使用的时候需要接取 spring-taybct 分支的代码，不要拉 main 分支，因为，我会定期使用 main 分支同步原作者大佬的代码，只有 spring-taybct 分支是我做了框架适配的"
   :actions='[
     {
-      text: "Gitee",
+      text: "我集成的代码：Gitee",
       link:"https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
+    },
+    {
+      text: "框架原作者的：GitHub",
+      link:"https://github.com/xiaoxian521",
+      type: "default",
     }
   ]'
 />
