@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'  # 这里会自动处理 PNPM 缓存
+          # 完全移除 cache 配置
 
       - name: 安装依赖
         run: |
