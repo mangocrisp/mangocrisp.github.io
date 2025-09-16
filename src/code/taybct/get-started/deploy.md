@@ -97,8 +97,8 @@ vm="-Dfile.encoding=utf-8 \
 --add-opens java.base/java.lang.invoke=ALL-UNNAMED \
 --add-opens java.base/java.lang.io=ALL-UNNAMED"
 params="--spring.profiles.active=test \
---spring.cloud.nacos.discovery.server-addr=68.52.2.141:8848 \
---spring.cloud.nacos.config.server-addr=68.52.2.141:8848 \
+--spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848 \
+--spring.cloud.nacos.config.server-addr=127.0.0.1:8848 \
 --spring.cloud.nacos.username=nacos \
 --spring.cloud.nacos.password=THga20_24_nacos"
 nohup $java $vm -jar $jar $params >$jar.out 2>&1 &
