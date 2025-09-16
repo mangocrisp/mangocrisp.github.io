@@ -5,10 +5,10 @@ import theme from "./theme.js";
 /**
  * 网站的域名前缀，这里默认是 /
  */
-const $$site_prefix = '/';
+const $$site_prefix = '/blog/';
 
 export default defineUserConfig({
-  base: "/",
+  base: "/blog/",
   lang: "zh-CN",
   title: "Mango Crisp",
   description: "Mango Crisp",

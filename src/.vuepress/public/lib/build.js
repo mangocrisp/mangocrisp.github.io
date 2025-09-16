@@ -1,7 +1,7 @@
 /**
  * 网站的域名前缀，这里默认是 /
  */
-const $$site_prefix = '/';
+const $$site_prefix = '/blog/';
 const ref = {};
 ref.wet_site_title = null;
 async function iniLib() {
