@@ -67,5 +67,10 @@ export default sidebar({
       icon: "logos:element",
       link: "https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
     },
+    {
+      text: "前端演示-vue-pure-admin",
+      icon: "carbon:demo",
+      link: "https://mangocrisp.top/pureadmin",
+    },
   ],
 });
