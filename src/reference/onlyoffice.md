@@ -167,7 +167,7 @@ docker run -i -t -d -p 18080:80 -p 14443:443 \
 -v d:/dev/tools/docker/onlyoffice/documentServer/nginx:/etc/onlyoffice/documentserver/nginx \
 -v d:/dev/tools/docker/onlyoffice/documentServer/default.json:/etc/onlyoffice/documentserver/default.json \
 -e JWT_ENABLED=false -e USE_UNAUTHORIZED_STORAGE=true -e ONLYOFFICE_HTTPS_HSTS_ENABLED=false -e CORS_ENABLED=true -e CORS_ORIGIN=* -e ONLYOFFICE_ALLOW_CORS=true \
-onlyoffice/documentserver:latest
+onlyoffice/documentserver:8.0
 ```
 
 ## 代码示例
