@@ -64,9 +64,7 @@ docker 的安装这里就不详细写了，可以参考[docker 官方文档](htt
 ```json
 {
   "registry-mirrors": [
-    "https://hub-mirror.c.163.com",
-    "https://mirror.ccs.tencentyun.com",
-    "https://mirrors.aliyun.com"
+    "https://docker.xuanyuan.me"
   ]
 }
 ```
