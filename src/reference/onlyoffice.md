@@ -304,6 +304,15 @@ body,
 
 :::
 
+::: warning 重要提示
+1. 由于使用了 docker 安装 ip 地址一定要写机器的路由的 ip 地址，不能用 127.0.0.1也不能用 localhost
+2. 如果由于 https 需要 nginx 配置代理后端接口，请一定不要配置如下请求头：
+   ```
+   add_header X-Content-Type-Options nosniff;
+   ```
+   这样会导出文件无法下载，这个是我需要的问题，如果你还遇到其他 nginx 配置的问题，请自行解决，主体逻辑就是这个下载文件的接口一定是要返回二进制流才能提供给 onlyoffice 使用
+:::
+
 ::: details Java (Spring Boot) 示例
 
 这个示例其实也就是官网的示例，[官方文档](https://api.onlyoffice.com/zh-CN/docs/docs-api/usage-api/callback-handler/#java-%E6%96%87%E6%A1%A3%E4%BF%9D%E5%AD%98%E7%A4%BA%E4%BE%8B)
@@ -338,37 +347,131 @@ public class OnlyOfficeController {
      */
     @SneakyThrows
     @RequestMapping("/callback")
-    public String callback(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String callback(HttpServletRequest request, HttpServletResponse response) {
         Scanner scanner = new Scanner(request.getInputStream()).useDelimiter("\\A");
         String body = scanner.hasNext() ? scanner.next() : "";
-
         JSONObject jsonObj = JSONObject.parseObject(body);
-        System.out.println(jsonObj.get("status"));
-        if((int) jsonObj.get("status") == 2)
-        {
-            String downloadUri = (String) jsonObj.get("url");
-            URL url = new URL(downloadUri);
-            java.net.HttpURLConnection connection = (java.net.HttpURLConnection) url.openConnection();
-            InputStream stream = connection.getInputStream();
-            String fileName = cn.hutool.core.lang.UUID.randomUUID().toString().replace("-", "") + "_create." + jsonObj.get("filetype");
-            // 这个 key 可以是关联的文件的 id ，到时候用来保存新的文件路径
-            //String key = jsonObj.getString("key");
-            FileServiceBuilder.upload(stream, ContentType.MULTIPART_FORM_DATA, fileName);
-//            String templatePath = getClass().getClassLoader().getResource("").getPath();
-//            templatePath += fileName;
-//            log.info("文件保存地址：" + templatePath);
-//            File tempFile = new File(templatePath);
-//            try (FileOutputStream out = new FileOutputStream(tempFile)) {
-//                int read;
-//                final byte[] bytes = new byte[1024];
-//                while ((read = stream.read(bytes)) != -1) {
-//                    out.write(bytes, 0, read);
-//                }
-//                out.flush();
-//            }
-            connection.disconnect();
+        int status = jsonObj.getInteger("status");
+            /*
+            1 - 正在编辑文档，
+            2 - 文档已准备好保存，
+            3 - 发生文档保存错误，
+            4 - 文档已关闭，没有任何更改，
+            6 - 正在编辑文档，但保存了当前文档状态，
+            7 - 强制保存文档时发生错误。
+             */
+        if (status == 2 || status == 3 || status == 6) {
+            //System.out.println(jsonObj.toJSONString());
+            String id = jsonObj.getString("key").split("_")[0];
+            OnlineDoc onlineDoc = getOne(Wrappers.<OnlineDoc>lambdaQuery()
+                    .select(OnlineDoc::getId, OnlineDoc::getData)
+                    .eq(OnlineDoc::getId, Convert.toLong(id)));
+            if (onlineDoc != null) {
+                if (StringUtil.isBlank((String) onlineDoc.getData())) {
+                    throw new NullPointerException("数据异常，文档数据为空【" + onlineDoc.getId() + "】");
+                }
+                FileData fileData = JSONObject.parseObject((String) onlineDoc.getData(), FileData.class);
+                String fileName = fileData.getTitle();
+                // 能查询到才做保存
+                String downloadUri = jsonObj.getString("url");
+                String path = saveFile(downloadUri, fileName);
+                fileData.setUrl(path);
+
+                onlineDoc.setUpdateTime(LocalDateTime.now());
+                JSONArray users = jsonObj.getJSONArray("users");
+                if (users != null && !users.isEmpty()) {
+                    // 最后一次修改的用户
+                    onlineDoc.setUpdateUser(users.getLong(users.size() - 1));
+                    SysUser sysUser = sysUserMapper.selectOne(Wrappers.<SysUser>lambdaQuery()
+                            .select(SysUser::getId, SysUser::getUsername, SysUser::getNickname, SysUser::getRealName)
+                            .eq(SysUser::getId, onlineDoc.getUpdateUser()));
+                    SysUserDept sysUserDept = sysUserDeptMapper.selectOne(Wrappers.<SysUserDept>lambdaQuery()
+                            .eq(SysUserDept::getUserId, onlineDoc.getUpdateUser())
+                            .orderByAsc(SysUserDept::getId)
+                            .last("limit 1"));
+                    SysDept sysDept = sysDeptMapper.selectOne(Wrappers.<SysDept>lambdaQuery()
+                            .select(SysDept::getId, SysDept::getName, SysDept::getFullName)
+                            .eq(SysDept::getId, sysUserDept.getDeptId()));
+                    String realName = Optional.ofNullable(sysUser.getRealName()).orElse(sysUser.getNickname());
+                    if (ObjectUtil.isNotEmpty(sysDept)) {
+                        String deptName = Optional.ofNullable(sysDept.getName()).orElse(sysDept.getFullName());
+                        realName = realName + "(" + deptName + ")";
+                    }
+                    onlineDoc.setUpdateUserName(realName);
+                }
+
+                if (status != 6) {
+                    // 不是强制保存才保存历史记录
+                    saveHistory(onlineDoc, fileData, jsonObj);
+                }
+
+                onlineDoc.setData(JSONObject.toJSONString(fileData, JSONWriter.Feature.WriteMapNullValue));
+                getBaseMapper().updateOnlyOfficeFileUrl(onlineDoc);
+            }
         }
         return "{\"error\":0}";
+    }
+
+    /**
+     * 回显图片/下载文件
+     *
+     * @param response 自动引入
+     * @param path     路径
+     * @param fileName 文件名
+     * @param d        是否下载
+     */
+    @Operation(summary = "回显图片/下载文件")
+    @RequestMapping(value = {"/statics"})
+    @Parameters({
+            @Parameter(name = "path", description = "文件路径")
+            , @Parameter(name = "fileName", description = "文件名")
+            , @Parameter(name = "d", description = "是否需要下载")
+            , @Parameter(name = "dName", description = "下载指定的文件名")
+    })
+    public void statics(HttpServletResponse response, @RequestParam String path
+            , @RequestParam(required = false) String fileName
+            , @RequestParam(required = false, defaultValue = "false") Boolean d
+            , @RequestParam(required = false) String dName) {
+        InputStream inputStream = null;
+        if (fileName == null){
+            int i = path.lastIndexOf("/");
+            if (i != -1){
+                fileName = path.substring(i + 1);
+            } else {
+                fileName = path;
+            }
+        }
+        try {
+            if (d) {
+                // 是否需要下载，下载是会返回一个流文件，会直接下载文件
+                if (dName == null) {
+                    dName = fileName;
+                }
+                response.setCharacterEncoding("utf-8");
+                response.setContentType("application/octet-stream");
+                response.setHeader("Content-Disposition", "attachment;filename=" +
+                        (URLEncoder.encode(dName, StandardCharsets.UTF_8)) + ";filename*=UTF-8''" +
+                        (URLEncoder.encode(dName, StandardCharsets.UTF_8)));
+            }
+            inputStream = FileServiceBuilder.get(path);
+            response.setContentLength(inputStream.available());
+            byte[] bytes = new byte[1024];
+            int len;
+            while ((len = inputStream.read(bytes)) > 0) {
+                response.getOutputStream().write(bytes, 0, len);
+            }
+            response.getOutputStream().flush();
+        } catch (Exception e) {
+            throw new BaseException(String.format("文件下载失败！%s", e.getMessage()));
+        } finally {
+            Optional.ofNullable(inputStream).ifPresent(is -> {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 }
 ```
