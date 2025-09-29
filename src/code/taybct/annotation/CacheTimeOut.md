@@ -37,6 +37,8 @@ tag:
   - "Spring Taybct"
   - 开发框架
   - 注解
+  - 缓存注解
+  - 可以设置超时的缓存注解
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---

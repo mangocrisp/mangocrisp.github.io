@@ -37,6 +37,7 @@ tag:
   - "Spring Taybct"
   - 开发框架
   - 注解
+  - 唯一逻辑删除
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
