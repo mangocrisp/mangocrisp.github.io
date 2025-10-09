@@ -108,8 +108,8 @@ tag:
       link: "https://github.com/mangocrisp/spring-taybct-single",
     },
     {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
+      text: "Gitee",
+      link: "https://gitee.com/mangocrisp/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -124,12 +124,17 @@ tag:
       link: "https://github.com/mangocrisp/spring-taybct-cloud",
     },
     {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
+      text: "Gitee",
+      link: "https://gitee.com/mangocrisp/spring-taybct-cloud",
       type: "default"
     },
   ]'
 />
+
+
+::: tip
+如果希望后续同步升级，建议 `fork` 项目，然后自己维护，这样，在主仓库更新时，可以同步更新到自己仓库中，这样，就不用每次更新代码的时候，都去同步代码了
+:::
 
 ## 启动项目（Single）
 

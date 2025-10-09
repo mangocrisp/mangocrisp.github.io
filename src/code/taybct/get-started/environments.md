@@ -730,8 +730,8 @@ taybct:
       link: "https://github.com/mangocrisp/spring-taybct-single",
     },
     {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-single",
+      text: "Gitee",
+      link: "https://gitee.com/mangocrisp/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -748,8 +748,8 @@ Single 在 `/run/src/main/resources` 目录下有项目配置文件
       link: "https://github.com/mangocrisp/spring-taybct-cloud",
     },
     {
-      text: "GitLab",
-      link: "https://jihulab.com/mangocrisp/spring-taybct-cloud",
+      text: "Gitee",
+      link: "https://gitee.com/mangocrisp/spring-taybct-cloud",
       type: "default"
     },
   ]'

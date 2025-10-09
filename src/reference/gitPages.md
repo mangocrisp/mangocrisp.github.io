@@ -119,7 +119,7 @@ $ pnpm create vuepress-theme-hope my-docs
 4. 项目配置：不要用自述文件初始化
 
 > [!note]
-> 不要用自述谁的初始化，因为后面直接把仓库 url 加到你本地的 git 里面：`git remote add gitlab https://jihulab.com/<USERNAME>/<USERNAME>.gitlab.io.git`
+> 不要用自述谁的初始化，因为后面直接把仓库 url 加到你本地的 git 里面：`git remote add gitlab https://gitlab.com/<USERNAME>/<USERNAME>.gitlab.io.git`
 > 然后 `git fetch gitlab`
 > `git push gitlab --all`
 > 最后去仓库看就是完完整整的代码了
@@ -170,7 +170,7 @@ pages:
 
 2. 在 `设置 > 可见性，项目功能，权限 > Pages` 选择 `具有访问权限的任何人`，只有这样才能被正常访问
 
-[GitLab 源代码](https://jihulab.com/mangocrisp/mangocrisp.gitlab.io) 
+[GitLab 源代码](https://gitlab.com/mangocrisp/mangocrisp.gitlab.io) 
 [由 GitLab Pages 生成的博客站](https://mangocrisp.gitlab.io)
 
 ## Gitee Pages ?
