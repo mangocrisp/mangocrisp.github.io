@@ -69,7 +69,7 @@ tag:
   :actions='[
     {
       text: "我集成的代码：Gitee",
-      link:"https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/",
+      link:"https://gitee.com/mangocrisp/vue-pure-admin",
     },
     {
       text: "框架原作者的：GitHub",
