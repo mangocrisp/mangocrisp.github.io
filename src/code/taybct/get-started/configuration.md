@@ -251,6 +251,20 @@ taybct:
 
 :::
 
+::: tip 版本兼容性
+
+3.5.x 以后的版本需要修改为：
+
+```yaml
+spring:
+  config:
+    import:
+      - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
+```
+
+详见：[配置更新](/code/taybct/release/3.5.0-beta.1.html#配置更新)
+:::
+
 ### 在配置中心(`Nacos`)动态配置
 
 这里默认你已经安装好了[Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须)
@@ -283,6 +297,20 @@ spring:
             group: 配置列表的 Group
             refresh: true # 是否需要动态刷新
 ```
+
+::: tip 版本兼容性
+
+3.5.x 以后的版本需要修改为：
+
+```yaml
+spring:
+  config:
+    import:
+      - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
+```
+
+详见：[配置更新](/code/taybct/release/3.5.0-beta.1.html#配置更新)
+:::
 
 ::: warning Nacos 动态刷新
 

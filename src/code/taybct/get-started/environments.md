@@ -717,6 +717,20 @@ taybct:
 
 :::
 
+::: tip 版本兼容性
+
+3.5.x 以后的版本需要修改为：
+
+```yaml
+spring:
+  config:
+    import:
+      - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
+```
+
+详见：[配置更新](/code/taybct/release/3.5.0-beta.1.html#配置更新)
+:::
+
 ## 项目配置文件
 
 在仓库源代码里面可以找到配置文件

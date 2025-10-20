@@ -158,6 +158,7 @@ spring:
 - 启动`module-online-doc`模块
 
 - 配置网关
+
 ```yaml
 spring:
   cloud:
@@ -171,6 +172,11 @@ spring:
           filters:
             - StripPrefix=1
 ```
+
+::: tip 版本兼容性
+3.5.x 以后的版本需要修配置
+详见：[配置更新](/code/taybct/release/3.5.0-beta.1.html#配置更新)
+:::
 
 ### 3. 核心代码
 

@@ -138,7 +138,7 @@ tag:
 
 ## 启动项目（Single）
 
-### 1. 启动前先添加启动 JVM 参数（仅 JDK 17）
+### 1. 启动前先添加启动 JVM 参数（仅 JDK 17 以上）
    
    ![添加 JVM 参数](/assets/images/blog/vmparams.png)
 
@@ -158,6 +158,11 @@ tag:
    ```
 
    点击 OK
+
+::: tip 提示
+1. 如果有些模块有可选的依赖，可以将`Add dependencies with "provided" scope to classpath`取消勾选
+2. 可以顺手将`Shorten command line`也勾上
+:::
 
 ### 2. 启动
 
@@ -185,9 +190,9 @@ tag:
   
 ## 启动项目（Cloud）
 
-### 1. 启动前添加启动 JVM 参数（仅 JDK 17）
+### 1. 启动前添加启动 JVM 参数（仅 JDK 17 以上）
 
-[参考 Single](#_1-启动前先添加启动-jvm-参数-仅-jdk-17)
+[参考 Single](#_1-启动前先添加启动-jvm-参数-仅-jdk-17-以上)
 
 ### 2. 启动
 
