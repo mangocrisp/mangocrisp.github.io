@@ -170,7 +170,7 @@ gpg --list-keys
     <version>3.2.0-alpha.1</version>
     <name>Spring TayBct Tools</name>
     <description>Spring TayBct Tools</description>
-    <url>https://github.com/mangocrisp/spring-taybct-tools</url>
+    <url>https://github.com/taybct/spring-taybct-tools</url>
     <packaging>pom</packaging>
 
     <licenses>
@@ -202,9 +202,9 @@ gpg --list-keys
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/mangocrisp/spring-taybct-tools.git</connection>
-        <developerConnection>scm:git:https://gitee.com/mangocrisp/spring-taybct-tools.git</developerConnection>
-        <url>https://github.com/mangocrisp/spring-taybct-tools</url>
+        <connection>scm:git:https://github.com/taybct/spring-taybct-tools.git</connection>
+        <developerConnection>scm:git:https://gitee.com/taybct/spring-taybct-tools.git</developerConnection>
+        <url>https://github.com/taybct/spring-taybct-tools</url>
     </scm>
 
     <properties>

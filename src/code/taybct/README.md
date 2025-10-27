@@ -26,6 +26,10 @@ tag:
 
 # Spring TayBct
 
+::: danger 重要！重要！
+介于开源需要，本项目已经由组织 [TayBct](github.com/taybct) 来维护，原来的部门仓库已经转移到组织 [TayBct](github.com/taybct) 的项目下，请移步
+:::
+
 Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
 
 ## 功能
@@ -59,16 +63,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-tools",
+      link: "https://github.com/taybct/spring-taybct-tools",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-tools",
+      link: "https://gitee.com/taybct/spring-taybct-tools",
       type: "default",
     },
     {
       text: "GitCode",
-      link: "https://gitcode.com/mangocrisp/spring-taybct-tools",
+      link: "https://gitcode.com/taybct/spring-taybct-tools",
       type: "default",
     },
   ]'
@@ -80,16 +84,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct",
+      link: "https://github.com/taybct/spring-taybct",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct",
+      link: "https://gitee.com/taybct/spring-taybct",
       type: "default",
     },
     {
       text: "GitCode",
-      link: "https://gitcode.com/mangocrisp/spring-taybct",
+      link: "https://gitcode.com/taybct/spring-taybct",
       type: "default",
     },
   ]'
@@ -101,16 +105,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-single",
+      link: "https://github.com/taybct/spring-taybct-single",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-single",
+      link: "https://gitee.com/taybct/spring-taybct-single",
       type: "default",
     },
     {
       text: "GitCode",
-      link: "https://gitcode.com/mangocrisp/spring-taybct-single",
+      link: "https://gitcode.com/taybct/spring-taybct-single",
       type: "default",
     },
   ]'
@@ -122,16 +126,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-cloud",
+      link: "https://github.com/taybct/spring-taybct-cloud",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-cloud",
+      link: "https://gitee.com/taybct/spring-taybct-cloud",
       type: "default",
     },
     {
       text: "GitCode",
-      link: "https://gitcode.com/mangocrisp/spring-taybct-cloud",
+      link: "https://gitcode.com/taybct/spring-taybct-cloud",
       type: "default",
     },
   ]'
@@ -143,16 +147,16 @@ Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-example",
+      link: "https://github.com/taybct/spring-taybct-example",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-example",
+      link: "https://gitee.com/taybct/spring-taybct-example",
       type: "default",
     },
     {
       text: "GitCode",
-      link: "https://gitcode.com/mangocrisp/spring-taybct-example",
+      link: "https://gitcode.com/taybct/spring-taybct-example",
       type: "default",
     },
   ]'

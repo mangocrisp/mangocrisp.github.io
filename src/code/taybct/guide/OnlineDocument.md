@@ -53,7 +53,7 @@ tag:
 
 ### 1. 单体架构
 
-[::mdi:github::参考代码](https://github.com/mangocrisp/spring-taybct-single/tree/3.2.x/) [::simple-icons:gitee::参考代码](https://gitee.com/mangocrisp/spring-taybct-single/tree/3.2.x/)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/3.2.x/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-single/tree/3.2.x/)
 
 - 引入依赖
 
@@ -86,7 +86,7 @@ taybct:
 
 ### 2. 微服务版本
 
-[::mdi:github::参考代码](https://github.com/mangocrisp/spring-taybct-single/tree/3.2.x/modules/module-online-doc/) [::simple-icons:gitee::参考代码](https://gitee.com/mangocrisp/spring-taybct-cloud/tree/3.2.x/modules/module-online-doc/)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/3.2.x/modules/module-online-doc/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-cloud/tree/3.2.x/modules/module-online-doc/)
 
 - 配置：
 ```yaml
@@ -180,9 +180,9 @@ spring:
 
 ### 3. 核心代码
 
-- 文件下载 [::mdi:github::](https://github.com/mangocrisp/spring-taybct/blob/3.2.x/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/mangocrisp/spring/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)[::simple-icons:gitee::](https://gitee.com/mangocrisp/spring-taybct/blob/3.2.x/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/mangocrisp/spring/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)
+- 文件下载 [::mdi:github::](https://github.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)
 
-- 回调处理[::mdi:github::](https://gitee.com/mangocrisp/spring-taybct/blob/3.2.x/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/mangocrisp/spring/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)[::simple-icons:gitee::](https://gitee.com/mangocrisp/spring-taybct/blob/3.2.x/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/mangocrisp/spring/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)
+- 回调处理[::mdi:github::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)
 
 ### 4. 演示
 

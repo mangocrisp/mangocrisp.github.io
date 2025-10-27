@@ -76,11 +76,9 @@ tag:
 │       └── api-system 系统模块接口
 ├── auth 鉴权模块
 ├── common 通用公共代码
-├── laboratory 实验室功能
-│       ├── lab-flux 模拟接口(Flux)
-│       └── lab-mock 模拟接口
 ├── modules 业务模块
-│       ├── module-lf 流程管制
+│       ├── module-lf 流程管制（LogicFlow 后台）
+│       ├── module-online-doc 在线文件（OnlyOffice 后台）
 │       ├── module-scheduling 任务调度
 │       └── module-system 系统模块
 ├── run 运行模块
@@ -135,17 +133,19 @@ tag:
 │       ├── admin-log 日志管理
 │       └── admin-monitor 运行监控
 ├── api 接口模块
-│       ├── api-proxy 代理接口
 │       └── api-system 系统模块接口
 ├── auth 鉴权模块
 ├── common 通用公共代码
 ├── gateway 网关模块（后端服务统一入口）
 ├── laboratory 实验室功能
+│       ├── lab-elk 搜索引擎
 │       ├── lab-flux 模拟接口(Flux)
+│       ├── lab-kafka-consumer Kafka 消费者
+│       ├── lab-kafka-provider Kafka 提供者
 │       └── lab-mock 模拟接口
 ├── modules 业务模块
-│       ├── module-es 搜索引擎
-│       ├── module-lf 流程管制
+│       ├── module-lf 流程管制（LogicFlow 后台）
+│       ├── module-online-doc 在线文件（OnlyOffice 后台）
 │       ├── module-scheduling 任务调度
 │       └── module-system 系统模块
 ├── run 运行模块
@@ -162,15 +162,12 @@ tag:
 
 微服务应用模块
 
-![微服务应用模块](/assets/images/taybct/CloudApplication.png)
-
-
-- AuthApplication<Badge text="必须" type="tip"/>：鉴权服务
-- ESApplication<Badge text="可选" type="note"/>：全文搜索服务
-- FileApplication<Badge text="建议" type="info"/>：文件管理服务
 - GatewayApplication<Badge text="必须" type="tip"/>：网关服务
-- LogApplication<Badge text="建议" type="info"/>：日志服务
-- LogicFlowApplication<Badge text="可选" type="note"/>：流程管理服务
-- MonitorApplication<Badge text="可选" type="note"/>：运行监控
-- SchedulingApplication<Badge text="建议" type="info"/>：任务调度
+- AuthApplication<Badge text="必须" type="tip"/>：鉴权服务
 - SystemApplication<Badge text="必须" type="tip"/>：系统服务
+- FileApplication<Badge text="建议" type="info"/>：文件管理服务
+- LogApplication<Badge text="建议" type="info"/>：日志服务
+- SchedulingApplication<Badge text="建议" type="info"/>：任务调度
+- LogicFlowApplication<Badge text="可选" type="note"/>：流程管理服务（LogicFlow 后台）
+- OnlineDocApplication<Badge text="可选" type="note"/>：在线文件（OnlyOffice 后台）
+- MonitorApplication<Badge text="可选" type="note"/>：运行监控 ==（因为需要暴露系统接口(`/actuator/**`)，所以存在安全隐患，慎用！）==

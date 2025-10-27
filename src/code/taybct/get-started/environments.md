@@ -70,22 +70,28 @@ JDK 目前有 [Oracle JDK](https://www.oracle.com/cn/java/technologies/downloads
 
 本项目**重度**依赖 [Spring Boot](https://spring.io/guides/gs/spring-boot)，所以基于 Spring Boot 的依赖的特点，即：Spring Boot 3.0.x 以后的版本只支持 Java 17 或者以上版本，而 Spring Boot 2.x 的最后一个大版本也是支持 Java 8 的版本是 Spring Boot 2.7.x
 
-综合以上所述，本项目目前大致分为了两个大版本:
+综合以上所述，本项目目前大致的大版本:
 
-1. 基于 Spring Boot 3.2.x 开发的 3.2.x 版本
-2. 基于 Spring Boot 2.7.x 开发的 2.7.x 版本
+| 项目版本 | Spring Boot 版本 | 说明 |
+| ----- | -------- | ---- |
+| 3.5.x | 3.5.x | 更新维护中 |
+| 3.2.x | 3.2.x | 已经停止维护 |
+| 2.7.x | 2.7.x | 已经停止维护 |
 
 所以如何选择项目版本，取决于项目开发真实所需，请谨慎选择，毕竟是最`底层`的东西，后续的版本号也是会基于 Spring Boot 的大版本去构建
 
-1. 3.2.x 版本要求 JDK >= 17.0.5
-2. 2.7.x 版本要求 JDK >= 8.202
+| 项目版本 | 推荐 JDK 版本 | 说明 |
+| ----- | -------- | ---- |
+| 3.5.x | 21 | 更新维护中 |
+| 3.2.x | 17 | 已经停止维护 |
+| 2.7.x | 8 | 已经停止维护 |
 
 ::: warning
 注意 [JDK 8u202](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) 版本是 Oracle JDK8 的最后一个免费商用的版本，请谨慎选择使用的版本
 :::
 
 ::: warning
-Oracle JDK 17 是 Oracle 开始免费商用的版本，但是目前只有 3 年的免费时间，后面也不知道怎么收费，或者你可以选择使用 Open JDK 17 也是可以的
+Oracle 从 Oracle JDK 17 开始免费商用的版本，但是目前只有 3 年的免费时间，后面也不知道怎么收费，或者你可以选择使用 Open JDK 17 也是可以的
 :::
 
 ::: info
@@ -100,6 +106,18 @@ Oracle JDK 17 是 Oracle 开始免费商用的版本，但是目前只有 3 年�
 
 下载版本也是有要求的，一般是与`IntelliJ IDEA`有关，旧的`IntelliJ IDEA`只能用旧的 Maven，所以推荐都下载[最新版本](https://maven.apache.org/download.cgi)，省时省力
 
+::: details JDK & Maven 对照关系表
+| Maven 版本	| 最低要求 JDK 版本 |	推荐 JDK 版本 |	备注 |
+|---|---|---|---|
+| Maven 2.2.1	| JDK 1.4+	| JDK 5 或 6	| 已停止维护（2010 年终止支持），仅兼容旧系统。 |
+| Maven 3.0.x - 3.2.x（如 3.0.5、3.2.5）	| JDK 1.6+	| JDK 6 或 7	| 支持 JDK 1.6，但部分插件可能需要更高版本。 |
+| Maven 3.3.x（如 3.3.9）	| JDK 1.7+	| JDK 7 或 8	| 不再支持 JDK 1.6，引入对 JDK 7 的特性依赖。 |
+| Maven 3.5.x（如 3.5.4）	| JDK 1.7+	| JDK 8+	| 兼容 JDK 7，但推荐 JDK 8（主流工具开始转向 JDK 8）。 |
+| Maven 3.6.x（如 3.6.3）	| JDK 1.8+	| JDK 8 或 11	| 不再支持 JDK 1.7，全面适配 JDK 8 及以上。 |
+| Maven 3.8.x（如 3.8.6）	| JDK 1.8+	| JDK 8、11、17	| 兼容 JDK 8，但对 JDK 11+ 的支持更完善（如模块化适配）。 |
+| Maven 3.9.x（如 3.9.6，当前最新）| JDK 1.8+	| JDK 11+（11、17、21）	| 最低仍支持 JDK 8，但建议使用 JDK 11+（性能更好，且旧 JDK 逐渐停止维护）。 |
+:::
+
 ### Maven 配置
 
 怎么下载，下载下来后怎么解压这些就不说明了，都是老司机了，找个文件夹解压就行了，然后这里直接贴上我的配置，可以直接照着`CV`：
@@ -110,9 +128,7 @@ Oracle JDK 17 是 Oracle 开始免费商用的版本，但是目前只有 3 年�
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">		  
-  <!-- 注意这里的这个地址，确保你的电脑有 D 盘，如果没有 D盘，就要修改一下配置 -->
-  <localRepository>D:/data/maven/repo</localRepository>
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
 	<!--maven 默认仓库的搜索顺序如下：
     本地仓库 -> settings>profiles>repo
     -> pom>profile>repo
@@ -120,70 +136,92 @@ Oracle JDK 17 是 Oracle 开始免费商用的版本，但是目前只有 3 年�
     -> settings>mirror
     -> central
     -->
+  <localRepository>D:/data/maven/repo</localRepository>
   <pluginGroups>
     <pluginGroup>org.sonatype.plugins</pluginGroup>
   </pluginGroups>
-  <mirrors>  	
-	<!--Maven 中央仓库配置-->
-	<!--还需要在 IDEA 里面配置 -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true-->
-	<mirror>
-		<id>central-repos1</id>
-		<name>Central Repository 2</name>
-		<mirrorOf>central</mirrorOf>
-		<url>https://repo1.maven.org/maven2/</url>
-	</mirror>
-	<!--阿里云配置-->	
-	<mirror>
-		<id>aliyunmaven-public</id>
-		<name>aliyun google maven repo</name>
-        <mirrorOf>*</mirrorOf>
-		<url>https://maven.aliyun.com/repository/public</url>
-    </mirror>	
+  <mirrors>  
+    <!--中央仓库配置
+    <mirror>  
+        <id>repo2</id>  
+        <name>central</name>  
+        <mirrorOf>central</mirrorOf>  
+        <url>http://repo2.maven.org/maven2</url>  
+    </mirror>  	-->
+    
+    <!--阿里云镜像配置
+    <mirror>
+      <id>aliyunmaven-public</id>
+      <name>aliyun google maven repo</name>
+      <mirrorOf>*</mirrorOf>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>	-->
   </mirrors>
+
   <profiles>
-	<profile>
-		<id>dev</id>
-		<repositories>		
-			<!--中央仓库配置-->
-			<repository>
-			  <id>central</id>
-			  <url>https://repo1.maven.org/maven2</url>
-			  <releases><enabled>true</enabled></releases>
-			  <snapshots><enabled>true</enabled></snapshots>
-			</repository>
-		</repositories>
-		<pluginRepositories>	
-			<pluginRepository>
-				<id>alimaven-plugin</id>
-				<url>https://maven.aliyun.com/repository/public</url>
-				<layout>default</layout>
-				<!-- 是否开启 release 版构件下载 -->
-				<releases>
-					<enabled>true</enabled>
-				</releases>
-				<!-- 是否开启 snapshot 版构件下载 -->
-				<snapshots>
-					<enabled>true</enabled>
-				</snapshots>
-			</pluginRepository>			
-			<pluginRepository>
-			  <id>central</id>
-			  <url>http://repo2.maven.org/maven2</url>  
-			  <releases><enabled>true</enabled></releases>
-			  <snapshots><enabled>true</enabled></snapshots>
-			</pluginRepository>
-    	</pluginRepositories>
+    <profile>
+      <id>dev</id>
+      <repositories>
+      
+        <!--中央仓库配置-->
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+
+        <!--<repository>
+          <id>central</id>
+          <url>https://maven.aliyun.com/repository/central</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>-->
+        
+      </repositories>
+      <pluginRepositories>
+      
+        <pluginRepository>
+          <id>alimaven-plugin</id>
+          <url>https://maven.aliyun.com/repository/public</url>
+          <layout>default</layout>
+          <!-- 是否开启 release 版构件下载 -->
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <!-- 是否开启 snapshot 版构件下载 -->
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+        
+        <pluginRepository>
+          <id>central</id>
+          <url>http://repo2.maven.org/maven2</url>  
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </pluginRepository>
+        
+      </pluginRepositories>
+      <properties>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.keyname>crisp</gpg.keyname>
+      </properties>
     </profile>
   </profiles>  
   <activeProfiles>
-	<activeProfile>dev</activeProfile>
-  </activeProfiles>  
+	  <activeProfile>dev</activeProfile>
+  </activeProfiles>    
 </settings>
 ```
 :::
 
 ::: danger
-看清里面的配置，确保你的电脑有 D 盘，如果没有 D盘，就要修改一下配置
+看清里面的配置，确保你的电脑有 D 盘，如果没有 D 盘，就要修改一下配置
 :::
 
 ### 默认配置
@@ -215,8 +253,6 @@ Oracle JDK 17 是 Oracle 开始免费商用的版本，但是目前只有 3 年�
 ### IntelliJ IDEA 配置
 
 `Settings` > `Build, Execution, Deployment` > `Build Tools` > `Maven`
-
-![IntelliJ IDEA 配置](/assets/images/blog/IntelliJIDEAsettingsmaven.png)
 
 ::: warning
 配置自己的 Maven 安装路径
@@ -741,11 +777,16 @@ spring:
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-single",
+      link: "https://github.com/taybct/spring-taybct-single",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-single",
+      link: "https://gitee.com/taybct/spring-taybct-single",
+      type: "default"
+    },
+    {
+      text: "GitCode",
+      link: "https://gitcode.com/taybct/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -759,11 +800,16 @@ Single 在 `/run/src/main/resources` 目录下有项目配置文件
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-cloud",
+      link: "https://github.com/taybct/spring-taybct-cloud",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-cloud",
+      link: "https://gitee.com/taybct/spring-taybct-cloud",
+      type: "default"
+    },
+    {
+      text: "GitCode",
+      link: "https://gitcode.com/taybct/spring-taybct-cloud",
       type: "default"
     },
   ]'

@@ -71,7 +71,7 @@ Linux 部署要注意的是，没有图形化的界面，所以一定要做好�
 
 ### 启动脚本
 
-::: details run.sh
+::: details
 
 ```bash
 java=env/linux/jdk-17.0.5/bin/java
@@ -193,7 +193,7 @@ cat /dev/null > nohup.out
 
 ### 启动脚本
 
-::: details run.bat
+::: details
 
 ```shell
 @echo off

@@ -273,7 +273,11 @@ spring:
 
 #### 1. 新增命名空间
 
-![对应版本的命名空间](/assets/images/taybct/nacosnamespace.png)
+| 项目版本 | 命名空间 |
+|:--------:|:--------:|
+| 2.7.x | taybct-2-7-x |
+| 3.2.x | taybct-3-2-x |
+| 3.5.x | taybct-3-5-x |
 
 #### 2. 导入配置
 

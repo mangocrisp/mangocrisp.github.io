@@ -427,7 +427,7 @@ public class AuthServerConfigurer {
 
 ### 其他示例配置
 
-其他相关的配置示例，可以[查看](https://github.com/mangocrisp/spring-taybct-single/blob/3.2.x/run/src/main/java/io/github/mangocrisp/spring/taybct/single/security/AuthServerConfigurer.java)
+其他相关的配置示例，可以[查看](https://github.com/taybct/spring-taybct-single/blob/3.2.x/run/src/main/java/io/github/mangocrisp/spring/taybct/single/security/AuthServerConfigurer.java)
 
 ## 第三方授权码登录模式登录页面配置 <Badge text="3.2.3" type="tip" vertical="top" />
 

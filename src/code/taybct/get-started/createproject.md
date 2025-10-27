@@ -48,53 +48,34 @@ tag:
 首先要搞清楚要创建的项目是怎样的一个体量，如果不是特别大的项目，就没必要上微服务，再有，如果不确定，也可以是先单体架构，这样前期好修改和维护，后面如果业务量上来了，模块更多了，再考虑升级微服务
 :::
 
-## 使用模板创建项目
-
-![新建项目](/assets/images/blog/newProject1.png)
-
-说明：
-
-1. 项目文件夹的名称
-2. 项目存放的路径
+## 使用模板（Maven Archetype）创建项目
 
 ::: warning
 文件夹名尽量都使用英文
 :::
 
-3. 如果是 2.7.x 就选择 jdk8，如果是 3.2.x+ 就选择 jdk17
-4. 添加模板
-   
-   ![添加模板](/assets/images/blog/addarchetype.png)
+1. JDK 版本
 
-   ::: info 版本的信息
-   1. GroupId: io.github.mangocrisp
-   这个是固定的组
+| 项目版本 | JDK 版本 | 说明 |
+| ----- | -------- | ---- |
+| 3.5.x | 21 | 更新维护中 |
+| 3.2.x | 17 | 已经停止维护 |
+| 2.7.x | 8 | 已经停止维护 |
 
-   2. ArtifactId: spring-taybct-single-archetype
-   这个根据实际需求来，如果是单体架构就是 `spring-taybct-single-archetype`，如果是微服务就先 `spring-taybct-cloud-archetype`
+2. 添加模板
 
-   3. Version: 3.2.0-alpha.1 
-   版本号，目前只有两种版本号：以 `3.2.*` 开头的 `3.2.x` 版本，以及 `2.7.*` 开头的 `2.7.x` 版本，分别对应了 `Spring Boot` `3.2.x` 和 `2.7.x` 版本
-   :::
+Archetype 坐标
 
-   填完点 Add
-   ::: tip
-   或者选择 Catalog，选择 Maven Central,然后输入`io.github.mangocrisp:spring-taybct-single-archetype`，Version 选择`3.2.0-alpha.1`
-   :::
-   ![添加模板](/assets/images/blog/addarchetype2.png)
-
-5. 这里这个 GroupId,推荐是使用默认的 io.github.mangocrisp，如果使用其他的 GroupId，就需要修改一些依赖相关的代码
-6. 项目名
-7. 版本号
+| 项目版本 | 单体架构 | 微服务架构 |
+| ----------- | -------- | -------- |
+| 3.5.x | `io.github.taybct:spring-taybct-single-archetype` | `io.github.taybct:spring-taybct-cloud-archetype` |
+| 3.2.x | `io.github.mangocrisp:spring-taybct-single-archetype` | `io.github.mangocrisp:spring-taybct-cloud-archetype` |
+| 2.7.x | `io.github.mangocrisp:spring-taybct-single-archetype` | `io.github.mangocrisp:spring-taybct-cloud-archetype` |
 
 点击 Create，就能自动创建项目了
 
-![创建完成](/assets/images/blog/newpfoject1complete.png)
-
-::: details 如果 Maven 提示报错了，可以参考这个
-汗，当时提交模板的时候忘了改版本号了，所以这里的 pom.xml 默认一开始是 `${project.version}`，新建的项目怎么可能是`3.2.0-alpha.1`嘛，所以`3.2.0-alpha.1`版本的模板创建完成之后需要修改一下 pom.xml 文件，也只有 `spring-taybct-single` 的 `3.2.0-alpha.1` 和 `2.7.0-alpha.1` 版本有这样的问题，后面就没这样的问题了
-![修改 pom.xml](/assets/images/blog/fixpom.xml.png)
-此时需要点击重新加载 Maven 依赖
+::: warning
+创建项目之后，注意修改项目里面的配置文件，配置文件里面的一些配置的包名需要手动修改，单体架构已经自动替换成了 `${package}`，手动全局替换成你自己的包名就行了，微服务架构的，得去`Nacos`一个一个修改
 :::
 
 ## 直接下载源码
@@ -105,11 +86,16 @@ tag:
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-single",
+      link: "https://github.com/taybct/spring-taybct-single",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-single",
+      link: "https://gitee.com/taybct/spring-taybct-single",
+      type: "default"
+    },
+    {
+      text: "Gitcode",
+      link: "https://gitcode.com/taybct/spring-taybct-single",
       type: "default"
     },
   ]'
@@ -121,11 +107,16 @@ tag:
   :actions='[
     {
       text: "GitHub",
-      link: "https://github.com/mangocrisp/spring-taybct-cloud",
+      link: "https://github.com/taybct/spring-taybct-cloud",
     },
     {
       text: "Gitee",
-      link: "https://gitee.com/mangocrisp/spring-taybct-cloud",
+      link: "https://gitee.com/taybct/spring-taybct-cloud",
+      type: "default"
+    },
+    {
+      text: "GitCode",
+      link: "https://gitcode.com/taybct/spring-taybct-cloud",
       type: "default"
     },
   ]'
@@ -140,24 +131,20 @@ tag:
 
 ### 1. 启动前先添加启动 JVM 参数（仅 JDK 17 以上）
    
-   ![添加 JVM 参数](/assets/images/blog/vmparams.png)
-
-   ``` bash
-   -Dmaven.wagon.http.ssl.insecure=true
-   -Dmaven.wagon.http.ssl.allowall=true
-   --add-opens
-   java.base/java.lang=ALL-UNNAMED
-   --add-opens
-   java.base/java.util=ALL-UNNAMED
-   --add-opens
-   java.base/java.nio=ALL-UNNAMED
-   --add-opens
-   java.base/sun.nio.ch=ALL-UNNAMED
-   --add-opens
-   java.base/java.lang.reflect=ALL-UNNAMED
-   ```
-
-   点击 OK
+``` bash
+-Dmaven.wagon.http.ssl.insecure=true
+-Dmaven.wagon.http.ssl.allowall=true
+--add-opens
+java.base/java.lang=ALL-UNNAMED
+--add-opens
+java.base/java.util=ALL-UNNAMED
+--add-opens
+java.base/java.nio=ALL-UNNAMED
+--add-opens
+java.base/sun.nio.ch=ALL-UNNAMED
+--add-opens
+java.base/java.lang.reflect=ALL-UNNAMED
+```
 
 ::: tip 提示
 1. 如果有些模块有可选的依赖，可以将`Add dependencies with "provided" scope to classpath`取消勾选
@@ -166,27 +153,11 @@ tag:
 
 ### 2. 启动
 
-![启动成功 🎉🎉🎉](/assets/images/blog/startsuccess.png)
-
-启动成功如上图
-
 ### 3. 验证
 
 - swagger 后端接口文档：浏览器打开 http://127.0.0.1:9102/doc.html
-- ApiFox 调试登录接口：
   
-  ```bash
-  curl --location --request POST 'http://localhost:9102/auth/oauth/login' \
-  --header 'User-Agent: Apifox/1.0.0 (https://apifox.com)' \
-  --header 'Authorization: Basic dGF5YmN0X3BjOmUxMGFkYzM5NDliYTU5YWJiZTU2ZTA1N2YyMGY4ODNl' \
-  --data-urlencode 'grant_type=taybct' \
-  --data-urlencode 'scope=all' \
-  --data-urlencode 'username=root' \
-  --data-urlencode 'password=0475e3dd4c5e90bc3854490e7354b6f10a47dd6e1220a0147e0ad42f4428f5a87828597146cbc3c2b8fd3458cda53e9daf21d3aa5c6da8ed31fd256cdf378e17ade31a708f31158c062214126f7fb863d31147038da24f2d59704fbb7783fc2c1b764efad79319'
-  ```
-
-  ![登录成功 🎉🎉🎉](/assets/images/blog/loginsuccess.png)
-
+启动成功 🎉🎉🎉
   
 ## 启动项目（Cloud）
 
@@ -198,10 +169,8 @@ tag:
 
 启动如下所选的服务
 
-![启动](/assets/images/blog/startservices.png)
-
 ::: tip
-可以只启动服务 `1` `2` `3`，以最小化的服务启动
+可以只启动服务 `AuthApplication` `GatewayApplication` `SystemApplication`，以最小化的服务启动
 
 可以不用启动的服务：
 
@@ -211,15 +180,15 @@ tag:
    
 :::
 
-![启动成功 🎉🎉🎉](/assets/images/blog/startsuccess2.png)
-
-
 ### 3. 验证
 
 [参考 Single](#_3-验证)
+
+启动成功 🎉🎉🎉
 
 ## 前端
 
 配置前端项目来使用，目前可以使用的前端项目有：
 
 - https://turtlewxg.github.io/gx-web-doc/
+- https://mangocrisp.top/pureadmin/

@@ -331,7 +331,7 @@ try{
 
 工具框架对 WebSocket 进行了封装，提供了一些常用的功能，兼容并适配了 WebMVC 和 WebFlux 两种 WebSocket 框架
 
-可以查看这个示例：[exp-websocket](https://github.com/mangocrisp/spring-taybct-example/blob/3.2.x/exp-websocket)
+可以查看这个示例：[exp-websocket](https://github.com/taybct/spring-taybct-example/blob/3.2.x/exp-websocket)
 
 需要注意的是，在 WebMVC 框架中，需要引入依赖：
 

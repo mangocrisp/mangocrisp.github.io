@@ -46,4 +46,4 @@ tag:
 
 websocket reactive 路径匹配，类似 @ServerEndpoint，但是这个注解是在 WebFlux 里面使用的
 
-可以查看这个示例：[exp-websocket-reactive](https://github.com/mangocrisp/spring-taybct-example/blob/3.2.x/exp-websocket/exp-websocket-reactive/src/main/java/io/github/mangocrisp/exp/wsr/server/WebSocketReactiveServer.java)
+可以查看这个示例：[exp-websocket-reactive](https://github.com/taybct/spring-taybct-example/blob/3.2.x/exp-websocket/exp-websocket-reactive/src/main/java/io/github/mangocrisp/exp/wsr/server/WebSocketReactiveServer.java)
