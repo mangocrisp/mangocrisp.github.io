@@ -53,7 +53,7 @@ tag:
 
 ### 1. 单体架构
 
-[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/3.2.x/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-single/tree/3.2.x/)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-online-doc) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-online-doc)
 
 - 引入依赖
 
@@ -86,7 +86,7 @@ taybct:
 
 ### 2. 微服务版本
 
-[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/3.2.x/modules/module-online-doc/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-cloud/tree/3.2.x/modules/module-online-doc/)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-online-doc/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-online-doc)
 
 - 配置：
 ```yaml
