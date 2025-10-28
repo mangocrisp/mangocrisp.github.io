@@ -57,7 +57,8 @@ tag:
 
 可以自行修改想要生成怎么样的业务模板，也可以参考直接使用我这边的
 
-- [通用模板（3.2.x 持续更新）](https://gitee.com/taybct/spring-taybct/-/tree/3.2.x/spring-taybct-common/src/main/resources/MybatisX/templates)
-- [通用模板（2.7.x）](https://gitee.com/taybct/spring-taybct/-/tree/2.7.x/spring-taybct-common/src/main/resources)
+- [通用模板（3.5.x 持续更新）](https://gitee.com/taybct/spring-taybct/tree/main/spring-taybct-common/src/main/resources/MyBatisX/templates)
+- [通用模板（3.2.x）](https://gitee.com/taybct/spring-taybct/tree/3.2.x/spring-taybct-common/src/main/resources/MyBatisX/templates)
+- [通用模板（2.7.x）](https://gitee.com/taybct/spring-taybct/tree/2.7.x/spring-taybct-common/src/main/resources/MybatisX)
 
  这边集成了一整套的`增删改查`的基础操作（单表），后续还会加入多表的操作的模板更便捷的使用，无脑开发！！！
