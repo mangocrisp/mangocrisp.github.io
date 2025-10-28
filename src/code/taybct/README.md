@@ -27,7 +27,7 @@ tag:
 # Spring TayBct
 
 ::: danger 重要！重要！
-介于开源需要，本项目已经由组织 [TayBct](github.com/taybct) 来维护，原来的部门仓库已经转移到组织 [TayBct](github.com/taybct) 的项目下，请移步
+介于开源需要，本项目已经由组织 [TayBct](https://github.com/taybct) 来维护，原来的部分仓库已经转移到组织 [TayBct](https://github.com/taybct) 的项目下，请移步
 :::
 
 Java 后端开发， Spring Boot 框架基础后台管理业务功能集成
