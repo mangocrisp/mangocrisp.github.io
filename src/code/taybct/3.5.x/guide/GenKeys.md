@@ -489,7 +489,7 @@ public class DemoController {
 }
 ```
 
-[@Encrypted 注解](/code/taybct/annotation/Encrypted)的处理逻辑：
+[@Encrypted 注解](../annotation/Encrypted)的处理逻辑：
 
 ```java
 @Aspect

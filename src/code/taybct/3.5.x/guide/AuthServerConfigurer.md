@@ -420,7 +420,7 @@ public class AuthServerConfigurer {
 :::
 
 ::: warning
-不建议修改签名证书的代码（`Bean`注入），可以生成新的`jwt.jks`证书，[生成方式](/code/taybct/guide/GenKeys.html)
+不建议修改签名证书的代码（`Bean`注入），可以生成新的`jwt.jks`证书，[生成方式](../guide/GenKeys.html)
 :::
 
 

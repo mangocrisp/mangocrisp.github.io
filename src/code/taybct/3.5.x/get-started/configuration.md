@@ -125,7 +125,7 @@ logging:
 
 ## Cloud
 
-微服务的配置，使用的是 [Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须) 作为配置中心，所以你需要先将环境准备好
+微服务的配置，使用的是 [Nacos](../get-started/environments.html#nacos-cloud-必须) 作为配置中心，所以你需要先将环境准备好
 
 ### 配置本地的`bootstrap.yml`
 
@@ -262,12 +262,12 @@ spring:
       - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
 ```
 
-详见：[配置更新](/code/taybct/release/3.5.0.html#配置更新)
+详见：[配置更新](../release/3.5.0.html#配置更新)
 :::
 
 ### 在配置中心(`Nacos`)动态配置
 
-这里默认你已经安装好了[Nacos](/code/taybct/get-started/environments.html#nacos-cloud-必须)
+这里默认你已经安装好了[Nacos](../get-started/environments.html#nacos-cloud-必须)
 
 浏览器打开 [http://127.0.0.1:8848/nacos](http://127.0.0.1:8848/nacos)，并登录（账号密码是你自己设置的，默认是 `nacos`/`nacos`）
 
@@ -313,7 +313,7 @@ spring:
       - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
 ```
 
-详见：[配置更新](/code/taybct/release/3.5.0.html#配置更新)
+详见：[配置更新](../release/3.5.0.html#配置更新)
 :::
 
 ::: warning Nacos 动态刷新

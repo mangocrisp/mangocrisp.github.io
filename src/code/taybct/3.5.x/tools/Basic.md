@@ -246,7 +246,7 @@ public class DataSyncController implements LongKeyConvertibleController<DataSync
 - 满足大部分业务场景需求的增、删、改、查、导入、导出
 - 生成了 Mybatis 的 xml 文件的配套内容，可以利用 ==`<include>`== 标签实现简单配置多表查询
 
-[自动生成业务代码](/code/taybct/guide/mybatisxTemplate)
+[自动生成业务代码](../guide/mybatisxTemplate)
 
 ## 业务逻辑处理
 

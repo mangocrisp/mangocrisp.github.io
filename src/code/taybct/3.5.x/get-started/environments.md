@@ -764,7 +764,7 @@ spring:
       - optional:nacos:taybct.yml?group=${spring.cloud.nacos.config.group}&refreshEnabled=true # 基本配置
 ```
 
-详见：[配置更新](/code/taybct/release/3.5.0.html#配置更新)
+详见：[配置更新](../release/3.5.0.html#配置更新)
 :::
 
 ## 项目配置文件

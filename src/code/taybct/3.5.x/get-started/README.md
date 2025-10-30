@@ -36,7 +36,7 @@ tag:
   :actions='[
     {
       text: "指南",
-      link:"/code/taybct/guide/",
+      link:"../guide/",
     }
   ]'
 />

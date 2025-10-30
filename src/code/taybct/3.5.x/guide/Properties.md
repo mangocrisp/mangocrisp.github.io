@@ -250,7 +250,7 @@ URI IP 配置
 |password|Boolean|true|是否加密密码|
 |||||
 
-[数据库加密连接](/code/taybct/guide/dbencryptedconnect.html)
+[数据库加密连接](../guide/dbencryptedconnect.html)
 
 ### taybct.scheduled.*
 

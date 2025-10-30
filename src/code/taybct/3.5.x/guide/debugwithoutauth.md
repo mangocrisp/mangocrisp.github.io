@@ -92,3 +92,7 @@ tag:
 ![payloadaccess.png](/assets/images/blog/payloadaccess.png)
 
 这样就不需要再走网关去调试接口，直接只启动一个服务就可以了
+
+::: danger 注意注意！
+这里的操作仅适用于开发环境，如果是生产环境，请做好过滤防护，不要把单个服务直接暴露出去，并且做好密钥的保护及定期更新
+:::

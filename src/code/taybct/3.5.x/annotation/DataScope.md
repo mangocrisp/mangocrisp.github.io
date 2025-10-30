@@ -74,8 +74,8 @@ tag:
 | alias | String | ==是== |  | 需要过滤数据权限的表的别名 |
 | field | String | ==是== |  | 需要过滤数据权限的表的用来过滤的字段 |
 | sqlField | String | 否 | "_data_scope_" | 自动生成的数据权限过滤`SQL`参数名 |
-| filterType | [DataScopeFilterType](/code/taybct/annotation/DataScope.html#datascopefiltertype) | 否 | DataScopeFilterType.USER | 按何种方式过滤 |
-| type | [DataScopeType](/code/taybct/annotation/DataScope.html#DataScopeType) | 否 | DataScopeType.SINGLE | 数据权限类型 |
+| filterType | [DataScopeFilterType](../annotation/DataScope.html#datascopefiltertype) | 否 | DataScopeFilterType.USER | 按何种方式过滤 |
+| type | [DataScopeType](../annotation/DataScope.html#datascopetype) | 否 | DataScopeType.SINGLE | 数据权限类型 |
 | logicDelete | boolean | 否 | false | 权限表是否是逻辑删除的 |
 | logicField | String | 否 | "" | 逻辑删除字段 |
 | notDeletedStatus | String | 否 | "" | 逻辑删除的未删除状态 |
@@ -84,9 +84,9 @@ tag:
 | includeParents | boolean | 否 | false | 是否包含查询权限父集 |
 | dataScopeCondition | `Class<? extends DataScopeCondition> dataScopeCondition()` | 否 | `DefaultDataScopeCondition.class` | 判断是否要进行数据权限过滤 |
 | custom | `Class<? extends DataScopeCustom>` | 否 | `DefaultDataScopeCustom.class` | 自定义过滤规则 |
-| notExistDealType | [DataScopeGetNotDealType](/code/taybct/annotation/DataScope.html#DataScopeGetNotDealType) | 否 | `DefaultDataScopeCustom.class` | 自定义过滤规则 |
+| notExistDealType | [DataScopeGetNotDealType](../annotation/DataScope.html#datascopegetnotdealtype) | 否 | `DefaultDataScopeCustom.class` | 自定义过滤规则 |
 | auto | boolean | 否 | true | 是否自动把过滤条件添加到 where 语句后面，默认添加到第一个 where 后面 |
-| extensible | boolean | 否 | false | 是否[扩展](/code/taybct/annotation/DataScope.html#扩展) |
+| extensible | boolean | 否 | false | 是否[扩展](../annotation/DataScope.html#扩展) |
 | extensionScopeTable | String | 否 | "" | 扩展数据范围表 |
 | extensionScopeField | String | 否 | "" | 扩展数据范围表的主键（用来关联是哪个权限需要扩展范围） |
 | extensionScopeDeptId | String | 否 | "" | 扩展数据范围表的关联扩展的权限的 id |
