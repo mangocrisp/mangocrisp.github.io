@@ -67,4 +67,4 @@ tag:
 @RequestMapping("/v1/sysUser")
 ```
 
-也可以使用注解 [@ApiVersion](/code/taybct/annotation/ApiVersion)
+也可以使用注解 [@ApiVersion](/code/taybct/annotation/ApiVersion.html)
