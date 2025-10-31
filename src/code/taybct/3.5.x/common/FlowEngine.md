@@ -1,8 +1,8 @@
 ---
 # 当前页面的短标题，会在导航栏、侧边栏和路径导航中作为首选
-shortTitle: 在线文档
+shortTitle: 流程引擎
 # 当前页面内容描述
-description: 在线文档
+description: 流程引擎
 # 是否在侧边栏或目录中索引当前页面
 index: true
 # 当前页面是否开启评论功能
@@ -18,11 +18,11 @@ editLink: true
 # 是否显示贡献者
 contributors: true
 # 指定当前页面在侧边栏或目录中的排序
-order: 23
+order: 5
 dir:
-  order: 23
+  order: 5
 # 页面图标
-icon: "line-md:document-report"
+icon: "hugeicons:flow"
 # 是否原创
 isOriginal: false
 # 日期
@@ -43,50 +43,31 @@ tag:
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---
 
-# 在线文档 
+# 流程引擎 
 
 ::: info
-从 <Badge text="3.2.4" type="tip" /> 版本开始，基于[OnlyOffice](https://www.onlyoffice.com/zh/)开发了在线文档功能
+从 <Badge text="3.2.4" type="tip" /> 版本开始，对之前一直没用起来的基于[滴滴开源 LogicFlow](https://site.logic-flow.cn)适配的流程引擎做了大量的优化，现在已经可以满足基本的流程使用，`LogicFlow` 拥有许多自定义的配置，可以满足大部分的流程使用场景，但是这些还是需要在项目开发过程中做一些相应的适配，比如，一些特定的需求，需要写自定义的一些逻辑，就需要注入一些`Bean`去做处理
 :::
 
 ## 使用说明
 
 ### 1. 单体架构
 
-[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-online-doc) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-online-doc)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-lf/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-single/tree/main/spring-taybct-modules/spring-taybct-module-lf/)
 
 - 引入依赖
 
 ```xml
+<!--流程管理-->
 <dependency>
     <groupId>io.github.mangocrisp</groupId>
-    <artifactId>spring-taybct-module-online-doc</artifactId>
+    <artifactId>module-lf</artifactId>
 </dependency>
 ```
-
-- 相关依赖
-
-```xml
-<!--文件管理-->
-<dependency>
-    <groupId>io.github.mangocrisp</groupId>
-    <artifactId>admin-file</artifactId>
-</dependency>
-```
-
-- 配置请求前缀
-
-```yaml
-taybct:
-  serve:
-    taybct-online-doc:
-      context-path: "/online-doc/"
-```
-
 
 ### 2. 微服务版本
 
-[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-online-doc/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-online-doc)
+[::mdi:github::参考代码](https://github.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-lf/) [::simple-icons:gitee::参考代码](https://gitee.com/taybct/spring-taybct-cloud/tree/main/spring-taybct-modules/spring-taybct-module-lf/)
 
 - 配置：
 ```yaml
@@ -101,7 +82,7 @@ spring:
     allow-bean-definition-overriding: true
   application:
     # 应用名称
-    name: module-online-doc
+    name: module-lf
   profiles:
     active: dev
   cloud:
@@ -148,14 +129,11 @@ spring:
           - data-id: ${taybct.config-prefix}-mq.${spring.cloud.nacos.config.file-extension}     # rabbit mq 配置
             group: ${spring.cloud.nacos.config.group}
             refresh: true
-          - data-id: ${taybct.config-prefix}-file.${spring.cloud.nacos.config.file-extension}     # OnlyOffice 文档文件支持
-            group: ${spring.cloud.nacos.config.group}
-            refresh: true
-  taybct:
-    config-prefix: taybct
+taybct:
+  config-prefix: taybct
   ```
 
-- 启动`module-online-doc`模块
+- 启动`module-lf`模块
 
 - 配置网关
 
@@ -164,11 +142,11 @@ spring:
   cloud:
     gatewayL:
       routes:
-        # 在线文档
-        - id: module-online-doc
-          uri: lb://module-online-doc
+        # 流程中心
+        - id: module-lf
+          uri: lb://module-lf
           predicates:
-            - Path=/online-doc/**
+            - Path=/lf/**
           filters:
             - StripPrefix=1
 ```
@@ -180,19 +158,19 @@ spring:
 
 ### 3. 核心代码
 
-- 文件下载 [::mdi:github::](https://github.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/controller/OnlineDocControllerRegister.java#L69-L129)
+- 流程步骤处理 [::mdi:github::](https://github.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-lf/src/main/java/io/github/taybct/module/lf/service/impl/ProcessServiceImpl.java#L268-L446)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-lf/src/main/java/io/github/taybct/module/lf/service/impl/ProcessServiceImpl.java#L268-L446)
 
-- 回调处理[::mdi:github::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-online-doc/src/main/java/io/github/taybct/module/od/service/impl/OnlineDocServiceImpl.java#L132-L200)
+- 自动判断和自定义处理[::mdi:github::](https://github.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-lf/src/main/java/io/github/taybct/module/lf/util/ProcessUtil.java#L45-L113)[::simple-icons:gitee::](https://gitee.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-lf/src/main/java/io/github/taybct/module/lf/util/ProcessUtil.java#L45-L113)
 
 ### 4. 演示
 
-[在线文档](https://mangocrisp.top/pureadmin/#/online-doc)
-这里因为服务器资源不太够安装OnlyOffice，只能贴出图片演示效果
-![1](/assets/images/blog/od1.png)
-![2](/assets/images/blog/od2.png)
-![3](/assets/images/blog/od3.png)
+[流程引擎](https://mangocrisp.top/pureadmin/#/lf/design)（首次加载需要下载资源有点慢，需要耐心等待加载 😓）
+
+::: tip
+演示使用到的表单设计器是 [FcDesigner](https://view.form-create.com/) 和 [FormCreate](https://www.form-create.com/v3/)
+:::
 
 
 ### 5. 参考
 
-配置，OnlyOffice 的安装教程可以参考[OnlyOffice+VUE3+Java+OSS 实现在线协同编辑文档](/reference/onlyoffice)
+[LogicFlow 教程](https://site.logic-flow.cn/tutorial/get-started)
