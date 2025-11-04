@@ -96,6 +96,9 @@ Java 开始就一定要安装 JDK 就和 VUE 开发一定离不开 Node.js 是�
    tar -zxvf xxx.tar.gz
    ```
 2. 添加环境变量
+
+- CentOS
+
    编辑 `/etc/profile`
    ```bash
    vim /etc/profile
@@ -109,6 +112,23 @@ Java 开始就一定要安装 JDK 就和 VUE 开发一定离不开 Node.js 是�
    ```
    source /etc/profile
    ```
+
+- Ubuntu
+
+   编辑 `~/.profile`
+   ```bash
+   vim ~/.profile
+   ```
+   在文件末尾添加 ==解压后的 jdk 的目录的路径==
+   ```bash
+   JAVA_HOME="/usr/local/share/jdk"
+   PATH="$JAVA_HOME/bin:$PATH"
+   ```
+   修改完保存后不要忘了刷新一下配置
+   ```
+   source ~/.profile
+   ```
+
 3. 验证
    ```bash
    java -version
