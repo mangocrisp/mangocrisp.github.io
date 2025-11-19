@@ -29,11 +29,12 @@ isOriginal: false
 date: 2024-11-21
 # 类别
 category:
-  - 代码笔记
+  - 参考
 tag:
   - 知识
   - 分享
   - 开发工具
+  - IntelliJ IDEA
 # 页面顶上的图片
 #cover: /assets/images/ys/KamisatoAyakaBlack.jpg
 ---

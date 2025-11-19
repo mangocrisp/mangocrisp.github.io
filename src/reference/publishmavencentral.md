@@ -35,6 +35,8 @@ tag:
   - 知识
   - 分享
   - Maven
+  - Maven 中央仓库
+  - 发布Jar包
   - 依赖管理
 # 页面顶上的图片
 cover: https://central.sonatype.com/maven-central-logo.svg

@@ -296,3 +296,7 @@ Jar 包参数：
 
 nacos > 启动参数 > application.yml > bootstrap.yml > @Value(${key=value})
 :::
+
+## Docker 镜像
+
+如果希望使用 Docker 镜像来部署，那么可以参考[打包 Jar 到 Docker 并上传到云容器仓库](/reference/dockerJarCR.html)
