@@ -285,3 +285,10 @@ include ':spring-taybct-gateway'
   核心原因是 Lombok 注解在测试代码的编译阶段未生效——@SneakyThrows 依赖 Lombok 注解处理器在编译时改写字节码，若测试代码的编译流程没引入 Lombok 支持，编译器会依然认为 “受检异常未声明 / 捕获”，从而报错
   解决：
   在 build.gradle 中，必须同时给 测试代码 配置 testCompileOnly（测试编译时依赖 Lombok 类）和 testAnnotationProcessor（测试编译时启用 Lombok 注解处理器），不能只配置主代码的依赖
+- build 跳过测试代码，需要在 build 后面加上 `-x test`
+
+  ```bash
+  ./gradlew build -x test
+  ```
+  
+  IntelliJ IDEA 在面板右键 build -> 修改运行配置 -> 直接在命令后面加上 `-x test`
