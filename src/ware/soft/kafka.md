@@ -452,7 +452,7 @@ spring:
       # 手动提交偏移量
       enable-auto-commit: false
       # 消费者组
-      group-id: lab-kafka-consumer
+      group-id: exp-kafka-consumer
       properties:
         # 允许反序列化任意包
         spring.json.trusted.packages: "*"
@@ -472,17 +472,17 @@ spring:
 
 详见：
 
-[::mdi:github::lab-kafka-provider](https://github.com/taybct/spring-taybct-cloud/tree/main/laboratory/lab-kafka-provider)
-[::simple-icons:gitee::lab-kafka-provider](https://gitee.com/taybct/spring-taybct-cloud/tree/main/laboratory/lab-kafka-provider)
+[::mdi:github::exp-kafka-provider](https://github.com/taybct/spring-taybct-example/tree/master/exp-kafka-provider)
+[::simple-icons:gitee::exp-kafka-provider](https://gitee.com/taybct/spring-taybct-example/tree/master/exp-kafka-provider)
 
 ### 消费者
 
 详见：
 
-[::mdi:github::lab-kafka-consumer](https://github.com/taybct/spring-taybct-cloud/tree/main/laboratory/lab-kafka-consumer)
-[::simple-icons:gitee::lab-kafka-consumer](https://gitee.com/taybct/spring-taybct-cloud/tree/main/laboratory/lab-kafka-consumer)
+[::mdi:github::exp-kafka-consumer](https://github.com/taybct/spring-taybct-example/tree/master/exp-kafka-consumer)
+[::simple-icons:gitee::exp-kafka-consumer](https://gitee.com/taybct/spring-taybct-example/tree/master/exp-kafka-consumer)
 
 ### 测试
 
-1. 启动`lab-kafka-provider`和`lab-kafka-consumer`服务
+1. 启动`exp-kafka-provider`和`exp-kafka-consumer`服务
 2. 在浏览器中访问：[http://localhost:7003/send/message?key=topic&message=hello](http://localhost:7003/send/message?key=topic&message=hello)
