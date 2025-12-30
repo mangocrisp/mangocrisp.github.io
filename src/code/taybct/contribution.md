@@ -49,20 +49,20 @@ tag:
 
 ### 项目成分
 
-Spring Taybct 是一个基于 SpringBoot 开发的 Java 后端后台管理业务基础框架，框架分为基础工具类库和业务框架，业务框架。
+[Spring Taybct](https://gitee.com/taybct) 是一个基于 SpringBoot 开发的 Java 后端后台管理业务基础框架，框架分为基础工具类库和业务框架，业务框架。
 
 1. 基础工具类库：
 
-Spring TayBct Tools 是一个Spring 业务组件基础集成的工具类库，对一些常用的中间件做了基础的常用的集成，并且提供一些业务开发过程中常用的功能模块集成，工具类库里面是不含任何业务功能，只是对常用的功能进行了抽象，方便业务开发使用。例如：[消息传递服务](./3.5.x/common/Message)
+[Spring TayBct Tools](https://gitee.com/taybct/spring-taybct-tools) 是一个Spring 业务组件基础集成的工具类库，对一些常用的中间件做了基础的常用的集成，并且提供一些业务开发过程中常用的功能模块集成，工具类库里面是不含任何业务功能，只是对常用的功能进行了抽象，方便业务开发使用。例如：[消息传递服务](./3.5.x/common/Message)
 
 
 2. 业务框架：
 
-Spring TayBct 是一个 Spring 业务组件基础集成的基础业务库，对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成，比如：[流程管理](./3.5.x/common/FlowEngine)
+[Spring Taybct](https://gitee.com/taybct/spring-taybct) 是一个 Spring 业务组件基础集成的基础业务库，对一些常用的系统管理，用户体系等基础功能做了基础的常用的简易的集成，并且提供一些业务开发过程中常用的功能模块集成，比如：[流程管理](./3.5.x/common/FlowEngine)
 
 ### 结构说明
 
-spring-taybct 依赖 spring-taybct-tools，同时又分了两个分支：单体框架和微服务框架，其实原理也很简单，就是多模块的项目，如果是单体项目就不需要和微服务相关的功能，比如 `网关`、`注册中心`、`RPC框架` 等，当想切换到微服务的时候只需要添加上这些模块，即可。
+[spring-taybct](https://gitee.com/taybct/spring-taybct) 依赖 [spring-taybct-tools](https://gitee.com/taybct/spring-taybct-tools)，同时又分了两个分支：单体框架和微服务框架，其实原理也很简单，就是多模块的项目，如果是单体项目就不需要和微服务相关的功能，比如 `网关`、`注册中心`、`RPC框架` 等，当想切换到微服务的时候只需要添加上这些模块，即可。
 
 ::: info 为什么要这样区分？
 在实际开发的过程中，不是所有的项目都需要上微服务，单体就完全够用了，有些项目在前期要快速搭建运行演示的时候也应该是先考虑单体，后续再切换为微服务，这样会方便一些
@@ -147,6 +147,6 @@ spring-taybct 依赖 spring-taybct-tools，同时又分了两个分支：单体�
 
 ### 业务框架的使用
 
-- 当 spring-taybct 发布的同时，会将代码同时发布到 spring-taybct-cloud 和 spring-taybct-single 两个仓库，其实也就是 spring-taybct 的那两个分支（single、cloud）。
-- 然后这两个仓库会将代码打包成 Maven Archetype 模板发布到 Maven 中央仓库，这样，别人就可以使用 Maven 引入 spring-taybct-cloud 或者 spring-taybct-single 仓库的代码了。
-- 当然，如果希望后续继续获取到 spring-taybct 的同步更新，我这里是建议以模板项目的形式来 Fork spring-taybct-cloud 或者 srping-taybct-single 仓库，这样，后续只要源仓库发布更新了，Fork 了的仓库也可以得到同步更新
+- 当 [spring-taybct](https://gitee.com/taybct/spring-taybct) 发布的同时，会将代码同时发布到 [spring-taybct-cloud](https://gitee.com/taybct/spring-taybct-cloud) 和 [spring-taybct-single](https://gitee.com/taybct/spring-taybct-single) 两个仓库，其实也就是 [spring-taybct](https://gitee.com/taybct/spring-taybct) 的那两个分支（single、cloud）。
+- 然后这两个仓库会将代码打包成 Maven Archetype 模板发布到 Maven 中央仓库，这样，别人就可以使用 Maven 引入 [spring-taybct-cloud](https://gitee.com/taybct/spring-taybct-cloud) 或者 [spring-taybct-single](https://gitee.com/taybct/spring-taybct-single) 仓库的代码了。
+- 当然，如果希望后续继续获取到 [spring-taybct](https://gitee.com/taybct/spring-taybct) 的同步更新，我这里是建议以模板项目的形式来 Fork [spring-taybct-cloud](https://gitee.com/taybct/spring-taybct-cloud) 或者 [srping-taybct-single](https://gitee.com/taybct/spring-taybct-single) 仓库，这样，后续只要源仓库发布更新了，Fork 了的仓库也可以得到同步更新
