@@ -96,11 +96,40 @@ spring-taybct 依赖 spring-taybct-tools，同时又分了两个分支：单体�
 
 ### 贡献代码
 
-贡献代码，请按照以下步骤进行：
+贡献代码，请注意以下几个点：
 
-1. 如果你的贡献的代码即有工具类库，也有业务功能，你应该是先在工具类库写完，然后在本地 install 到本地的 maven 仓库，然后再在业务框架里面引用工具类库
-2. 业务框架的 dev 分支只是放了单纯的业务代码，你可以看到是没有启动类的，因为还需要区分为单体和微服务，所以，你需要将你在 dev 分支开发好的代码合并到对应的 single(单体)或者cloud(微服务)分支，然后再测试功能，或者是在 single(单体)或者cloud(微服务)分支里面测试功能，但是不提交，只拷贝代码到 dev 分支，然后再提交 dev 分支，然后再合并到 single(单体)或者cloud(微服务)分支，==主要就是要保证你的代码是从 dev 分支往另外两个分支去合并的==
-3. 如果不是专属的单体或者微服务的功能，就只需要提交 dev 分支的代码即可，如果有专属的，只能是单体或者微服务分支，你应该是需要将这些分支都提交
+- 如果你的贡献的代码即有工具类库，也有业务功能，你应该是先在工具类库写完，然后在本地 install 到本地的 maven 仓库，然后再在业务框架里面引用工具类库
+- 业务框架的 dev 分支只是放了单纯的业务代码，你可以看到是没有启动类的，因为还需要区分为单体和微服务，所以，你需要将你在 dev 分支开发好的代码合并到对应的 single(单体)或者cloud(微服务)分支，然后再测试功能，或者是在 single(单体)或者cloud(微服务)分支里面测试功能，但是不提交，只拷贝代码到 dev 分支，然后再提交 dev 分支，然后再合并到 single(单体)或者cloud(微服务)分支，==主要就是要保证你的代码是从 dev 分支往另外两个分支去合并的==
+- 如果不是专属的单体或者微服务的功能，就只需要提交 dev 分支的代码即可，如果有专属的，只能是单体或者微服务分支，你应该是需要将这些分支都提交
+- 如果有涉及到 SQL 操作，请务必兼容以下几种数据库，因为这是目前世面上使用较多的几种数据库：MySQL、PostgreSQL、Oracle、SQLite
+
+::: details 示例
+
+例如，字符串的操作，不同的数据库语法不同
+
+```sql
+    <!--部门过滤-->
+    <sql id="Dept_Filter">
+        <choose>
+            <when test="_db_type_db_ == 'postgresql'">
+                and CAST(#{_login_user_dept_.id} as VARCHAR) = ANY(STRING_TO_ARRAY(sys_dept.pid_all, ','))
+            </when>
+            <when test="_db_type_db_ == 'mysql'">
+                and FIND_IN_SET(#{_login_user_dept_.id},sys_dept.pid_all)
+            </when>
+            <when test="_db_type_db_ == 'sqlite'">
+                and ',' || sys_dept.pid_all || ',' like '%,' || #{_login_user_dept_.id} || ',%'
+            </when>
+            <when test="_db_type_db_ == 'oracle'">
+                and INSTR(sys_dept.pid_all, TO_CHAR(#{_login_user_dept_.id}))>0
+            </when>
+        </choose>
+    </sql>
+```
+
+:::
+
+- 如果需要对配置文件(Nacos 配置文件 | yaml 配置文件)有改动，或者有 SQL 语句更新，请将这些文件放到 `项目目录/_ini/xxx` 目录下，文件格式以 `xxx.sql` 或 `xxx.yml` 或者其他格式，主要是你需要在文件的顶部添加好说明，我到时候审查的时候会把这些文件配置好进行测试
 
 ::: warning 注意
 在 3.5.1 以后的版本是兼容了 Gradle 和 Maven 两种依赖管理的，所以你贡献的代码如果需要涉及到依赖管理，请将两种方式都要兼容，这样，在切换依赖管理方式时，不会出现兼容性问题
@@ -115,3 +144,9 @@ spring-taybct 依赖 spring-taybct-tools，同时又分了两个分支：单体�
 ### 后续处理
 
 在审核通过之后，就能在主仓库看到你贡献的代码了，我会在后续合适的时候将这些代码统一打包到 maven 中央仓库，到时候就可以直接使用 maven 引入了。
+
+### 业务框架的使用
+
+- 当 spring-taybct 发布的同时，会将代码同时发布到 spring-taybct-cloud 和 spring-taybct-single 两个仓库，其实也就是 spring-taybct 的那两个分支（single、cloud）。
+- 然后这两个仓库会将代码打包成 Maven Archetype 模板发布到 Maven 中央仓库，这样，别人就可以使用 Maven 引入 spring-taybct-cloud 或者 spring-taybct-single 仓库的代码了。
+- 当然，如果希望后续继续获取到 spring-taybct 的同步更新，我这里是建议以模板项目的形式来 Fork spring-taybct-cloud 或者 srping-taybct-single 仓库，这样，后续只要源仓库发布更新了，Fork 了的仓库也可以得到同步更新
