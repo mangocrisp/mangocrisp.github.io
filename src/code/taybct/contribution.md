@@ -76,8 +76,8 @@ tag:
 
 如果想贡献代码，应该要有抽象的思维，比如你有个好的想法，那么是否可以复用？是否可以有多种实现？并且你应该为你的抽象的想法做默认的实现？也就是说，当别人不实现你的抽象的时候，应该使用你的默认实现。如果你要实现的功能还需要前端配合，我这边也提供了前端框架可以拿来用：
 
-- [前端框架-gx-web](https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/)
-- [前端演示-vue-pure-admin](https://mangocrisp.top/pureadmin)
+- [前端框架-gx-web](https://turtlewxg.github.io/gx-web-doc/)
+- [前端演示-vue-pure-admin](https://gitee.com/mangocrisp/vue-pure-admin/tree/spring-taybct/)
 
 当然，因为 Spring Taybct 框架是纯后端框架，所以，你必须为你的后端功能实现写好完整的 OpenAPI 文档，这是个好的习惯，这样，别人就可以通过 OpenAPI 文档来调用你的功能了
 
