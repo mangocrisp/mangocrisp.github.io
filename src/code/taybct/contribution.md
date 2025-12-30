@@ -49,7 +49,7 @@ tag:
 
 ### 项目成分
 
-[Spring Taybct](https://gitee.com/taybct) 是一个基于 SpringBoot 开发的 Java 后端后台管理业务基础框架，框架分为基础工具类库和业务框架，业务框架。
+[Spring Taybct](https://gitee.com/taybct) 是一个基于 SpringBoot 开发的 Java 后端后台管理业务基础框架，框架分为基础工具类库和业务框架。
 
 1. 基础工具类库：
 
@@ -62,7 +62,7 @@ tag:
 
 ### 结构说明
 
-[spring-taybct](https://gitee.com/taybct/spring-taybct) 依赖 [spring-taybct-tools](https://gitee.com/taybct/spring-taybct-tools)，同时又分了两个分支：单体框架和微服务框架，其实原理也很简单，就是多模块的项目，如果是单体项目就不需要和微服务相关的功能，比如 `网关`、`注册中心`、`RPC框架` 等，当想切换到微服务的时候只需要添加上这些模块，即可。
+[spring-taybct](https://gitee.com/taybct/spring-taybct) 依赖 [spring-taybct-tools](https://gitee.com/taybct/spring-taybct-tools)，同时又分了两个分支：[单体业务](https://gitee.com/taybct/spring-taybct-single)和[微服务项目](https://gitee.com/taybct/spring-taybct-cloud)，其实原理也很简单，就是多模块的项目，如果是单体项目就不需要和微服务相关的功能，比如 `网关`、`注册中心`、`RPC框架` 等，当想切换到微服务的时候只需要添加上这些模块，即可。
 
 ::: info 为什么要这样区分？
 在实际开发的过程中，不是所有的项目都需要上微服务，单体就完全够用了，有些项目在前期要快速搭建运行演示的时候也应该是先考虑单体，后续再切换为微服务，这样会方便一些
