@@ -99,6 +99,10 @@ Archetype 坐标
 推荐单体构架的项目使用 Maven，因为简单，学习成本低，微服务的项目，多个模块太多的情况下，还是 Gradle 加载、打包更快
 :::
 
+::: tip
+使用 模板创建的项目，一些文件的内容会有差异和默认值的变化，例如 .gitignore 文件是没有的，建议从[::mdi:github::源码仓库](https://github.com/taybct/spring-taybct) [::simple-icons:gitee::源码仓库](https://gitee.com/taybct/spring-taybct)中复制过来
+:::
+
 ## 直接下载源码
 
 <VPBanner

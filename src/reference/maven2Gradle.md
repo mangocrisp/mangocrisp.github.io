@@ -290,5 +290,11 @@ include ':spring-taybct-gateway'
   ```bash
   ./gradlew build -x test
   ```
+
+- 文档和源码问题，使用 gradle 拉取的 MAVEN 依赖如果无法接取源码和文档，可以尝试使用 single 项目的 mavne 构建先下载一遍源码和文档，或者使用 `mvn` 命令：
+
+  ```bash
+  mvn dependency:sources dependency:javadoc -DgroupId=依赖组ID -DartifactId=依赖工件ID -Dversion=依赖版本号
+  ```
   
   IntelliJ IDEA 在面板右键 build -> 修改运行配置 -> 直接在命令后面加上 `-x test`
