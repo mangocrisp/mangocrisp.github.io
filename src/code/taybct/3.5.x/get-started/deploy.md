@@ -78,7 +78,7 @@ java=env/linux/jdk-17.0.5/bin/java
 jar=$1
 echo "" > $jar.out
 echo "*****************start begin*****************"
-oldpid=`jps | grep $jar | grep -v "prep" | awk '{print $1}'`
+oldpid=$(ps -ef | grep java | grep "$jar" | grep -v grep | awk '{print $2}')
 if [ x"$oldpid" != x"" ]; then
     echo "$jar was running..."
     echo "try restart"
@@ -102,7 +102,7 @@ params="--spring.profiles.active=test \
 --spring.cloud.nacos.username=nacos \
 --spring.cloud.nacos.password=THga20_24_nacos"
 nohup $java $vm -jar $jar $params >$jar.out 2>&1 &
-nowpid=`jps | grep $jar | grep -v "prep" | awk '{print $1}'`
+nowpid=$(ps -ef | grep java | grep "$jar" | grep -v grep | awk '{print $2}')
 echo "*****************start success,new PID is $nowpid*****************"
 ```
 使用`nohup`在后台运行`Jar 包`
