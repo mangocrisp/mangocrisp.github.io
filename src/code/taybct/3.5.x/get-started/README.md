@@ -43,9 +43,9 @@ tag:
 
 ## 后端接 JavaDoc 口文档
 
-<a href="https://mangocrisp.top/javadoc/spring-taybct-tools-doc/index.html" target="_blank" >::line-md:link::spring-taybct-tools 接口文档</a>
+<a href="https://8.148.188.198/javadoc/spring-taybct-tools-doc/index.html" target="_blank" >::line-md:link::spring-taybct-tools 接口文档</a>
 
-<a href="https://mangocrisp.top/javadoc/spring-taybct-doc/index.html" target="_blank" >::line-md:link::spring-taybct 接口文档</a>
+<a href="https://8.148.188.198/javadoc/spring-taybct-doc/index.html" target="_blank" >::line-md:link::spring-taybct 接口文档</a>
 
 ## 前端框架集成
 

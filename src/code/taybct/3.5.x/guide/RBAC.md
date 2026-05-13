@@ -122,4 +122,4 @@ taybct:
 
 ## 尝试一下
 
-[示例](https://mangocrisp.top/pureadmin/)]
+[示例](https://8.148.188.198/pureadmin/)]

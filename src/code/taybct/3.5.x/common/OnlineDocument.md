@@ -186,7 +186,7 @@ spring:
 
 ### 4. 演示
 
-[在线文档](https://mangocrisp.top/pureadmin/#/online-doc)
+[在线文档](https://8.148.188.198/pureadmin/#/online-doc)
 这里因为服务器资源不太够安装OnlyOffice，只能贴出图片演示效果
 ![1](/assets/images/blog/od1.png)
 ![2](/assets/images/blog/od2.png)

@@ -164,7 +164,7 @@ spring:
 
 ### 4. 演示
 
-[流程引擎](https://mangocrisp.top/pureadmin/#/lf/design)（首次加载需要下载资源有点慢，需要耐心等待加载 😓）
+[流程引擎](https://8.148.188.198/pureadmin/#/lf/design)（首次加载需要下载资源有点慢，需要耐心等待加载 😓）
 
 ::: tip
 演示使用到的表单设计器是 [FcDesigner](https://view.form-create.com/) 和 [FormCreate](https://www.form-create.com/v3/)

@@ -216,4 +216,4 @@ java.base/java.lang.reflect=ALL-UNNAMED
 配置前端项目来使用，目前可以使用的前端项目有：
 
 - https://turtlewxg.github.io/gx-web-doc/
-- https://mangocrisp.top/pureadmin/
+- https://8.148.188.198/pureadmin/

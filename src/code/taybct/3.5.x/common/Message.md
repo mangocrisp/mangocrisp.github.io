@@ -57,7 +57,7 @@ tag:
 
 ## IMessageSendService
 
-使用框架提供的消息发送服务，可以发送消息。详见：[接口文档](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/message/IMessageSendService.html)
+使用框架提供的消息发送服务，可以发送消息。详见：[接口文档](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/message/IMessageSendService.html)
 
 ## IMessageSendHandler
 

@@ -76,11 +76,11 @@ tag:
 
 ## 文件操作 FileServiceBuilder
 
-FileServiceBuilder 提供了常见的文件操作方法，详见：[接口文档](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/file/util/FileServiceBuilder.html)
+FileServiceBuilder 提供了常见的文件操作方法，详见：[接口文档](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/file/util/FileServiceBuilder.html)
 
 ### IFileService
 
-如果这个工具类并不能实现需要的业务功能，可以通过调用 `IFileService` 来实现自己的功能，[接口文档](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/file/service/IFileService.html)，
+如果这个工具类并不能实现需要的业务功能，可以通过调用 `IFileService` 来实现自己的功能，[接口文档](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/file/service/IFileService.html)，
 
 - 实现
 

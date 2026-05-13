@@ -20,6 +20,6 @@ projects:
   - icon: /logo.svg
     name: 个人博客
     desc: 个人博客（.top 域名）
-    link: https://mangocrisp.top/
+    link: https://8.148.188.198/
 #footer: 自定义你的页脚文字
 ---

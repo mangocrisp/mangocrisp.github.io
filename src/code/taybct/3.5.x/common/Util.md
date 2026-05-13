@@ -55,7 +55,7 @@ tag:
 - 支持 GET、POST、PUT、DELETE、PATCH 等请求，你也可以通过提供[HttpUriRequest](https://hc.apache.org/httpcomponents-client-5.5.x/current/httpclient5/apidocs/org/apache/hc/client5/http/classic/methods/ClassicHttpRequests.html)自定义如何请求
 - 对请求做了 CURL 生成（需要将日志输出级别设置为 DEBUG），可以查看每次请求的 CURL 命令，复制到 Postman 或者 ApiFox，能更方便的测试接口
 
-详见：[HttpClientUtil](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/HttpClientUtil.html)
+详见：[HttpClientUtil](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/HttpClientUtil.html)
 
 ### MyBatisUtil
 
@@ -64,13 +64,13 @@ tag:
 - 利用传入的参数，自动生成需要的 Wrapper 对象
 - 利用传入的参数，自动判断生成分页参数
 
-详见：[MyBatisUtil](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/MyBatisUtil.html)
+详见：[MyBatisUtil](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/MyBatisUtil.html)
 
 ### ValidatorUtil
 
 数据校验工具类，通常我们对接口的参数进行校验，会使用`@Valid`或者`@Validated`注解，但是如果希望在逻辑处理的过程中进行校验，可以使用这个工具类。
 
-详见：[ValidatorUtil](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/ValidatorUtil.html)
+详见：[ValidatorUtil](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/ValidatorUtil.html)
 
 ### CollectionSortUtil
 
@@ -79,7 +79,7 @@ tag:
 - 可以按照指定的字段进行排序
 - 对于字段中包含的中文，可以按照拼音进行排序，并且对于多音字也做了处理，会按照语意进行排序，比如 "重(chong)庆" 会排在 "重(zhong)大" 之前
 
-详见：[CollectionSortUtil](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/CollectionSortUtil.html)
+详见：[CollectionSortUtil](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/CollectionSortUtil.html)
 
 ### TreeUtil
 
@@ -91,7 +91,7 @@ tag:
 - 不限定 root 节点
 - 可以指定排除某些节点
 
-详见：[TreeUtil](https://mangocrisp.top/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/tree/TreeUtil.html)
+详见：[TreeUtil](https://8.148.188.198/javadoc/spring-taybct-tools-doc/io/github/taybct/tool/core/util/tree/TreeUtil.html)
 
 示例：
 [::mdi:github:: 用户部门树结构](https://github.com/taybct/spring-taybct/blob/main/spring-taybct-modules/spring-taybct-module-system/src/main/java/io/github/taybct/module/system/service/impl/SysDeptServiceImpl.java#L51-L69)

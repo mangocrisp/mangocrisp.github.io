@@ -70,7 +70,7 @@ export default sidebar({
     {
       text: "前端演示-vue-pure-admin",
       icon: "carbon:demo",
-      link: "https://mangocrisp.top/pureadmin",
+      link: "https://8.148.188.198/pureadmin",
     },
   ],
 });
