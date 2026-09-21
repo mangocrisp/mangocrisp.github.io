@@ -207,3 +207,62 @@ stopRecord(OperateStatus.SUCCESS.getCode(), "我自己记录一个消息");
 ```
 
 但是，注意，这个记录只能写一次，而且，你记录之后，框架就不会再记录
+
+## ServiceApiTask 服务接口定时任务
+
+通过指定需要的服务名，接口名来调用接口。在微微服务项目里面，分布式任务调度通过统一的任务调度服务来完成任务统一的调度，所以可以通过在任务调度中心来配置服务接口任务。配置如下：
+
+示例：
+```yaml
+taybct:
+  scheduled:
+    pool-size: 20
+    await-termination-seconds: 60
+    thread-name-prefix: "Scheduler-"
+    wait-for-tasks-to-complete-on-shutdown: true
+    packages-to-scan:
+      - io.github.taybct.**.task.job
+    tasks:
+      serviceApiTask_01:
+        task-key: serviceApiTask
+        cron: 0 0/1 * * * ?
+        description: "接口调度01"
+        auto-start: 1
+        sort: 0
+        params:
+          serviceId: module-system
+          method: POST
+          mapping: /demo/testSchedule1?param1=1&param2=2
+          auth:
+            username: admin
+            userId: 2
+            role:
+              - ADMIN
+          queryParams:
+            param1: 1
+            param2: 2
+          queryBody:
+            name: "test"
+            age: 18
+            sex: "男"
+            address: "中国"
+            hobby:
+              - "football"
+              - "basketball"
+            birthday: "2026-04-03"
+            isMarried: true
+            height: 1.8
+            weight: 80.5
+            isStudent: false
+```
+
+不再需要写一个任务调度就写一遍 bean，直接在前端配置都可以完成定时调用某个模块的某个接口，详情查看 [ServiceApiTask](https://github.com/taybct/spring-taybct/blob/3.5.3/spring-taybct-modules/spring-taybct-module-scheduling/src/main/java/io/github/taybct/module/scheduling/task/job/ServiceApiTask.java)
+
+参数说明：
+
+- serviceId：服务名，也就是注册在注册中心中的服务名，程序会用这个服务名来去注册中心中寻找服务实例然后循环访问这些服务直到找到一个可用的为止
+- method：请求方式，例如 GET POST PUT DELETE，注意，必须要大写
+- mapping：接口映射，例如 /user/name/1，也就是接口的访问地址，也可以在地址中使用 {id} 的方式来动态指定参数，例如 /user/name/{id}?q={q}，那么接口调用的时候就可以传入参数 id 的值了
+- queryParams：get 请求参数，结合上面的 mapping 使用, 例如 {"id":1, "q": "what"}
+- queryBody：post 请求体，例如 {"name":"张三", "age": 28}
+- auth：认证信息，例如 {"username": "admin", "userId": 1, "role": ["ADMIN", "USER"]}
