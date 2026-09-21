@@ -178,6 +178,10 @@ java.base/java.lang.reflect=ALL-UNNAMED
 
 ### 2. 启动
 
+3.5.5 版本之后，如果条件有限，可以使用项目自带的 SQLite 文件启动项目，无需配置数据库
+
+> Nacos 和 Redis 还是需要启动先
+
 ### 3. 验证
 
 - swagger 后端接口文档：浏览器打开 http://127.0.0.1:9102/doc.html
